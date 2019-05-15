@@ -1,0 +1,38 @@
+.boton{
+	height: 10%;
+	width: 25%;
+	border-radius: 10px;
+	color: white;
+}
+.boton-correcto{
+	background-color: #00C851;
+	border-color: #00C851;
+}
+.boton-correcto:hover{
+	background-color: #00e676;
+	border-color: #00e676;
+}
+.boton-eliminar{
+	background-color: #ff4444;
+	border-color: #ff4444;
+}
+.boton-eliminar:hover{
+	background-color: #CC0000;
+	border-color: #CC0000;
+}
+.boton-info{
+	background-color: #33b5e5;
+	border-color: #33b5e5;
+}
+.boton-info:hover{
+	background-color: #0099CC;
+	border-color: #0099CC;
+}
+.boton-peq{
+	width: 10%;
+	max-width: 10%;
+}
+.boton-med{
+	width: 40%;
+	max-width: 40%;
+}
