@@ -1,10 +1,10 @@
 <?php 
     //ENTER THE RELEVANT INFO BELOW
-    $mysqlUserName      = "Your Username";
-    $mysqlPassword      = "Your Password";
-    $mysqlHostName      = "Your Host";
-    $DbName             = "Your Database Name here";
-    $backup_name        = "mybackup.sql";
+    $mysqlUserName      = "root";
+    $mysqlPassword      = "";
+    $mysqlHostName      = "localhost";
+    $DbName             = "volarenglobo";
+    $backup_name        = "volarenglobo.sql";
     $tables             = "Your tables";
 
    //or add 5th parameter(array) of specific tables:    array("mytable1","mytable2","mytable3") for multiple tables
