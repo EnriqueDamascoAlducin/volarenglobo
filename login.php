@@ -57,7 +57,7 @@
 
 					<div class="container-login100-form-btn m-t-32">
 						<button class="login100-form-btn" type="submit">
-							Iniciar Sesión ALgo
+							Iniciar Sesión 
 						</button>
 					</div>
 
