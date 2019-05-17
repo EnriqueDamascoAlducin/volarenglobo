@@ -57,18 +57,8 @@
 
 					<div class="container-login100-form-btn m-t-32">
 						<button class="login100-form-btn" type="submit">
-<<<<<<< HEAD
-<<<<<<< HEAD
-							Iniciar Sesión De Quique
-=======
 							Iniciar Sesión 
->>>>>>> fd79099221da7dfd6c2d14b6f8b7d40097b74c3e
 						</button>
-=======
-
-								Iniciar Sesión 
--						</button>
->>>>>>> 1dd14af268c828add7ce095331e173d152fdce7e
 					</div>
 
 				</form>
