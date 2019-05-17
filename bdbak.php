@@ -3,8 +3,8 @@
     $mysqlUserName      = "root";
     $mysqlPassword      = "";
     $mysqlHostName      = "localhost";
-    $DbName             = "volarenglobo";
-    $backup_name        = "volarenglobo.sql";
+    $DbName             = "volar1";
+    $backup_name        = "volar1.sql";
     $tables             = "Your tables";
 
    //or add 5th parameter(array) of specific tables:    array("mytable1","mytable2","mytable3") for multiple tables
