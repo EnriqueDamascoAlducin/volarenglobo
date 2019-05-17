@@ -14,7 +14,7 @@
 	       	$this->server="localhost";
 			$this->user="root";
 			$this->pass="";
-			$this->db="volar1";  
+			$this->db="volarenglobo";  
 			try
 			{
 				$con= new PDO('mysql:host='. $this->server .';dbname='. $this->db .'',$this->user, $this->pass);
