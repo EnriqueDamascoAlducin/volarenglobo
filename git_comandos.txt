@@ -1,3 +1,4 @@
+//////para bajar archivos del servidor
 git init // sirve para indicar que trabajaremos esa carpeta con git
 git remote add origin https://github.com/EnriqueDamascoAlducin/volarenglobo // es para indicar sobre que proyecto vamos a trabajar
 git checkout -b una_rama //es para crear una nueva rama (una rama son versiones por usuario)
@@ -15,3 +16,10 @@ git add (. / nombre_archivo(s) ) // sirve para poder preparar la subida de los a
 git commit -m "un comentario" // sirve para haer los cambios pero solo de forma local en tu rama
 git pull origin master // es para verificar que no haya otros cambios en master y se terminen sobreescribiendo
 git push origin turama // sirve para agregar tus cambios a la rama remota
+
+
+
+
+
+
+Otra cosa
