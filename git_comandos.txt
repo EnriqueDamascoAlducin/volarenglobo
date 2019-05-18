@@ -12,3 +12,6 @@ git status // sirve para validar si existe algun archivo modificado o un nuevo a
 
 *git diff archivo // sirve para ver que diferencias hay en el archivo mencionado
 git add (. / nombre_archivo(s) ) // sirve para poder preparar la subida de los archivos nuevos	
+git commit -m "un comentario" // sirve para haer los cambios pero solo de forma local en tu rama
+git pull origin master // es para verificar que no haya otros cambios en master y se terminen sobreescribiendo
+git push origin turama // sirve para agregar tus cambios a la rama remota
