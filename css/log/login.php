@@ -10,6 +10,7 @@
 		$_SESSION['nombre_completo']=$consulta[0]->nombre_usu. " ".$consulta[0]->apellidop_usu." ".$consulta[0]->apellidom_usu ;
 		$_SESSION['apellido']=$consulta[0]->apellidop_usu." ".$consulta[0]->apellidom_usu;
 		$_SESSION['correo']=$consulta[0]->correo_usu;
+		$_SESSION['contrasena']=$consulta[0]->contrasena_usu;
 		$_SESSION['id']=$consulta[0]->id_usu;
 		$_SESSION['nivel']=$consulta[0]->apellidop_usu;
 		echo "Bienvenido ". $consulta[0]->nombre_usu." ".$consulta[0]->apellidop_usu." ".$consulta[0]->apellidom_usu;

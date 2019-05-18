@@ -121,5 +121,13 @@ $campos=$cons->consultas("show full columns",$_SESSION['tabla'],"","");
 				<input type="time"  name="<?php echo $campo ?>" title="<?php echo utf8_encode($comentario) ?>" class="form-control" id="<?php echo $campo; ?>" value="<?php if($datos!='' && $datos[0]->$campo2!=''){ echo($datos[0]->$campo2);}else{ echo '';} ?>"<?php echo $req; ?> pattern="[0-9]{2}-[0-9]{4}-[0-9]{4}" />
 			</div>
 	</div>
+	
+	<?php } else if($tipo==13){ ?>
+	<div class="col-sm-<?php echo $tamano; ?> col-md-<?php echo $tamano; ?> col-lg-<?php echo $tamano; ?> col-xs-6" id="div_<?php echo $campo; ?>">
+			<div class="form-group">
+				<label for="<?php echo $campo ?>" <?php echo $color; ?>><?php echo utf8_encode($comentario); ?></label>
+				<input type="password"  name="<?php echo $campo ?>" title="<?php echo utf8_encode($comentario) ?>" class="form-control" id="<?php echo $campo; ?>" value="<?php if($datos!='' && $datos[0]->$campo2!=''){ echo($datos[0]->$campo2);}else{ echo '';} ?>"<?php echo $req; ?> pattern="[0-9]{2}-[0-9]{4}-[0-9]{4}" />
+			</div>
+	</div>
 	<?php } ?>
 <?php } ?>

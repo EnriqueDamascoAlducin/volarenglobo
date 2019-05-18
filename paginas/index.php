@@ -171,6 +171,7 @@ $permisos=$cons->consultas($campos,$tablas,$filtro,"");
 			cargar_pagina(modulo,idpag);
 		}
 		function abrir_modal(titulo,id,url){
+			alert(titulo);
 			$("#modal-confirmacion").load("modales/"+url,{id:id,titulo:titulo},function(response, status, xhr){
 				if ( xhr.status == 404 ) {
 				    $( "#cuerpo_modal" ).html("<img src='../img/404.jpg' style='margin-left:20%;margin-rigth:20%;width:60%'>");
@@ -313,6 +314,14 @@ $permisos=$cons->consultas($campos,$tablas,$filtro,"");
 		}
 	}
 </script>
-  
+  <script type="text/javascript">
+		<?php if(md5("123")==$_SESSION['contrasena']){ ?>
+			alert("cambia tu contraseña");
+			abrir_modal("Cambio de contraseña <?php echo $_SESSION['nombre'] ?>",'<?php echo $_SESSION['id'] ?>',"cambiocontra.php");
+			$("#modal-confirmacion").modal('show');
+		<?php }else{ ?>
+			alert("gracias por cambiar tu contraseña");
+		<?php } ?>
+	</script>
 </body>
 </html>
