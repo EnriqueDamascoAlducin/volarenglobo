@@ -1,0 +1,14 @@
+git init // sirve para indicar que trabajaremos esa carpeta con git
+git remote add origin https://github.com/EnriqueDamascoAlducin/volarenglobo // es para indicar sobre que proyecto vamos a trabajar
+git checkout -b una_rama //es para crear una nueva rama (una rama son versiones por usuario)
+git pull origin master // sirve para copiar los archivos funcionando de master
+
+
+
+
+//////// es para cuando existan nuevos archivos o cambios en la rama
+
+git status // sirve para validar si existe algun archivo modificado o un nuevo archivo creado
+
+*git diff archivo // sirve para ver que diferencias hay en el archivo mencionado
+git add (. / nombre_archivo(s) ) // sirve para poder preparar la subida de los archivos nuevos	
