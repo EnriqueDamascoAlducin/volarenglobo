@@ -215,7 +215,7 @@ $permisos=$cons->consultas($campos,$tablas,$filtro,"");
 				"searching":false
 			});
 		}
-  function save_extra(url1,idpag,titulo,id,modal){
+  function save_extra(url1,idpag=0,titulo,id,modal){
     param=$("#formularioext").serialize();
     url="../crud/crud.php";
     $.ajax({                        
@@ -230,7 +230,13 @@ $permisos=$cons->consultas($campos,$tablas,$filtro,"");
             	 abrir_alert("success","Registro Agregado");     
             }
             console.log(data);
-            cargar_pagina(url1,idpag);
+            alert(data);
+            if(idpag!=0){
+            	cargar_pagina(url1,idpag);
+            }else{
+            	window.open("../","mywindow");
+
+            }
            }
        });
 	    setTimeout(function(){

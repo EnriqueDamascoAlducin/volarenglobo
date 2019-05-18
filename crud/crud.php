@@ -34,11 +34,14 @@
 			}
 			foreach ($_POST as $val) {
 				$name=$names[$i]."_".$clave;
+				if($names[$i]=="contrasena" || $names[$i]=="password"){
+					$val=md5($val);
+				}
 					if ($name!='id') {
 						if($val==""){
 							$campos.=$name."=null,";
 						}else{
-							$campos.=$name."='".$val."',";
+							$campos.=$name."='".utf8_decode( $val)."',";
 						}
 						
 					}

@@ -5,6 +5,7 @@
   $_SESSION['extraquery']="";
   include "../../crud/fin_session.php";
 	$_SESSION['tabla']="volar_usuarios";
+  $_SESSION['idpagina']=0;
 	$id=$_POST['id'];
   $titulo=$_POST['titulo'];
 	$datos="";
@@ -38,7 +39,7 @@
       		
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary"   onclick="save_extra(<?php echo "'".$_SESSION['modulo']."'".",".$_SESSION['idpagina']; ?>,<?php echo "'".$_POST['titulo']."',".$id.",'pilotos.php'"; ?>)" >Asignar</button>
+        <button type="button" class="btn btn-primary"   onclick="save_extra(<?php echo "'".$_SESSION['modulo']."login.php'".",".$_SESSION['idpagina']; ?>,<?php echo "'".$_POST['titulo']."',".$id.",'pilotos.php'"; ?>)" >Asignar</button>
         <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
       </div>
     </div>
