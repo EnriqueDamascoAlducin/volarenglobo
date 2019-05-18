@@ -7,9 +7,15 @@
 	if(isset($_POST['id'])){
 		$datos=$cons->consultas("*",$_SESSION['tabla'],"id_usu=".$_POST['id'],"");
 	}
-	$size=[3,3,3,3,3,3,3];
+	$size=[3,3,3,3,3,3,3,3];
+	/*
+		conexion a base de datos
+		select * from tabla where ....
+		ejecutar cada resultaod
+
+	*/
 	////tipos   ----> 1= input text; 2= input number; 3=select estatico; 4 = select dinamico; 5=textarea; 6=input file; 7= input date; 8=date-timelocal; 9=input email;10=input telefono
-	$tipo=[1,1,1,4,3,9,10,2];
+	$tipo=[1,1,1,4,3,9,10,1];
 	$query=["(nombre_extra) as text, id_extra as value","extras_volar","status=1 and clasificacion_extra='deptousu'"];
 	$valores=[''];
 	$options=["","","",$query,$valores,"","",""];

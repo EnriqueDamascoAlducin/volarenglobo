@@ -2,7 +2,7 @@
 	include_once "c/conexion.php";
 	$usuario=$_POST["user"];
 	$pass=md5($_POST["pass"]);
-	$consulta=$cons->consultas("*","volar_usuarios","status=1 and id_usu=".$usuario." and contrasena_usu='".$pass."'","");
+	$consulta=$cons->consultas("*","volar_usuarios","status=1 and (id_usu='".$usuario."' or usuario_usu='".$usuario."') and contrasena_usu='".$pass."'","");
 	if(sizeof($consulta)>0){
 		session_start();
 		$_SESSION['nombre']=$consulta[0]->nombre_usu;
