@@ -27,6 +27,11 @@
 			$filtro=substr($filtro,0,-1);
 			$tipo="insert";
 		}else{
+			if(isset($_FILE)){
+				echo "si existe";
+			}else{
+				echo " no existe";
+			}
 			foreach ($_POST as $val) {
 				$name=$names[$i]."_".$clave;
 					if ($name!='id') {
