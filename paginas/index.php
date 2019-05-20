@@ -59,7 +59,7 @@ $permisos=$cons->consultas($campos,$tablas,$filtro,"");
 			</td>
 			<td style="width: 10%;max-width: 10%;background-color: #FF6633;color: white;" height="1"></td>
 			<td style="width: 10%;max-width: 10%;background-color: #FF0000;color: white;" height="1"></td>
-			<td style="width: 10%;max-width: 10%;background-color: #660000;color: white;" height="1"></td>
+			<td style="width: 10%;max-width: 10%;background-color: #660000;color: white;" height="1" onclick='cambiar_contra();'>Cambiar Contraseña</td>
 			<td style="width: 30%;max-width: 30%;background-color: #3674B2;color: white;text-align: right;"onclick='window.location.replace("../login.php");'>
 			<span class="glyphicon glyphicon-log-out" aria-hidden="true"></span>&nbsp;&nbsp;Salir&nbsp;&nbsp;
 			</td>
@@ -171,7 +171,6 @@ $permisos=$cons->consultas($campos,$tablas,$filtro,"");
 			cargar_pagina(modulo,idpag);
 		}
 		function abrir_modal(titulo,id,url){
-			alert(titulo);
 			$("#modal-confirmacion").load("modales/"+url,{id:id,titulo:titulo},function(response, status, xhr){
 				if ( xhr.status == 404 ) {
 				    $( "#cuerpo_modal" ).html("<img src='../img/404.jpg' style='margin-left:20%;margin-rigth:20%;width:60%'>");
@@ -230,11 +229,11 @@ $permisos=$cons->consultas($campos,$tablas,$filtro,"");
             	 abrir_alert("success","Registro Agregado");     
             }
             console.log(data);
-            alert(data);
+            //alert(data);
             if(idpag!=0){
             	cargar_pagina(url1,idpag);
             }else{
-            	window.open("../","mywindow");
+            	window.location.replace("../login.php");
 
             }
            }
@@ -322,12 +321,14 @@ $permisos=$cons->consultas($campos,$tablas,$filtro,"");
 </script>
   <script type="text/javascript">
 		<?php if(md5("123")==$_SESSION['contrasena']){ ?>
-			alert("cambia tu contraseña");
-			abrir_modal("Cambio de contraseña <?php echo $_SESSION['nombre'] ?>",'<?php echo $_SESSION['id'] ?>',"cambiocontra.php");
-			$("#modal-confirmacion").modal('show');
-		<?php }else{ ?>
-			alert("gracias por cambiar tu contraseña");
+			cambiar_contra();
 		<?php } ?>
+		function cambiar_contra(){
+
+			abrir_modal("<?php echo $_SESSION['nombre'] ?>. Es necesario el cambio de contraseña",'<?php echo $_SESSION['id'] ?>',"cambiocontra.php");
+			$("#modal-confirmacion").modal('show');
+		}
 	</script>
+
 </body>
 </html>

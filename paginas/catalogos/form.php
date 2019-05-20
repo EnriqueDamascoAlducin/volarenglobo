@@ -11,15 +11,14 @@
 	
 	////tipos   ----> 1= input text; 2= input number; 3=select estatico; 4 = select dinamico; 5=textarea; 6=input file; 7= input date; 8=date-timelocal; 9=input email;10=input telefono
 	
-	$query=["(nombre_extra) as text, id_extra as value","extras_volar","status=1 and clasificacion_extra='deptousu'"];
+	$query=["distinct (clasificacion_extra) as text,  (clasificacion_extra) as value","extras_volar","status=1 "];
 	$valores=[''];
-	$cont=0;
 	include "../../dinamicos/inputs.php";
-	$array=["abrev_extra","",""];
+	$array=["abrev_extra","nombre_extra","clasificacion_extra"];
 	$size=[1,4,4,3,3];
-	$type=[1,1,1,1,1];
-	$options=["","","","","","","","","","","","","",""];
-	$req=["required","required","required","","","required","","","","","","","",""];
+	$type=[1,1,1,4,1];
+	$options=["","","",$query,"","","","","","","","","",""];
+	$req=["required","","required","required","","required","","","","","","","",""];
 ?>
 <form name="formulario" id="formulario" onsubmit="enviar_crud(event);">
 	<?php 
@@ -27,7 +26,8 @@
 		echo "<input type='hidden' name='id' id='id' value='".$_POST['id']."'>";
 	}
 	?>
-	<?php foreach ($campos as $campo) {
+	<?php 
+		$cont=0;foreach ($campos as $campo) {
 		if(in_array($campo->Field, $array)){
 		campos($type[$cont],$campo->Comment,$campo->Field,$size[$cont],$options[$cont],$datos,$req[$cont],$cons);
 		}

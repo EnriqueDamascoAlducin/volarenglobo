@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 18-05-2019 a las 06:52:24
+-- Tiempo de generación: 20-05-2019 a las 04:01:41
 -- Versión del servidor: 10.1.38-MariaDB
 -- Versión de PHP: 7.3.3
 
@@ -180,7 +180,30 @@ INSERT INTO `extras_volar` (`id_extra`, `abrev_extra`, `nombre_extra`, `clasific
 (61, NULL, 'Deposito en Linea', 'metodopago', '2019-04-11 21:22:01', 1),
 (62, NULL, 'SITIO', 'deptousu', '2019-04-17 17:53:44', 1),
 (63, NULL, 'FINANZAS', 'deptousu', '2019-04-17 18:28:21', 1),
-(64, NULL, 'BBVA VGAP', 'cuentasvolar', '2019-04-17 20:46:06', 1);
+(64, NULL, 'BBVA VGAP', 'cuentasvolar', '2019-04-17 20:46:06', 1),
+(65, NULL, 'Prueba', 'estados', '2019-05-18 13:50:31', 0),
+(66, NULL, 'PILOTOS', 'tipogastos', '2019-05-19 16:05:52', 1),
+(67, NULL, 'TRIPULACIONES', 'tipogastos', '2019-05-19 16:05:52', 1),
+(68, NULL, 'COMISIONES', 'tipogastos', '2019-05-19 16:06:41', 1),
+(69, NULL, 'RETORNO DE EFECTIVO', 'tipogastos', '2019-05-19 16:07:18', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `gastos_volar`
+--
+
+CREATE TABLE `gastos_volar` (
+  `id_gasto` int(11) NOT NULL COMMENT 'Llave Primaria',
+  `fecha_gasto` datetime DEFAULT NULL COMMENT 'Fecha de Gasto',
+  `tipo_gasto` mediumint(9) DEFAULT NULL COMMENT 'Tipo de Pago',
+  `cantidad_gasto` decimal(10,2) DEFAULT NULL COMMENT 'Cantidad',
+  `metodo_pago` mediumint(9) DEFAULT NULL COMMENT 'Metodo',
+  `referencia_gasto` int(11) DEFAULT NULL COMMENT 'Referencia',
+  `comentario_gasto` int(11) DEFAULT NULL COMMENT 'Comentario',
+  `register` datetime DEFAULT NULL COMMENT 'Register',
+  `status` int(11) DEFAULT NULL COMMENT 'Status'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci COMMENT='Tabla de Gastos';
 
 -- --------------------------------------------------------
 
@@ -261,8 +284,8 @@ CREATE TABLE `hoteles_volar` (
 
 INSERT INTO `hoteles_volar` (`id_hotel`, `nombre_hotel`, `calle_hotel`, `noint_hotel`, `noext_hotel`, `colonia_hotel`, `municipio_hotel`, `estado_hotel`, `cp_hotel`, `telefono_hotel`, `telefono2_hotel`, `correo_hotel`, `img_hotel`, `pagina_hotel`, `register`, `status`) VALUES
 (1, 'Quinto Sol', 'Ninguna', '24', NULL, 'Teotihuacan', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2019-05-12 18:12:51', 1),
-(2, 'Otro', 'p', NULL, NULL, 'a', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2019-05-17 16:14:56', 1),
-(3, 'a', 's', NULL, NULL, 'd', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2019-05-17 16:15:06', 1);
+(2, 'Otro', 'p', NULL, NULL, 'a', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2019-05-17 16:14:56', 0),
+(3, 'a', 's', NULL, NULL, 'd', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2019-05-17 16:15:06', 0);
 
 -- --------------------------------------------------------
 
@@ -339,7 +362,8 @@ INSERT INTO `permisosusuarios_volar` (`id_puv`, `idusu_puv`, `idsp_puv`, `regist
 (70, 1, 39, '2019-05-12 18:14:25', 1),
 (71, 1, 40, '2019-05-16 20:47:45', 1),
 (72, 1, 41, '2019-05-16 20:47:47', 1),
-(73, 1, 42, '2019-05-16 20:47:48', 1);
+(73, 1, 42, '2019-05-16 20:47:48', 1),
+(74, 1, 43, '2019-05-18 20:48:41', 1);
 
 -- --------------------------------------------------------
 
@@ -366,12 +390,13 @@ INSERT INTO `permisos_volar` (`id_per`, `nombre_per`, `img_per`, `ruta_per`, `re
 (3, 'Conciliar Pagos', '../img/modulos/conciliar.jpg', 'conciliar_pago/', '2019-03-31 14:19:37', 0),
 (4, 'Registrar Estados', '../img/modulos/registro.png', 'estados/', '2019-03-31 17:05:13', 1),
 (5, 'Servicios Extra', '../img/modulos/servicio.png', 'agregar_servicio/', '2019-03-31 20:14:55', 1),
-(6, 'Tipo de Vuelos', '../img/modulos/globo.png', 'registro_cat_vuelos/', '2019-04-05 13:37:32', 1),
+(6, 'Vuelos', '../img/modulos/globo.png', 'registro_cat_vuelos/', '2019-04-05 13:37:32', 1),
 (7, 'Servicios', '../img/modulos/catalogo.png', 'catalogo_servicios/', '2019-04-08 22:42:53', 1),
 (8, 'Usuarios', '../img/modulos/users.png', 'usuarios_volar/', '2019-04-09 12:59:39', 1),
 (9, 'Hoteles', '../img/modulos/hotel.png', 'registro_hoteles/', '2019-04-14 14:00:31', 1),
 (10, 'Globos', '../img/modulos/globo.png', 'globos/', '2019-05-12 14:37:06', 1),
-(11, 'Catalogos', '../img/modulos/catalogo.png', 'catalogos/', '2019-05-16 20:44:27', 1);
+(11, 'Catalogos', '../img/modulos/catalogo.png', 'catalogos/', '2019-05-16 20:44:27', 1),
+(12, 'Sitio', '../img/modulos/sitio.png', 'sitio/', '2019-05-18 19:47:03', 1);
 
 -- --------------------------------------------------------
 
@@ -749,7 +774,8 @@ INSERT INTO `subpermisos_volar` (`id_sp`, `nombre_sp`, `permiso_sp`, `register`,
 (39, 'HABITACIONES', 9, '2019-05-12 18:14:18', 1),
 (40, 'AGREGAR', 11, '2019-05-16 20:45:11', 1),
 (41, 'EDITAR', 11, '2019-05-16 20:45:11', 1),
-(42, 'ELIMINAR', 11, '2019-05-16 20:45:11', 1);
+(42, 'ELIMINAR', 11, '2019-05-16 20:45:11', 1),
+(43, 'GASTOS', 12, '2019-05-18 20:45:26', 1);
 
 -- --------------------------------------------------------
 
@@ -797,7 +823,7 @@ CREATE TABLE `temp_volar` (
 --
 
 INSERT INTO `temp_volar` (`id_temp`, `idusu_temp`, `clave_temp`, `nombre_temp`, `apellidos_temp`, `mail_temp`, `telfijo_temp`, `telcelular_temp`, `procedencia_temp`, `pasajerosa_temp`, `pasajerosn_temp`, `motivo_temp`, `tipo_temp`, `fechavuelo_temp`, `tarifa_temp`, `hotel_temp`, `habitacion_temp`, `checkin_temp`, `checkout_temp`, `comentario_temp`, `otroscar1_temp`, `precio1_temp`, `otroscar2_temp`, `precio2_temp`, `tdescuento_temp`, `cantdescuento_temp`, `total_temp`, `piloto_temp`, `kg_temp`, `globo_temp`, `register`, `status`) VALUES
-(29, 1, NULL, 'ENRIQUE', 'DAMASCO', 'enriquealducin@outlook.com', NULL, '5529227672', 5, 8, 0, 37, 2, '2019-05-09', 49, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0.00', 0.00, 0, '0.00', 0, '2019-05-12 15:31:35', 2);
+(29, 1, NULL, 'ENRIQUE', 'DAMASCO', 'enriquealducin@outlook.com', NULL, '5529227672', 5, 8, 0, 37, 2, '2019-05-09', 49, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0.00', 0.00, 0, '0.00', 0, '2019-05-12 15:31:35', 2);
 
 -- --------------------------------------------------------
 
@@ -825,11 +851,11 @@ CREATE TABLE `volar_usuarios` (
 --
 
 INSERT INTO `volar_usuarios` (`id_usu`, `nombre_usu`, `apellidop_usu`, `apellidom_usu`, `depto_usu`, `puesto_usu`, `correo_usu`, `telefono_usu`, `contrasena_usu`, `usuario_usu`, `register`, `status`) VALUES
-(1, 'Enrique', 'Damasco', 'Alducin', 54, 1, 'enriquealducin@outlook.com', '55-2922-7672', '202cb962ac59075b964b07152d234b70', 'quique', '2019-03-29 23:20:06', 1),
-(2, 'Verenice', 'Gomez', 'Martinez', 54, 0, 'verenicegm@gmail.com', '55-2463-8183', '202cb962ac59075b964b07152d234b70', 'vere', '2019-04-09 14:55:40', 1),
-(3, 'Sonia', 'Alducin', 'Guajardo', 63, 3, 'enriquealducin@outlook.com', '5529212556', '202cb962ac59075b964b07152d234b70', NULL, '2019-04-10 09:27:49', 1),
-(5, 'Victor', 'Vazquez', 'Velazquez', 54, 1, 'vvv-nas@outlook.com', '55-2654-5234', '202cb962ac59075b964b07152d234b70', NULL, '2019-04-18 11:07:42', 1),
-(6, 'Fernanda', 'Ordoï¿½es', NULL, 54, 1, 'alguncorre@hotmail.com', '55-2928-2822', '202cb962ac59075b964b07152d234b70', 'fer', '2019-05-17 23:12:27', 1),
+(1, 'Enrique', 'Damasco', 'Alducin', 54, 1, 'enriquealducin@outlook.com', '55-2922-7672', '81dc9bdb52d04dc20036dbd8313ed055', 'quique', '2019-03-29 23:20:06', 1),
+(2, 'Verenice', 'Gomez', 'Martinez', 54, 0, 'verenicegm@gmail.com', '55-2463-8183', '11734c05689ef09acd4ff2ccb12853ee', 'vere', '2019-04-09 14:55:40', 1),
+(3, 'Sonia', 'Alducin', 'Guajardo', 63, 3, 'enriquealducin@outlook.com', '5529212556', 'f1c1592588411002af340cbaedd6fc33', NULL, '2019-04-10 09:27:49', 1),
+(5, 'Victor', 'Vazquez', 'Velazquez', 54, 1, 'vvv-nas@outlook.com', '55-2654-5234', '81dc9bdb52d04dc20036dbd8313ed055', 'victor', '2019-04-18 11:07:42', 1),
+(6, 'Fernanda', 'Ordoñes', NULL, 54, 1, 'alguncorre@hotmail.com', '55-2928-2822', '202cb962ac59075b964b07152d234b70', 'fer', '2019-05-17 23:12:27', 1),
 (7, 'Martin', 'Garcia', NULL, 54, 1, 'ingmartingc@outlook.com', '55-6369-7567', '202cb962ac59075b964b07152d234b70', 'martin', '2019-05-17 23:13:56', 1);
 
 -- --------------------------------------------------------
@@ -888,6 +914,12 @@ ALTER TABLE `cat_servicios_volar`
 --
 ALTER TABLE `extras_volar`
   ADD PRIMARY KEY (`id_extra`);
+
+--
+-- Indices de la tabla `gastos_volar`
+--
+ALTER TABLE `gastos_volar`
+  ADD PRIMARY KEY (`id_gasto`);
 
 --
 -- Indices de la tabla `globos_volar`
@@ -1011,7 +1043,13 @@ ALTER TABLE `cat_servicios_volar`
 -- AUTO_INCREMENT de la tabla `extras_volar`
 --
 ALTER TABLE `extras_volar`
-  MODIFY `id_extra` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Llave Primaria', AUTO_INCREMENT=65;
+  MODIFY `id_extra` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Llave Primaria', AUTO_INCREMENT=70;
+
+--
+-- AUTO_INCREMENT de la tabla `gastos_volar`
+--
+ALTER TABLE `gastos_volar`
+  MODIFY `id_gasto` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Llave Primaria';
 
 --
 -- AUTO_INCREMENT de la tabla `globos_volar`
@@ -1041,13 +1079,13 @@ ALTER TABLE `imghoteles_volar`
 -- AUTO_INCREMENT de la tabla `permisosusuarios_volar`
 --
 ALTER TABLE `permisosusuarios_volar`
-  MODIFY `id_puv` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Llave Primaria', AUTO_INCREMENT=74;
+  MODIFY `id_puv` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Llave Primaria', AUTO_INCREMENT=75;
 
 --
 -- AUTO_INCREMENT de la tabla `permisos_volar`
 --
 ALTER TABLE `permisos_volar`
-  MODIFY `id_per` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Llave Primaria', AUTO_INCREMENT=12;
+  MODIFY `id_per` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Llave Primaria', AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT de la tabla `puestos_volar`
@@ -1083,7 +1121,7 @@ ALTER TABLE `servicios_vuelo_temp`
 -- AUTO_INCREMENT de la tabla `subpermisos_volar`
 --
 ALTER TABLE `subpermisos_volar`
-  MODIFY `id_sp` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Llave Primaria', AUTO_INCREMENT=43;
+  MODIFY `id_sp` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Llave Primaria', AUTO_INCREMENT=44;
 
 --
 -- AUTO_INCREMENT de la tabla `temp_volar`

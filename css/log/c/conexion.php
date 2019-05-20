@@ -32,7 +32,7 @@
 		    $this->con=$conexion->Conection();
         }
        
-		function consultas($campos,$tabla,$filtro,$tipo)
+		function consultas($campos,$tabla,$filtro,$tipo="")
 		{
 			$this->where=" WHERE ";
 			if($filtro==""){

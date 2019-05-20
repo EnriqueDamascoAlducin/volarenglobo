@@ -4,7 +4,7 @@
   include_once "../../css/log/c/conexion.php";
   $datos="";
   if(isset($_POST['id'])){
-    $datos=$cons->consultas("*",$_SESSION['tabla'],"id_hotel=".$_POST['id'],"");
+    $datos=$cons->consultas("*",$_SESSION['tabla'],"id_venta=".$_POST['id'],"");
   } 
   ////tipos   ----> 1= input text; 2= input number; 3=select estatico; 4 = select dinamico; 5=textarea; 6=input file; 7= input date; 8=date-timelocal; 9=input email;10=input telefono
   $query=["(nombre_extra) as text, id_extra as value","extras_volar","status=1 and clasificacion_extra='deptousu'"];

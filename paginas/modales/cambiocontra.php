@@ -9,11 +9,15 @@
 	$id=$_POST['id'];
   $titulo=$_POST['titulo'];
 	$datos="";
+  if (isset($_POST['id'])) {
+    $datos=$cons->consultas("usuario_usu","volar_usuarios","id_usu=".$id);
+  }
 	$size=[3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,1,1,1,1,1,1,1,1,1,1,3,3,3,3,3];
-  $type=[1,3,3,3,3,3,3,3,3,3,3,3,13,3,3,3,1,1,1,1,1,1,1,1,1,1,0,4,4,12,2];
+  $type=[13,1,3,3,3,3,3,3,3,3,3,3,13,3,3,3,1,1,1,1,1,1,1,1,1,1,0,4,4,12,2];
  	$options=["1","2","3","2"];
 	$extraprop=["required","required","required","required","required","required","required","required","","","","","","","","","","","","","","","","","","","","","","","","","",""];
- 	$array=["contrasena_usu"];
+  $array=["contrasena_usu","usuario_usu"];
+  $array2=["contrasena_usu"];
 	include "../../dinamicos/inputs.php";
 ?>
 
@@ -28,20 +32,52 @@
       <div class="modal-body cuerpo_modal" id="cuerpo_modal" style=''>
       		<form name="formularioext" id="formularioext" method="POST" style="margin-bottom: 10%">
       			<input type="hidden" name="id" id="id" value="<?php echo $id; ?>">
-      <?php $cont=0; foreach ($campos as $campo) {
-        if(in_array($campo->Field, $array)){
-        campos($type[$cont],$campo->Comment,$campo->Field,$size[$cont],$options[$cont],$datos,$extraprop[$cont],$cons);
-        $cont++;
-        }
-      } ?>
+            <?php $cont=0; foreach ($campos as $campo) {
+              if(in_array($campo->Field, $array)){
+              campos($type[$cont],$campo->Comment,$campo->Field,$size[$cont],$options[$cont],$datos,$extraprop[$cont],$cons);
+              $cont++;
+              }
+            } ?>
+
+
+            <div class="col-sm-3 col-md-3 col-lg-3 col-xs-6" id="div_confirmarcontra">
+                <div class="form-group">
+                  <label for="confirmar_contrasena" >Cambio de Contraseña</label>
+                  <input type="password" autocomplete="false" title="Cambio de Contraseña" required class="form-control" id="confirmar_contrasena" value="">
+                </div>
+            </div>
 
       		</form>
       		
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary"   onclick="save_extra(<?php echo "'".$_SESSION['modulo']."login.php'".",".$_SESSION['idpagina']; ?>,<?php echo "'".$_POST['titulo']."',".$id.",'pilotos.php'"; ?>)" >Asignar</button>
+        <button type="button" class="btn btn-primary"  id="asignarcontras" onclick="save_extra(<?php echo "'".$_SESSION['modulo']."login.php'".",".$_SESSION['idpagina']; ?>,<?php echo "'".$_POST['titulo']."',".$id.",'pilotos.php'"; ?>)" disabled >Asignar</button>
         <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
       </div>
     </div>
 
   </div>
+
+  <script type="text/javascript">
+    $("input:password").on("keyup",function(){
+      
+      if(this.id=="contrasena"){
+        if(this.value==$("#confirmar_contrasena").val()){
+          $("#asignarcontras").prop("disabled",false);
+          $("#confirmar_contrasena").css("border-color","black");
+        }else{
+          $("#asignarcontras").prop("disabled",true);
+          $("#confirmar_contrasena").css("border-color","red");
+        }
+      }else if(this.id=="confirmar_contrasena"){
+
+        if(this.value==$("#contrasena").val()){
+          $("#confirmar_contrasena").css("border-color","black");
+          $("#asignarcontras").prop("disabled",false);
+        }else{
+          $("#asignarcontras").prop("disabled",true);
+          $("#confirmar_contrasena").css("border-color","red");
+        }
+      }
+    });
+  </script>
