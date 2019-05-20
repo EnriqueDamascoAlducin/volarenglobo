@@ -22,7 +22,8 @@
 	$req=["required","required","","required onchange='mostrar_puestos();'","required ","","required","required"];
 	$cont=0;
 	include "../../dinamicos/inputs.php";
-	$array=["id_usu","contrasena_usu","register","status"];
+	//$array=["id_usu","contrasena_usu","register","status"];
+	$array=["nombre_usu","apellidop_usu","apellidom_usu","depto_usu","puesto_usu","correo_usu","telefono_usu","usuario_usu"];
 
 ?>
 <form name="formulario" id="formulario" onsubmit="enviar_crud(event);">
@@ -32,7 +33,7 @@
 	}
 	?>
 	<?php foreach ($campos as $campo) {
-		if(!in_array($campo->Field, $array)){
+		if(in_array($campo->Field, $array)){
 		campos($tipo[$cont],$campo->Comment,$campo->Field,$size[$cont],$options[$cont],$datos,$req[$cont],$cons);
 		$cont++;
 		}

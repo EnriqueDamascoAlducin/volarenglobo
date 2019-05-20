@@ -98,6 +98,9 @@
 							<?php if($permiso->nombre=="PERMISOS"){ ?>
 								<span class="glyphicon glyphicon-th-list" title="Agregar Permisos" style="color: #aa66cc" onclick="editar_pagina(<?php echo $usuario->id_usu ?>,3,'<?php echo $usuario->usuario ?>')"></span>
 							<?php } ?>
+							<?php if($permiso->nombre=="NOMINA"){ ?>
+								<span class="glyphicon glyphicon-usd" title="Datos de Nómina" style="color: #00C851" onclick="editar_pagina(<?php echo $usuario->id_usu ?>,3,'<?php echo $usuario->usuario ?>')"></span>
+							<?php } ?>
 						<?php } ?>
 					<?php } else{?>
 							Sin permisos

@@ -59,7 +59,7 @@ $permisos=$cons->consultas($campos,$tablas,$filtro,"");
 			</td>
 			<td style="width: 10%;max-width: 10%;background-color: #FF6633;color: white;" height="1"></td>
 			<td style="width: 10%;max-width: 10%;background-color: #FF0000;color: white;" height="1"></td>
-			<td style="width: 10%;max-width: 10%;background-color: #660000;color: white;" height="1" onclick='cambiar_contra();'>Cambiar Contraseña</td>
+			<td style="width: 10%;max-width: 10%;background-color: #660000;color: white;" height="1" ></td>
 			<td style="width: 30%;max-width: 30%;background-color: #3674B2;color: white;text-align: right;"onclick='window.location.replace("../login.php");'>
 			<span class="glyphicon glyphicon-log-out" aria-hidden="true"></span>&nbsp;&nbsp;Salir&nbsp;&nbsp;
 			</td>
@@ -92,13 +92,15 @@ $permisos=$cons->consultas($campos,$tablas,$filtro,"");
 	</div>
 	<table style="width: 100%;max-width: 100%" class="tablafinal">
 		<tr style="max-height: 1px">
-			<td style="width: 30%;max-width: 30%;background-color: #3674B2;color: white;" height="1"> </td>
+			<td style="width: 30%;max-width: 30%;background-color: #3674B2;color: white;" height="1" onclick='cambiar_contra();'>
+				<label class="copy glyphicon glyphicon-cog" > Contraseña </label> 
+			</td>
 			<td style="width: 10%;max-width: 10%;background-color: #FFFF00;" height="1"><label class="copy" style="color: black"><?PHP echo $date ?></label> </td>
 			<td style="width: 10%;max-width: 10%;background-color: #FF6633;color: white;" height="1"></td>
 			<td style="width: 10%;max-width: 10%;background-color: #FF0000;color: white;" height="1"></td>
 			<td style="width: 10%;max-width: 10%;background-color: #660000;color: white;" height="1"></td>
-			<td style="width: 30%;max-width: 30%;background-color: #3674B2;color: white;">
-				<label class="copy"> &copy; Volar en Globo S.A. de C.V.</label>
+			<td style="width: 30%;max-width: 30%;background-color: #3674B2;color: white;" >
+				<label class="copy" > &copy; Volar en Globo S.A. de C.V.</label>
 			</td>
 		</tr>
 	</table>
