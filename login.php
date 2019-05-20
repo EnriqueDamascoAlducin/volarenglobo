@@ -13,7 +13,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->	
-	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+	<link rel="icon" type="image/png" href="images/icons/logo.png"/>
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
 <!--===============================================================================================-->
@@ -45,21 +45,18 @@
 				<form id="loginform"  class="login100-form validate-form p-b-33 p-t-5" style="background: transparent;"   onsubmit=" mandar_datos(event);">
 
 					<div class="wrap-input100 validate-input" style="background: transparent ;" data-validate = "Ingresa tu Usuario">
-						<input autocomplete="off" style="background: transparent ;color:white" class="input100" type="text" name="user" id="user" placeholder="Usuario">
-						<!--
-						<span class="focus-input100" data-placeholder="&#xe82a;" ></span> -->
+						<input autocomplete="off" style="background: transparent ;color:white" class="input100" type="text" name="user" id="user" placeholder="Usuario" autofocus="">
+						<span class="focus-input100" data-placeholder="&#xe82a;" ></span> 
 					</div>
-
 					<div class="wrap-input100 validate-input" data-validate="Ingresa tu Contraseña">
 						<input autocomplete="off" style="background: transparent ;color:white" class="input100" type="password" name="pass" id="pass" placeholder="Contraseña">
-						<!--<span class="focus-input100" data-placeholder="&#xe80f;"></span>-->
+						<span class="focus-input100" data-placeholder="&#xe80f;"></span>
 					</div>
 
 					<div class="container-login100-form-btn m-t-32">
 						<button class="login100-form-btn" type="submit">
-
 								Iniciar Sesión 
--						</button>
+						</button>
 					</div>
 
 				</form>

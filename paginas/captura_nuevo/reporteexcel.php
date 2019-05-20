@@ -47,6 +47,9 @@ $enc=2;
 $reservas=$cons->consultas($campos,"volar_usuarios vu, temp_volar tv ",$filtro,"");
 include '../../excel/Classes/PHPexcel.php';
 $objphp= new PHPExcel();
+
+	
+$gdImage = imagecreatefrompng('../../img/logo.png');//Logotipo
 $objphp->getProperties()
         ->setCreator("Volar en Globo")
         ->setLastModifiedBy("Volar en Globo")
@@ -56,26 +59,135 @@ $objphp->getProperties()
         ->setKeywords("vuelos reservas")
         ->setCategory("Vuelos");
 $objphp->setActiveSheetIndex(0);
-$objphp->getActiveSheet()->setTitle('Hoja 1');
-$objphp->getActiveSheet()->setCellValue('A'.$titulo,'Reporte de Vuelos de Volar en Globo');
-$objphp->getActiveSheet()->mergeCells('A'.$titulo.':L'.$titulo);
+$objphp->getActiveSheet()->setTitle('Reporte General');
+////////// Para dibujar el logo
+
+
+	$objDrawing = new PHPExcel_Worksheet_MemoryDrawing();
+	$objDrawing->setName('Logotipo');
+	$objDrawing->setDescription('Logotipo');
+	$objDrawing->setImageResource($gdImage);
+	$objDrawing->setRenderingFunction(PHPExcel_Worksheet_MemoryDrawing::RENDERING_PNG);
+	$objDrawing->setMimeType(PHPExcel_Worksheet_MemoryDrawing::MIMETYPE_DEFAULT);
+	$objDrawing->setHeight(100);
+	$objDrawing->setCoordinates('B1');
+	$objDrawing->setWorksheet($objphp->getActiveSheet());
+////////////Dibujar el log
+
+/////////////////     Estilos de las celdas (titulos y contenido)
+$estiloTituloReporte = array(
+    	'font' => array(
+			'name'      => 'Arial',
+			'bold'      => true,
+			'italic'    => false,
+			'strike'    => false,
+			'size' =>25
+    	),
+    	'fill' => array(
+			'type'  => PHPExcel_Style_Fill::FILL_SOLID
+		),
+    	'borders' => array(
+			'allborders' => array(
+				'style' => PHPExcel_Style_Border::BORDER_NONE
+			)
+    	),
+    	'alignment' => array(
+			'horizontal' => PHPExcel_Style_Alignment::HORIZONTAL_CENTER,
+			'vertical' => PHPExcel_Style_Alignment::VERTICAL_CENTER
+    	)
+	);
+	
+	$estiloTituloColumnas = array(
+    	'font' => array(
+			'name'  => 'Arial',
+			'bold'  => true,
+			'size' =>10,
+			'color' => array('rgb' => 'FFFFFF')
+    	),
+    	'fill' => array(
+			'type' => PHPExcel_Style_Fill::FILL_SOLID,
+			'color' => array('rgb' => '538DD5')
+    	),
+    	'borders' => array(
+			'allborders' => array(
+				'style' => PHPExcel_Style_Border::BORDER_THIN
+			)
+    	),
+    	'alignment' =>  array(
+			'horizontal'=> PHPExcel_Style_Alignment::HORIZONTAL_CENTER,
+			'vertical'  => PHPExcel_Style_Alignment::VERTICAL_CENTER
+    	)
+	);
+	
+	$estiloInformacion = new PHPExcel_Style();
+	$estiloInformacion->applyFromArray( array(
+    	'font' => array(
+			'name'  => 'Arial',
+			'color' => array('rgb' => '000000')
+	    ),
+    	'fill' => array(
+			'type'  => PHPExcel_Style_Fill::FILL_SOLID
+		),
+    	'borders' => array(
+			'allborders' => array(
+				'style' => PHPExcel_Style_Border::BORDER_THIN
+			)
+    	),
+		'alignment' =>  array(
+			'horizontal'=> PHPExcel_Style_Alignment::HORIZONTAL_CENTER,
+			'vertical'  => PHPExcel_Style_Alignment::VERTICAL_CENTER
+    	)	
+	));
+	
+
+/////////////////     Estilos de las celdas (titulos y contenido)
+
+
+
+$objphp->getActiveSheet()->getStyle('A1:Q1')->applyFromArray($estiloTituloReporte);
+$objphp->getActiveSheet()->getRowDimension(1)->setRowHeight(100);
+$objphp->getActiveSheet()->getColumnDimension('A')->setWidth(15);
+//$objphp->getActiveSheet()->setCellValue('B'.$titulo,'Reporte de Vuelos de Volar en Globo');
+
+
+$objphp->getActiveSheet()->setCellValue('B'.$titulo, 'Reporte de Reservas de Volar en Globo');
+$objphp->getActiveSheet()->mergeCells('B'.$titulo.':Q'.$titulo);
+$objphp->getActiveSheet()->getStyle('A'.$enc.':Q'.$enc)->applyFromArray($estiloTituloColumnas);
+
 $objphp->getActiveSheet()->setCellValue('A'.$enc, 'Reserva');
+$objphp->getActiveSheet()->getColumnDimension('A')->setWidth(15);
 $objphp->getActiveSheet()->setCellValue('B'.$enc, 'Nombre');
+$objphp->getActiveSheet()->getColumnDimension('B')->setWidth(25);
 $objphp->getActiveSheet()->setCellValue('C'.$enc, 'Vendedor');
+$objphp->getActiveSheet()->getColumnDimension('C')->setWidth(25);
 $objphp->getActiveSheet()->setCellValue('D'.$enc, 'Correo');
+$objphp->getActiveSheet()->getColumnDimension('D')->setWidth(25);
 $objphp->getActiveSheet()->setCellValue('E'.$enc, 'Telefonos Fijo/Celular');
+$objphp->getActiveSheet()->getColumnDimension('E')->setWidth(25);
 $objphp->getActiveSheet()->setCellValue('F'.$enc, 'Fecha de Vuelo');
+$objphp->getActiveSheet()->getColumnDimension('F')->setWidth(15);
 $objphp->getActiveSheet()->setCellValue('G'.$enc, 'Procedencia');
+$objphp->getActiveSheet()->getColumnDimension('G')->setWidth(15);
 $objphp->getActiveSheet()->setCellValue('H'.$enc, 'P. Adultos');
+$objphp->getActiveSheet()->getColumnDimension('H')->setWidth(15);
 $objphp->getActiveSheet()->setCellValue('I'.$enc, 'P. Niños');
+$objphp->getActiveSheet()->getColumnDimension('I')->setWidth(15);
 $objphp->getActiveSheet()->setCellValue('J'.$enc, 'Motivo');
+$objphp->getActiveSheet()->getColumnDimension('J')->setWidth(15);
 $objphp->getActiveSheet()->setCellValue('K'.$enc, 'Tipo');
+$objphp->getActiveSheet()->getColumnDimension('K')->setWidth(15);
 $objphp->getActiveSheet()->setCellValue('L'.$enc, 'Hotel');
+$objphp->getActiveSheet()->getColumnDimension('L')->setWidth(15);
 $objphp->getActiveSheet()->setCellValue('M'.$enc, 'Habitación');
+$objphp->getActiveSheet()->getColumnDimension('M')->setWidth(15);
 $objphp->getActiveSheet()->setCellValue('N'.$enc, 'Cotizado');
+$objphp->getActiveSheet()->getColumnDimension('N')->setWidth(15);
 $objphp->getActiveSheet()->setCellValue('O'.$enc, 'Globo');
+$objphp->getActiveSheet()->getColumnDimension('O')->setWidth(15);
 $objphp->getActiveSheet()->setCellValue('P'.$enc, 'Peso (kg)');
+$objphp->getActiveSheet()->getColumnDimension('P')->setWidth(15);
 $objphp->getActiveSheet()->setCellValue('Q'.$enc, 'Status');
+$objphp->getActiveSheet()->getColumnDimension('Q')->setWidth(15);
 foreach ($reservas as $reserva) {
 
 $objphp->getActiveSheet()->setCellValue('A'.$fila, $reserva->reserva );
@@ -116,6 +228,8 @@ if( $reserva->status ==4){
 $objphp->getActiveSheet()->setCellValue('Q'.$fila, $text );
 $fila++;
 }
+$fila--;
+$objphp->getActiveSheet()->setSharedStyle($estiloInformacion, "A3:Q".$fila);
 header("Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet");
 header('Content-Disposition: attachment;filename="Excel.xlsx"');
 header('Cache-Control: max-age=0');

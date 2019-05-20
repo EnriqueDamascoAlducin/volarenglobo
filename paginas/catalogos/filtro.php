@@ -21,7 +21,7 @@ $filcategorias=$cons->consultas('DISTINCT (clasificacion_extra) as clasificacion
 <div class="col-sm-3 col-md-3 col-lg-3 col-xs-6">
 	<div class="form-group">
 		<label for="hotel">Categorias</label>
-		<select class="selectpicker form-control" id="hotel" name="hotel" data-live-search="true">
+		<select class="selectpicker form-control" id="categoria" name="categoria" data-live-search="true">
 			<option value='0'>Todos...</option>
 			<?php foreach ($filcategorias as $categoria) { ?>
 				<option ><?php echo $categoria->clasificacion; ?></option>

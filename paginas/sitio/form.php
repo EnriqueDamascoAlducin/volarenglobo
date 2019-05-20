@@ -17,7 +17,7 @@
 	$type=[1,7,4,2,1,1,5,4,2,10,10,9,6,1];
 	$gastos=["id_extra as value, nombre_extra as text","extras_volar","clasificacion_extra='tipogastos' and status=1"];
 	$options=["","",$gastos,"","","","","","","","","","",""];
-	$req=["required","required","required","","","required","","","","","","","",""];
+	$req=["required","required","required","required","required","required","required","required","required","required","","","",""];
 ?>
 <form name="formulario" id="formulario" onsubmit="enviar_crud(event);">
 	<?php 
@@ -33,12 +33,12 @@
 	} ?>
 	<?php $tamano=3;
 	 $campo="metodo";
-	 $color="black";
+	 $color="style='color:red;'";
 	 $comentario="Pagado con: "; ?>
 	<div class="col-sm-<?php echo $tamano; ?> col-md-<?php echo $tamano; ?> col-lg-<?php echo $tamano; ?> col-xs-6" id="div_<?php echo $campo; ?>">
 			<div class="form-group">
 				<label for="<?php echo $campo; ?>" <?php echo $color; ?>><?php echo utf8_encode($comentario); ?></label>
-				<select class="form-control" id="<?php echo $campo; ?>" name="<?php echo $campo; ?>">
+				<select class="form-control" id="<?php echo $campo; ?>" name="<?php echo $campo; ?>" required>
 					<option value=""><?php echo "Selecciona un ". utf8_encode($comentario); ?></option>
 					<option value="1">Efectivo</option>
 					<option value="2">Tarjeta</option>
