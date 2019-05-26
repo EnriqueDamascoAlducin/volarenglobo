@@ -45,7 +45,7 @@ $fila=3;
 $titulo=1;
 $enc=2;
 $reservas=$cons->consultas($campos,"volar_usuarios vu, temp_volar tv ",$filtro,"");
-include '../../excel/Classes/PHPexcel.php';
+include '../../excel/Classes/PHPExcel.php';
 $objphp= new PHPExcel();
 
 	
@@ -231,7 +231,7 @@ $fila++;
 $fila--;
 $objphp->getActiveSheet()->setSharedStyle($estiloInformacion, "A3:Q".$fila);
 header("Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet");
-header('Content-Disposition: attachment;filename="Excel.xlsx"');
+header('Content-Disposition: attachment;filename="Reservas.xlsx"');
 header('Cache-Control: max-age=0');
 
 $objWriter = PHPExcel_IOFactory::createWriter($objphp, 'Excel2007');
