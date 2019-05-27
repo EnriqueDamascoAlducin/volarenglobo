@@ -1,7 +1,12 @@
 
 <?php
 	include_once "../../css/log/c/conexion.php";
-	session_start();
+	if(!isset($_SESSION['id'])){
+
+    session_start();
+
+  }
+
   $_SESSION['extraquery']="";
   include "../../crud/fin_session.php";
 	$_SESSION['tabla']="volar_usuarios";

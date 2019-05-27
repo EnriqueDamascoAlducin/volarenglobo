@@ -6,6 +6,9 @@
 	if(isset($permiso[1])){
 		$titulo=$permiso[0];
 	}
+	if(!isset($_SESSION['id'])){
+		session_start();
+	}
 	if($id!=""){
 		include_once "../../css/log/c/conexion.php";
 		$principales=$cons->consultas("*","temp_volar","status<>0 and id_temp=".$id,"");
@@ -225,7 +228,7 @@ include "../../crud/fin_session.php";
       	<?php if ($id!="") { ?>
       		<?php if(!isset($permiso[1])){ ?>
 	
-      		<button type="button" class="btn btn-info" data-dismiss="modal" onclick="enviar_cotizacion();">Confirmar</button>
+      		<button type="button" class="btn btn-info" data-dismiss="modal" onclick="enviar_cotizacion(<?php echo "'".$_SESSION['modulo']."'" ?>,<?php echo $_SESSION['idpagina']; ?>);">Confirmar</button>
       		<?php } ?>
       	<?php } ?>
         

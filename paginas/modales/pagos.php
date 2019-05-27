@@ -21,6 +21,7 @@ session_start();
           <?php //2 es para conciliar 12 para agregar pagos 13 es para mostrar bitacora
             if($opcion==2 || $opcion==12 || $opcion==13){
               if($opcion==12){
+                echo "algo";
                 $_SESSION['extraquery']="../paginas/captura_nuevo/queries/solcitar_conciliacion.php";
               }
               $pagos=$cons->consultas("*",$_SESSION['tabla'],"status<>0 and idres_bp=".$id,"");

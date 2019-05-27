@@ -126,10 +126,10 @@ $permisos=$cons->consultas($campos,$tablas,$filtro,"");
 	           }
 	       });
 		}
-		function enviar_cotizacion(){
+		function enviar_cotizacion(url,idpagina){
 			parametros={id:act_temp};
 			$.ajax({
-				url:"../css/log/correo.php",
+				url:"../correos/cotizacion.php",
 				method: "POST",
 		  		data: parametros,
 		  		success:function(response){
@@ -146,7 +146,7 @@ $permisos=$cons->consultas($campos,$tablas,$filtro,"");
 				    }
 				  }
 			});
-			cargar_pagina("<?php echo $_SESSION['modulo'] ?>",<?php echo $_SESSION['idpagina'] ?>);
+			cargar_pagina(url,idpagina);
 		}
 		function actualizar_status(valor,id,modulo,idpag){
 			parametros={status:valor,id:id};

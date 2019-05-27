@@ -1,7 +1,7 @@
 <?php
 	$id=$_POST['id'];
 	session_start();
-	include_once "c/conexion.php";
+	include_once "../css/log/c/conexion.php";
 	$principales=$cons->consultas("*","temp_volar","status<>0 and id_temp=".$id,"");
 	$campos=$cons->consultas("show full columns","temp_volar","","");
 	$servicios_suma=$cons->consultas("nombre_servicio,precio_servicio,tipo_sv,cantidad_sv","servicios_vuelo_temp svt ,servicios_volar sv","id_servicio=idservi_sv and cantidad_sv>0 and idtemp_sv=".$id,"");
@@ -66,7 +66,15 @@ $cuerpo='<!DOCTYPE html>
 
 </head>
 <body>
-Estimado(a) '.$principales[0]->nombre_temp.' '.$principales[0]->apellidos_temp.'
+<img src="https://www.volarenglobo.com.mx/admin/imgs/banner_cotiza.png" style="width:100%; max-width=100%;" alt="Cotización">
+<b>Estimado(a) '.$principales[0]->nombre_temp.' '.$principales[0]->apellidos_temp.'</b>
+<p>
+	Es un gusto poder atender tu solicitud de vuelo en globo. Nuestra operación se encuentra en el 
+			<a href="https://www.google.com/maps/place/VOLAR+EN+GLOBO/@19.695002,-98.8258507,17z/data=!3m1!4b1!4m5!3m4!1s0x85d1f5725d683f25:0xff4f4587c24e2324!8m2!3d19.695002!4d-98.823662">
+				Valle de Teotihuacan, Estado de Mexico 
+			</a>,
+	 te ofrecemos la mejor vista de las pirámides y de la zona arqueológica. La cita es en nuestra recepción ubicada a 5 minutos de la zona arqueológica, en este lugar nuestro equipo te recibirá y te trasladara a nuestra zona de despegue, allí podrás ver el armado y el inflado de tu globo, desde este momento inicia la aventura así que prepara tu cámara para tomar muchas fotos. ¡Prepárate para la mejor parte! Al aterrizar la tripulación se hará cargo del globo mientras tú y el piloto llevan a cabo el tradicional brindis, recibirás un certificado de vuelo (suvenir) y la tripulación te trasladará de regreso a la recepción.
+</p>
 La cotización de su viaje en globo es el siguiente:
 <table class="tabla" style="max-width: 100%;width:100%; border-color: #673ab7 " border="3" id="tablareservacion" >
 	<thead>
@@ -214,19 +222,20 @@ foreach ($servicios as $servicio) {
 */
 $cuerpo.='</tbody>
 </table>';		
-$cuerpo.="<div class='col-sm-12 col-md-12 col-lg-12 ' style='background:blue-gradient; border-color:#01579b; border-width:10px;border-style:double;vertical-align:middle'>";
-$cuerpo.=" <div class='col-sm-1 col-md-1 col-lg-1' style='vertical-align:middlw' >";
-	$cuerpo.="<img src='../img/loguito.png' style='height:200%;max-height:200%;'>";
-$cuerpo.="</div>";
-$cuerpo.=" <div class='col-sm-11 col-md-11 col-lg-11' >";
-$cuerpo.="<h3>Gracias por pensar en nosotros.</h3>";
-	$cuerpo.="<p style='font-size:14px'>Para mas información por favor contactate con tu vendedor</p>";
-	$cuerpo.="<p style='font-size:13px'><span class='glyphicon glyphicon-user'></span>".$empleado[0]->nombre."</p><p> <span class='glyphicon glyphicon-phone'></span>".$empleado[0]->telefono_usu."/<span class='glyphicon glyphicon-envelope'></span> ".$empleado[0]->correo_usu."</p>";
 
-$cuerpo.="</div>";
-$cuerpo.="</div>";
+$cuerpo .= '<h3>¿Cómo Pagar?</h3>';
+$cuerpo .= '<p>Deposito por el total o mínimo de $2000.00 en cuenta bancaria o transferencia. El resto podrás liquidarlo el día de tu vuelo.</p>';
+$cuerpo.='<h3 style="color:red";><b>Cuenta para depósito:</b></h3>';
+$cuerpo.='Banco: BBVA Bancomer<br>
+No. de cuenta: 0191809393 Sucursal: 399<br>
+A nombre de: VOLAR EN GLOBO, AVENTURA Y PUBLICIDAD SA DE CV<br>
+CLABE Interbancaria 012180001918093935<br>
+IMPORTANTE: Notificar vía telefónica o por mail tu depósito para poderte enviar la RESERVACION e itinerario del vuelo. Si te surgen dudas llámanos o escríbenos a nuestro correo electrónico.';
+$cuerpo.="<p style='font-size:14px'>Para mas información por favor contactate con tu vendedor</p>";
+$cuerpo.="<p style='font-size:13px'><span class='glyphicon glyphicon-user'></span>".$empleado[0]->nombre."</p><p> <span class='glyphicon glyphicon-phone'></span>".$empleado[0]->telefono_usu."/<span class='glyphicon glyphicon-envelope'></span> ".$empleado[0]->correo_usu."</p>";
+
 $cuerpo.='</body></html>';
-include_once "../../mails/mail.php";
+include_once "../mails/mail.php";
 
 $setter=$cons->consultas("id_bp","bitpagos_volar","idres_bp=".$id,"");
 if(sizeof($setter)==0){
