@@ -58,6 +58,7 @@ function get_salerinfo($id,$cons){
 		$cuerpo.="</table>";
 	}else{
 		$vendedor=get_salerinfo($pasajeros[0]->vendedor,$cons);
+		$total=0;
 		$cuerpo="<style>
 		.tdtitulo{
 			background:#33b5e5;
@@ -109,6 +110,7 @@ function get_salerinfo($id,$cons){
 						$cuerpo .= '<td class="tdtitulo">'.$servicio->nombre.'</td>';
 						if($servicio->tipo_sv==1){
 							$cuerpo .= '<td > ('.$servicio->cantidad.'*'.$servicio->precio.')'.($servicio->cantidad*$servicio->precio).'</td>';
+							$total += ($servicio->cantidad*$servicio->precio);
 						}else{
 							$cuerpo .= '<td > Cortesia ('.$servicio->cantidad.')</td>';
 						}
@@ -118,7 +120,7 @@ function get_salerinfo($id,$cons){
 						
 				$cuerpo .= ' <tr>';
 					$cuerpo .= '<td class="tdtitulo">Subtotal</td>';
-					$cuerpo .= '<td > '.$vendedor[0].'</td>';
+					$cuerpo .= '<td > '.$total.'</td>';
 				$cuerpo .= ' </tr>';
 				///////////////
 				$cuerpo .= ' <tr>';
@@ -133,11 +135,11 @@ function get_salerinfo($id,$cons){
 				$cuerpo .= ' </tr>';
 				$cuerpo .= ' <tr>';
 					$cuerpo .= '<td class="tdtitulo">Pago Actual</td>';
-					$cuerpo .= '<td > '.$vendedor[0].'</td>';
+					$cuerpo .= '<td > '.$pasajeros[0]->cantidad.'</td>';
 				$cuerpo .= ' </tr>';
 				$cuerpo .= ' <tr>';
 					$cuerpo .= '<td class="tdtitulo">Anticipo</td>';
-					$cuerpo .= '<td > '.$vendedor[0].'</td>';
+					$cuerpo .= '<td > '.$pasajeros[0]->sumaactual.'</td>';
 				$cuerpo .= ' </tr>';
 				$cuerpo .= ' <tr>';
 					$cuerpo .= '<td class="tdtitulo">Por Pagar</td>';
