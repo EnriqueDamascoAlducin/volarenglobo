@@ -1,5 +1,8 @@
 <?php
-	session_start();
+	if(!isset($_SESSION['id'])){
+    	session_start();	
+    }
+    include_once '../crud/fin_session.php';
 	include_once"../css/log/c/conexion.php";
 	$tabla=$_SESSION['tabla'];
 	$clave=$cons->consultas("show full columns",$tabla,"Comment='Llave Primaria'","");

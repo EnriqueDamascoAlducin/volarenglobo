@@ -1,6 +1,6 @@
 <?php
 	$id=$_POST['id'];
-	session_start();
+	include_once '../crud/fin_session.php';
 	include_once "../css/log/c/conexion.php";
 	$principales=$cons->consultas("*","temp_volar","status<>0 and id_temp=".$id,"");
 	$campos=$cons->consultas("show full columns","temp_volar","","");

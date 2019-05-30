@@ -1,5 +1,7 @@
 <?php 
-	session_start();
+	if(!isset($_SESSION['id'])){
+    	session_start();	
+    }
 	$datos="";
 	include_once "../../css/log/c/conexion.php";
 	$_SESSION['tabla']="globos_volar";

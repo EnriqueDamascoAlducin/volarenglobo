@@ -1,5 +1,7 @@
 <?php 
-	session_start();
+	if(!isset($_SESSION['id'])){
+		session_start();	
+	}
 	include_once "../../css/log/c/conexion.php";
 	$_SESSION['modulo']="catalogo_servicios/";
 	$_SESSION['tabla']="cat_servicios_volar";

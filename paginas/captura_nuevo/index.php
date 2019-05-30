@@ -1,5 +1,8 @@
 <?php
-session_start();
+if(!isset($_SESSION['id'])){
+	session_start();	
+}
+
 if(isset($_POST['idpagina'])){
 	$_SESSION['idpagina']=$_POST['idpagina'];
 }

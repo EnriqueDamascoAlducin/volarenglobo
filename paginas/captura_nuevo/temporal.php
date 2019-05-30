@@ -1,4 +1,7 @@
 <?php 
+	if(!isset($_SESSION['id'])){
+		session_start();	
+	}
 	include_once "../../css/log/c/conexion.php";
 	if(!isset($_POST['servicio'])){
 		session_start();

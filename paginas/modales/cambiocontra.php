@@ -2,9 +2,7 @@
 <?php
 	include_once "../../css/log/c/conexion.php";
 	if(!isset($_SESSION['id'])){
-
     session_start();
-
   }
 
   $_SESSION['extraquery']="";
@@ -15,7 +13,7 @@
   $titulo=$_POST['titulo'];
 	$datos="";
   if (isset($_POST['id'])) {
-    $datos=$cons->consultas("usuario_usu","volar_usuarios","id_usu=".$id);
+    $datos=$cons->consultas("usuario_usu","volar_usuarios","id_usu=".$id,"");
   }
 	$size=[3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,1,1,1,1,1,1,1,1,1,1,3,3,3,3,3];
   $type=[13,1,3,3,3,3,3,3,3,3,3,3,13,3,3,3,1,1,1,1,1,1,1,1,1,1,0,4,4,12,2];

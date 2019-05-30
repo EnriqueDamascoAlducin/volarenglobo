@@ -4,7 +4,7 @@
 	$pass=md5($_POST["pass"]);
 	$consulta=$cons->consultas("*","volar_usuarios","status=1 and (id_usu='".$usuario."' or usuario_usu='".$usuario."') and contrasena_usu='".$pass."'","");
 	if(sizeof($consulta)>0){
-		session_start();
+		include_once '../../crud/fin_session.php';
 		$_SESSION['nombre']=$consulta[0]->nombre_usu;
 		$_SESSION['apellidop']=$consulta[0]->apellidop_usu;
 		$_SESSION['nombre_completo']=$consulta[0]->nombre_usu. " ".$consulta[0]->apellidop_usu." ".$consulta[0]->apellidom_usu ;

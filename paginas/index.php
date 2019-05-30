@@ -1,5 +1,7 @@
 <?php 
-session_start();
+if(!isset($_SESSION['id'])){
+	session_start();	
+}
 include_once "../css/log/c/conexion.php";
 date_default_timezone_set("America/Mexico_City");
 if(!isset($_SESSION['id'])){

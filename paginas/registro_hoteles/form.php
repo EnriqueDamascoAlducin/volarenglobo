@@ -1,5 +1,7 @@
 <?php 
-	session_start();
+	if(!isset($_SESSION['id'])){
+		session_start();	
+	}
 	$_SESSION['tabla']="hoteles_volar";
 	include_once "../../css/log/c/conexion.php";
 	$datos="";

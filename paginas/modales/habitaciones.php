@@ -2,7 +2,9 @@
 <?php
 	include_once "../../css/log/c/conexion.php";
 	include "../../crud/fin_session.php";
-	session_start();
+	if(!isset($_SESSION['id'])){
+    session_start();  
+  }
 	$_SESSION['tabla']="habitaciones_volar";
 	$id=$_POST['id'];
 	$titulo=$_POST['titulo'];
