@@ -59,12 +59,25 @@ function get_salerinfo($id,$cons){
 	}else{
 		$vendedor=get_salerinfo($pasajeros[0]->vendedor,$cons);
 		$total=0;
+		$signo="";
 		$cuerpo="<style>
 		.tdtitulo{
 			background:#33b5e5;
 			color:white;
 			text-align:center;
 		}
+		#direccionvga{
+				background:#aa66cc;
+				width:100%;
+				height:35px;
+				color:white;
+
+			}
+			#direccionvga:hover{
+				background:#9933CC;
+
+			}
+			
 		</style>";
 		$cuerpo .= '<img src="http://volarenglobo.com.mx/admin/imgs/bannersito.png" style="width:100%; 100%;" alt="Confirmación de Vuelo">';
 		$cuerpo .= ' Hola!!! '.$pasajeros[0]->nombre.'. Te enviamos la confirmación de tu vuelo, no olvides tu confirmación de vuelo de forma digital. 
@@ -117,7 +130,16 @@ function get_salerinfo($id,$cons){
 
 					$cuerpo .= ' </tr>';
 				}
-						
+
+				if($pasajeros[0]->tdescuento==1){
+					$signo="$" . $pasajeros[0]->cantdescuento;
+					$total= $pasajeros[0]->total - $pasajeros[0]->cantdescuento;
+					$total=  "$ ".$total;
+				}else{
+					$signo=$pasajeros[0]->cantdescuento."%";
+					$total=$pasajeros[0]->total -($pasajeros[0]->total * ($pasajeros[0]->cantdescuento / 100 ));
+					$total = $total . " " . $signo;
+				}
 				$cuerpo .= ' <tr>';
 					$cuerpo .= '<td class="tdtitulo">Subtotal</td>';
 					$cuerpo .= '<td > '.$total.'</td>';
@@ -125,13 +147,13 @@ function get_salerinfo($id,$cons){
 				///////////////
 				$cuerpo .= ' <tr>';
 					$cuerpo .= '<td class="tdtitulo">Descuento</td>';
-					$cuerpo .= '<td > '.$vendedor[0].'</td>';
+					$cuerpo .= '<td > '.$signo.'</td>';
 				$cuerpo .= ' </tr>';
 				////////////////
 
 				$cuerpo .= ' <tr>';
 					$cuerpo .= '<td class="tdtitulo">Total</td>';
-					$cuerpo .= '<td > '.$vendedor[0].'</td>';
+					$cuerpo .= '<td > '.$pasajeros[0]->total.'</td>';
 				$cuerpo .= ' </tr>';
 				$cuerpo .= ' <tr>';
 					$cuerpo .= '<td class="tdtitulo">Pago Actual</td>';
@@ -144,9 +166,65 @@ function get_salerinfo($id,$cons){
 				$cuerpo .= ' <tr>';
 					$cuerpo .= '<td class="tdtitulo">Por Pagar</td>';
 					$cuerpo .= '<td > '.$vendedor[0].'</td>';
-				$cuerpo .= ' </tr>';
-			$cuerpo .= '</tbody>';
-		$cuerpo .= '</table>';
+				$cuerpo .= ' </tr>';$cuerpo.='<td colspan="2">Los esperamos el día <b>'.$fecha.'</b> partir de las <b>'.$datos[0]->hora.'</b> horas en nuestra recepción, sin embargo esta hora sera <b><i>CONFIRMADA UN DIA ANTES</i></b> de acuerdo a la logística de operación del día o a las condiciones meteorológicas, te pido estés al tanto ya que recibirás una llamada para confirmar horario.</td>';
+	$cuerpo.='</tr>';
+	$cuerpo.='<tr>';
+		$cuerpo.='<td colspan="2" class="tdseparador">PUNTO DE REUNION:</td>';
+	$cuerpo.='</tr>';
+	$cuerpo.='<tr>';
+		$cuerpo.='<td  colspan="2">Recepción Volar en Globo, Aventura y Publicidad SA de CV. Esquina Francisco Villa con Carretera Libre Mexico- Tulancingo (132) C.P. 55850.</td>';
+	$cuerpo.='</tr>';
+	$cuerpo.='<tr>';
+		$cuerpo.='<td colspan="2">';
+			$cuerpo.='<ol type="1">
+<li>Que incluye tu vuelo:</li>
+<ul>
+<li>Tiempo de vuelo de 45 minutos aproximadamente.</li>
+<li>Coffee Break.</li>
+<li>Transporte local durante toda la actividad (Teotihuacan).</li>
+<li>Seguro de Viajero.</li>
+<li>Certificado personalizado.</li>
+<li>Brindis tradicional con vino blanco espumoso durante o después del vuelo dependiendo del tipo de vuelo contratado.</li>
+</ul>
+<li>Restricciones:</li>
+<ul>
+<li>Niños menores a 4 años.</li>
+<li>Si ha padecido del corazón.</li>
+<li>Si tiene una cirugia reciente.</li>
+<li>Lastimada de la columna.</li>
+<li>Mujeres embarazadas.</li>
+<li>No se puede abordar en estado de ebriedad.</li>
+</ul>
+<li>Restricciones para los vuelos:</li>
+<ul>
+<li>Cuando las condiciones climatológicas no lo permita (Vientos mayor a 20 Km.).</li>
+<li>Lluvia.</li>
+<li>Exceso de neblina.</li>
+<li>En caso de alguna de estas causas se reprogramara el vuelo en acuerdo mutuo.</li>
+</ul>
+<li>Cambio de fecha de vuelo o cancelaciones:</li>
+<ul>
+<li>En caso de no poder asistir a la cita por circunstancias adversas e imprevistas, se debera cancelar y confirmar la cancelacion via telefonica con al menos 36 horas de anticipación para que se te haga una reprogramacion de tu vuelo sin cargo alguno, si la cancelación se hace dentro del periodo de las 36 a 12 horas previo a la realizacion del vuelo, se podra reprogramar el vuelo con un cargo adicional al precio total del 35% por gastos de administración y operación. Si no existe cancelacion y confirmacion de cancelacion o no se presentara el pasajero perderá el derecho a reembolso alguno.</li>
+<li>En caso de que se requiera posponer un vuelo; es responsabilidad del pasajero reprogramar en un período no mayor a 12 meses de lo contrario se perderá el derecho al vuelo.</li>
+<li>Recuerda estar a tiempo en el lugar de la cita para no perder tu vuelo.</li>
+<li>El tiempo estimado de vuelo es hasta de una hora pero si las condiciones no lo permiten, la empresa lo deja a consideración del piloto. Así que no habrá reembolso alguno por vuelos con duración menor a una hora.</li>
+</ul>
+</ol>';
+		$cuerpo.='</td>';
+	$cuerpo.='</tr>';
+	$cuerpo.='<tr><td colspan="2" class="tdseparador">Direccion y Como Llegar:</td></tr>';
+	$cuerpo.='<tr>';
+		$cuerpo.='<td colspan="2">';
+			$cuerpo.='Tomar insurgentes hacia Pachuca numero de autopistá 132-D en cuanto llegues a las casetas tomar las del lado derecho mas con dirección a pirámides - Tulancingo, ( extremo derecho ), ahí pagaras una caseta de $75.00, INMEDIATAMENTE PEGARTE A LADO DERECHO Y SEGUIR LOS SEÑALAMIENTOS HACIA PIRAMIDES seguir sobre la autopista en el Km. 17 y pasandoÂ  la gasolinera tomar la desviación hacia pirámidesÂ y continuar hasta la desviación a Tulancingo continuas sobre esta carretera donde a tu mano izquierda vas a encontrar una Estación de Policía Federal, un poco más adelante encontraras una salida a mano izquierda antes del puente, debes girar a la izquierda nuevamente y allí encontraras nuestra recepción.
+				<hr>
+				<a href="https://www.google.com.mx/maps/place/VOLAR+EN+GLOBO/@19.694916,-98.823688,19z/data=!3m1!4b1!4m2!3m1!1s0x0000000000000000:0xff4f4587c24e2324">
+				<button type="button" id="direccionvga">Ver Dirección</button></a>
+				<hr>
+				Sin más por el momento quedo a sus órdenes para cualquier duda o aclaración respecto al servicio contratado.';
+		$cuerpo.='</td>';
+	$cuerpo.='</tr>';
+	$cuerpo.='</tbody>
+	</table>';	
 
 
 		//$cuerpo.='<h4>Le agradecemos por su pago de '.$pasajeros[0]->cantidad.'. '.$titulo.'.</h4>';

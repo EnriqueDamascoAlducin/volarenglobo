@@ -10,6 +10,7 @@
 		}
 		save_Data($(this).attr("name"),$(this).val());
 	});
+	
 	$("input:not(:checkbox):not(#cantdescuento1)").on("blur",function(){
 		if($(this).attr("name")=="mail"){
 			if(!$(this).val().includes("@")){
