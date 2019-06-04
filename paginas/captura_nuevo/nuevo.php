@@ -38,18 +38,13 @@ include_once "../../css/log/c/conexion.php";
 $idusu=$_SESSION['id'];
 $_SESSION['tabla']="temp_volar";
 $datos="";
-$servicios=$cons->consultas("*","servicios_volar","status=1","");
+$servicios=$cons->consultas("*","servicios_volar","status<>0","");
 if(!isset($_POST['id'])){
 	$idtemp=$cons->consultas("iFNULL(max(id_temp),0) as id_temp","temp_volar","","");
 	$idtemp=$idtemp[0]->id_temp+1;
 	echo "<div style='display:none'>";
 		$cons->consultas("idusu_temp","temp_volar",$idusu,"insert");
-		foreach ($servicios as $servicio) {
-			//Para agregar servicio con precio
-			$cons->consultas("idtemp_sv,idservi_sv,tipo_sv,cantidad_sv","servicios_vuelo_temp",$idtemp.",".$servicio->id_servicio.",1,0","insert");
-			//agregar servico de cortesia (tipo=2)
-			$cons->consultas("idtemp_sv,idservi_sv,tipo_sv,cantidad_sv","servicios_vuelo_temp",$idtemp.",".$servicio->id_servicio.",2,0","insert");
-		}
+		
 	echo	"</div>";
 }else{
 	$idtemp=$_POST['id'];
