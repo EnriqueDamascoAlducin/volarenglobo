@@ -1,7 +1,6 @@
 <?php
-if(!isset($_SESSION['id'])){
-	session_start();	
-}
+
+include "../../crud/fin_session.php";
 $_SESSION['tabla']='vueloscat_volar';
 include_once "../../css/log/c/conexion.php";
 $vuelos=$cons->consultas("*","vueloscat_volar","status=1","");

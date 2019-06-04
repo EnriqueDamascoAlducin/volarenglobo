@@ -1,11 +1,10 @@
 <?php
 
-		include_once "../../css/log/c/conexion.php";
+	include_once "../../css/log/c/conexion.php";
 	if(isset($_POST['id'])){
 		$datos=$cons->consultas("*","vueloscat_volar","id_vc=".$_POST['id'],"");
-
-
-	}$tipos=$cons->consultas("*","extras_volar","status=1 and clasificacion_extra='tiposv'","");
+	}
+	$tipos=$cons->consultas("*","extras_volar","status=1 and clasificacion_extra='tiposv'","");
 ?>
 <form name="formulario" id="formulario">
 <div class="col-sm-12 col-md-3 col-lg-3 col-xs-12">

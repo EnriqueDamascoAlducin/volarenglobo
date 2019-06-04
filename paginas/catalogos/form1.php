@@ -1,5 +1,6 @@
 <?php
   
+  include "../../crud/fin_session.php";
   include_once "../../css/log/c/conexion.php";
 	$id=$_POST['id'];
   $permisos=$cons->consultas("*","permisos_volar","status=1","");

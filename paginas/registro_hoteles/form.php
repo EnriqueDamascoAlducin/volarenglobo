@@ -1,7 +1,6 @@
 <?php 
-	if(!isset($_SESSION['id'])){
-		session_start();	
-	}
+	
+	include "../../crud/fin_session.php";
 	$_SESSION['tabla']="hoteles_volar";
 	include_once "../../css/log/c/conexion.php";
 	$datos="";

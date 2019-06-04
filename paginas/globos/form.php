@@ -1,7 +1,6 @@
 <?php 
-	if(!isset($_SESSION['id'])){
-    	session_start();	
-    }
+	
+	include "../../crud/fin_session.php";
 	$datos="";
 	include_once "../../css/log/c/conexion.php";
 	$_SESSION['tabla']="globos_volar";

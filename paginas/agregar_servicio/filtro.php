@@ -1,9 +1,7 @@
 <?php 
-
-include_once '../../crud/fin_session.php';
 $usuarios=$cons->consultas("DISTINCT( CONCAT(nombre_usu,' ',apellidop_usu,' ',apellidom_usu) )as usuario ,id_usu","volar_usuarios","status<>0 order by nombre_usu asc, apellidop_usu asc",""); 
 
-$filcategorias=$cons->consultas('DISTINCT (clasificacion_extra) as clasificacion',"extras_volar","status<>0 ","");
+$filhotel=$cons->consultas('id_hotel,nombre_hotel',"hoteles_volar","status<>0 ","");
 
 
  ?>
@@ -22,11 +20,11 @@ $filcategorias=$cons->consultas('DISTINCT (clasificacion_extra) as clasificacion
 </div>
 <div class="col-sm-3 col-md-3 col-lg-3 col-xs-6">
 	<div class="form-group">
-		<label for="hotel">Categorias</label>
-		<select class="selectpicker form-control" id="categoria" name="categoria" data-live-search="true">
+		<label for="hotel">Hoteles</label>
+		<select class="selectpicker form-control" id="hotel" name="hotel" data-live-search="true">
 			<option value='0'>Todos...</option>
-			<?php foreach ($filcategorias as $categoria) { ?>
-				<option ><?php echo $categoria->clasificacion; ?></option>
+			<?php foreach ($filhotel as $hotele) { ?>
+				<option value="<?php echo $hotele->id_hotel ?>"><?php echo $hotele->nombre_hotel; ?></option>
 			<?php } ?>
 		</select>
 	</div>

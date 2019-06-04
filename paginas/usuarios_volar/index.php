@@ -1,7 +1,6 @@
 <?php 
-	if(!isset($_SESSION['id'])){
-		session_start();	
-	}
+	
+	include "../../crud/fin_session.php";
 	if(isset($_POST['idpagina'])){
 		$_SESSION['idpagina']=$_POST['idpagina'];
 	}
@@ -30,7 +29,6 @@
 	}
 	$empleados=$cons->consultas($campos,"volar_usuarios",$filtro,"");
 	
-	include "../../crud/fin_session.php";
 
 ?>
 <nav class="navbar navbar-light bg-info">

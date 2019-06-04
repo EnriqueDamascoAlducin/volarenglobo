@@ -1,7 +1,6 @@
 <?php 
-if(!isset($_SESSION['id'])){
-	session_start();	
-}
+
+include "../crud/fin_session.php";
 include_once "../css/log/c/conexion.php";
 date_default_timezone_set("America/Mexico_City");
 if(!isset($_SESSION['id'])){
@@ -310,6 +309,7 @@ $permisos=$cons->consultas($campos,$tablas,$filtro,"");
            	}
            }
        	});
+       	event.preventDefault();
 		setTimeout(function(){
 			cargar_pagina("<?php echo $_SESSION['modulo'] ?>",<?php echo $_SESSION['idpagina'] ?>);
 		},1000);

@@ -33,11 +33,8 @@
 	}
 </style>
 <?php
-if(!isset($_SESSION['id'])){
-	session_start();	
-}
-include_once "../../css/log/c/conexion.php";
 include "../../crud/fin_session.php";
+include_once "../../css/log/c/conexion.php";
 $idusu=$_SESSION['id'];
 $_SESSION['tabla']="temp_volar";
 $datos="";

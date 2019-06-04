@@ -1,7 +1,6 @@
 <?php 
-	if(!isset($_SESSION['id'])){
-		session_start();	
-	}
+	
+	include "../../crud/fin_session.php";
 	if(isset($_POST['idpagina'])){
 		$_SESSION['idpagina']=$_POST['idpagina'];
 	}
@@ -9,7 +8,6 @@
 	$_SESSION['tabla']="";
 	$_SESSION['extraquery']="";
 	include_once "../../css/log/c/conexion.php";
-	include "../../crud/fin_session.php";
 	$permisos=$cons->consultas("nombre_sp as nombre","permisosusuarios_volar pv,subpermisos_volar sv","id_sp=idsp_puv and idusu_puv=".$_SESSION['id']." and pv.status=1 and sv.status=1 and permiso_sp=".$_SESSION['idpagina'],"");
 
 	

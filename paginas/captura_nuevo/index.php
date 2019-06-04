@@ -1,7 +1,6 @@
 <?php
-if(!isset($_SESSION['id'])){
-	session_start();	
-}
+
+include_once '../../crud/fin_session.php';
 
 if(isset($_POST['idpagina'])){
 	$_SESSION['idpagina']=$_POST['idpagina'];
@@ -9,7 +8,6 @@ if(isset($_POST['idpagina'])){
 $_SESSION['modulo']="captura_nuevo/";
 include_once "../../css/log/c/conexion.php";
 $id=$_SESSION['id'];
-include "../../crud/fin_session.php";
 $_SESSION['tabla']="temp_volar";
 $usuario=$cons->consultas("CONCAT(nombre_usu,' ',ifnull(apellidop_usu,''),' ',ifnull(apellidom_usu,'')) as nombre","volar_usuarios","id_usu=".$id,"");
 $campo="";
@@ -43,7 +41,7 @@ if(isset($_POST['fechaf'])){
 	if($_POST['status']!="" && $_POST['status']!="0"){
 		$filtro.=" and status='".$_POST['status']."'";
 	}
-	if($_POST['empleados']!="" && $_POST['empleados']!="0"){
+	if(isset($_POST['empleados']) && $_POST['empleados']!="" && $_POST['empleados']!="0"){
 		$filtro.=" and idusu_temp='".$_POST['empleados']."'";
 	}
 	if($_POST['reserva']!=""){

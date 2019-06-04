@@ -1,12 +1,10 @@
 
 <?php
+  include_once '../../crud/fin_session.php';
 	include_once "../../css/log/c/conexion.php";
-	if(!isset($_SESSION['id'])){
-    session_start();
-  }
+	
 
   $_SESSION['extraquery']="";
-  include "../../crud/fin_session.php";
 	$_SESSION['tabla']="volar_usuarios";
   $_SESSION['idpagina']=0;
 	$id=$_POST['id'];
