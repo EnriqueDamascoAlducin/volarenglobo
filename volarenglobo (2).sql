@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 26-05-2019 a las 18:32:59
+-- Tiempo de generación: 04-06-2019 a las 06:32:32
 -- Versión del servidor: 10.1.38-MariaDB
 -- Versión de PHP: 7.3.3
 
@@ -78,7 +78,9 @@ CREATE TABLE `bitpagos_volar` (
 --
 
 INSERT INTO `bitpagos_volar` (`id_bp`, `idres_bp`, `idreg_bp`, `metodo_bp`, `banco_bp`, `referencia_bp`, `cantidad_bp`, `fecha_bp`, `idconc_bp`, `fechaconc_bp`, `register`, `status`) VALUES
-(1, 31, 9, 57, 64, '123', '2000.00', '2019-05-20', 8, '2019-05-21 17:02:36', '2019-05-21 16:58:39', 3);
+(1, 31, 9, 57, 64, '123', '2000.00', '2019-05-20', 8, '2019-05-21 17:02:36', '2019-05-21 16:58:39', 3),
+(2, 29, 1, 55, 64, '3', '3.00', '1997-12-12', 1, '2019-05-26 18:14:02', '2019-05-26 18:13:50', 3),
+(3, 29, 1, 56, 64, '12', '11.00', '2019-05-09', NULL, NULL, '2019-05-26 20:31:25', 3);
 
 -- --------------------------------------------------------
 
@@ -273,7 +275,8 @@ CREATE TABLE `habitaciones_volar` (
 
 INSERT INTO `habitaciones_volar` (`id_habitacion`, `nombre_habitacion`, `idhotel_habitacion`, `precio_habitacion`, `capacidad_habitacion`, `descripcion_habitacion`, `register`, `status`) VALUES
 (1, 'Sencilla', 1, '500.00', NULL, 'Habitación Sencilla para 1 persona', '0000-00-00 00:00:00', 0),
-(3, 'Doble', 1, '500.00', 6, 'Habitación Sencilla', '2019-05-12 18:20:32', 1);
+(3, 'Doble', 1, '500.00', 6, 'Habitación Sencilla', '2019-05-12 18:20:32', 1),
+(4, 'Sencilla', 1, '500.00', 1, 'Habitación Sencilla', '2019-06-03 22:59:58', 1);
 
 -- --------------------------------------------------------
 
@@ -307,7 +310,8 @@ CREATE TABLE `hoteles_volar` (
 INSERT INTO `hoteles_volar` (`id_hotel`, `nombre_hotel`, `calle_hotel`, `noint_hotel`, `noext_hotel`, `colonia_hotel`, `municipio_hotel`, `estado_hotel`, `cp_hotel`, `telefono_hotel`, `telefono2_hotel`, `correo_hotel`, `img_hotel`, `pagina_hotel`, `register`, `status`) VALUES
 (1, 'Quinto Sol', 'Ninguna', '24', NULL, 'Teotihuacan', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2019-05-12 18:12:51', 1),
 (2, 'Otro', 'p', NULL, NULL, 'a', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2019-05-17 16:14:56', 0),
-(3, 'a', 's', NULL, NULL, 'd', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2019-05-17 16:15:06', 0);
+(3, 'a', 's', NULL, NULL, 'd', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2019-05-17 16:15:06', 0),
+(4, 'o', 'Z', NULL, NULL, 'FD', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2019-06-03 23:02:01', 1);
 
 -- --------------------------------------------------------
 
@@ -408,7 +412,9 @@ INSERT INTO `permisosusuarios_volar` (`id_puv`, `idusu_puv`, `idsp_puv`, `regist
 (94, 8, 26, '2019-05-21 17:00:58', 1),
 (95, 9, 40, '2019-05-21 17:10:00', 1),
 (96, 9, 41, '2019-05-21 17:10:02', 1),
-(97, 9, 42, '2019-05-21 17:10:03', 1);
+(97, 9, 42, '2019-05-21 17:10:03', 1),
+(98, 1, 45, '2019-06-02 14:21:54', 1),
+(99, 1, 46, '2019-06-02 14:21:56', 1);
 
 -- --------------------------------------------------------
 
@@ -433,8 +439,8 @@ INSERT INTO `permisos_volar` (`id_per`, `nombre_per`, `img_per`, `ruta_per`, `re
 (1, 'Captura Diaria', '../img/modulos/captura.png', 'captura_nueva/', '2019-03-30 22:56:21', 0),
 (2, 'Reservas', '../img/modulos/newc.png', 'captura_nuevo/', '2019-03-31 10:29:44', 1),
 (3, 'Conciliar Pagos', '../img/modulos/conciliar.jpg', 'conciliar_pago/', '2019-03-31 14:19:37', 0),
-(4, 'Registrar Estados', '../img/modulos/registro.png', 'estados/', '2019-03-31 17:05:13', 1),
-(5, 'Servicios Extra', '../img/modulos/servicio.png', 'agregar_servicio/', '2019-03-31 20:14:55', 1),
+(4, 'Registrar Estados', '../img/modulos/registro.png', 'estados/', '2019-03-31 17:05:13', 0),
+(5, 'Servicios', '../img/modulos/servicio.png', 'agregar_servicio/', '2019-03-31 20:14:55', 1),
 (6, 'Vuelos', '../img/modulos/globo.png', 'registro_cat_vuelos/', '2019-04-05 13:37:32', 1),
 (7, 'Servicios', '../img/modulos/catalogo.png', 'catalogo_servicios/', '2019-04-08 22:42:53', 1),
 (8, 'Usuarios', '../img/modulos/users.png', 'usuarios_volar/', '2019-04-09 12:59:39', 1),
@@ -596,9 +602,10 @@ INSERT INTO `rel_catvuelos_volar` (`id_rel`, `idvc_rel`, `idcat_rel`, `register`
 CREATE TABLE `servicios_volar` (
   `id_servicio` int(11) NOT NULL COMMENT 'Llave Primaria',
   `nombre_servicio` varchar(100) COLLATE utf8_spanish_ci DEFAULT NULL COMMENT 'Nombre',
-  `precio_servicio` float DEFAULT NULL COMMENT 'Precio',
+  `precio_servicio` decimal(10,2) DEFAULT NULL COMMENT 'Precio',
   `img_servicio` varchar(100) COLLATE utf8_spanish_ci NOT NULL DEFAULT '../../img/image-not-found.gif' COMMENT 'Imagen',
   `cortesia_servicio` tinyint(4) DEFAULT '1' COMMENT 'Con Cortesia',
+  `cantmax_servicio` tinyint(4) DEFAULT NULL COMMENT 'Cantidad',
   `register` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Registro',
   `status` tinyint(4) NOT NULL DEFAULT '1' COMMENT 'Status'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
@@ -607,31 +614,31 @@ CREATE TABLE `servicios_volar` (
 -- Volcado de datos para la tabla `servicios_volar`
 --
 
-INSERT INTO `servicios_volar` (`id_servicio`, `nombre_servicio`, `precio_servicio`, `img_servicio`, `cortesia_servicio`, `register`, `status`) VALUES
-(1, 'Flores', 200, '../img/flores.png', 1, '2019-03-31 20:21:40', 1),
-(2, 'Vino', 1350, '../img/vino.png', 1, '2019-03-31 20:22:30', 1),
-(3, 'Lona Personalizada', 600, '../img/lona_personalizada.png', 0, '2019-03-31 20:25:04', 1),
-(4, 'Trio', 2000, '../img/trio.jpg', 1, '2019-03-31 20:29:58', 1),
-(5, 'Desayuno', 140, '../img/desayuno.png', 1, '2019-03-31 20:31:16', 1),
-(6, 'Cena', 350, '../img/cena.png', 1, '2019-03-31 20:32:08', 1),
-(7, 'Fotos', 500, '../img/foto.jpg', 1, '2019-03-31 21:33:58', 1),
-(8, 'Video', 500, '../img/video.png', 1, '2019-03-31 21:35:45', 1),
-(9, 'Teotihuacan en Bici', 500, '../img/bici.png', 1, '2019-03-31 21:36:20', 1),
-(10, 'spa', 1500, '../img/spa.png', 1, '2019-03-31 21:37:07', 1),
-(11, 'Temazcal', 600, '../img/temazcal.jpg', 1, '2019-03-31 21:37:26', 1),
-(12, 'Cuatrimotos', 800, '../img/cuatrimotos.png', 1, '2019-03-31 21:37:42', 1),
-(13, 'Entremes', 400, '../img/entremes.jpeg', 1, '2019-03-31 21:38:01', 1),
-(14, 'Transporte Redondo', 500, '../img/vredondo.jpg', 1, '2019-03-31 21:38:32', 1),
-(15, 'Viaje Sencillo', 300, '../img/vsencillo.png', 1, '2019-03-31 21:39:28', 1),
-(16, 'Foto Impresa', 200, '../img/fimpresa.png', 1, '2019-03-31 21:39:50', 1),
-(17, 'Guia de 1 a 4', 900, '../img/3pers.png', 1, '2019-03-31 21:40:15', 1),
-(18, 'Guia de 5 a 10', 1500, '../img/5pers.jpg', 1, '2019-03-31 21:40:35', 1),
-(19, 'Servcio', 200, '../img/../img/newc.png', 1, '2019-04-01 08:26:22', 0),
-(20, 'prueba2', 100, '../img/../img/newc.png', 1, '2019-04-01 10:47:38', 0),
-(21, 'Prueba', 500, '../img/../img/newc.png', 0, '2019-04-02 20:44:23', 0),
-(22, 'otro', 1250, '../img/../img/new.png', 1, '2019-04-08 22:38:29', 0),
-(23, 'sa', 32, '../img/newc.png', 1, '2019-04-08 22:40:12', 0),
-(24, 'Prueba', 502, '../img/globo.png', 1, '2019-05-20 20:18:26', 1);
+INSERT INTO `servicios_volar` (`id_servicio`, `nombre_servicio`, `precio_servicio`, `img_servicio`, `cortesia_servicio`, `cantmax_servicio`, `register`, `status`) VALUES
+(1, 'Flores', '200.00', '../img/flores.png', 1, 0, '2019-03-31 20:21:40', 1),
+(2, 'Vino', '1350.00', '../img/vino.png', 1, NULL, '2019-03-31 20:22:30', 1),
+(3, 'Lona Personalizada', '600.00', '../img/lona_personalizada.png', 0, 0, '2019-03-31 20:25:04', 1),
+(4, 'Trio', '2000.00', '../img/trio.jpg', 1, NULL, '2019-03-31 20:29:58', 1),
+(5, 'Desayuno', '140.00', '../img/desayuno.png', 0, 0, '2019-03-31 20:31:16', 1),
+(6, 'Cena', '350.00', '../img/cena.png', 0, 0, '2019-03-31 20:32:08', 1),
+(7, 'Fotos', '500.00', '../img/foto.jpg', 1, 0, '2019-03-31 21:33:58', 1),
+(8, 'Video', '500.00', '../img/video.png', 1, NULL, '2019-03-31 21:35:45', 1),
+(9, 'Teotihuacan en Bici', '500.00', '../img/bici.png', 1, NULL, '2019-03-31 21:36:20', 1),
+(10, 'spa', '1500.00', '../img/spa.png', 1, NULL, '2019-03-31 21:37:07', 1),
+(11, 'Temazcal', '600.00', '../img/temazcal.jpg', 1, NULL, '2019-03-31 21:37:26', 1),
+(12, 'Cuatrimotos', '800.00', '../img/cuatrimotos.png', 1, 0, '2019-03-31 21:37:42', 1),
+(13, 'Entremes', '400.00', '../img/entremes.jpeg', 1, NULL, '2019-03-31 21:38:01', 1),
+(14, 'Transporte Redondo', '500.00', '../img/vredondo.jpg', 1, NULL, '2019-03-31 21:38:32', 1),
+(15, 'Viaje Sencillo', '300.00', '../img/vsencillo.png', 1, NULL, '2019-03-31 21:39:28', 1),
+(16, 'Foto Impresa', '200.00', '../img/fimpresa.png', 1, 1, '2019-03-31 21:39:50', 1),
+(17, 'Guia de 1 a 4', '900.00', '../img/3pers.png', 1, 0, '2019-03-31 21:40:15', 1),
+(18, 'Guia de 5 a 10', '1500.00', '../img/5pers.jpg', 1, NULL, '2019-03-31 21:40:35', 1),
+(19, 'Servcio', '200.00', '../img/../img/newc.png', 1, NULL, '2019-04-01 08:26:22', 0),
+(20, 'prueba2', '100.00', '../img/../img/newc.png', 1, NULL, '2019-04-01 10:47:38', 0),
+(21, 'Prueba', '500.00', '../img/../img/newc.png', 0, NULL, '2019-04-02 20:44:23', 0),
+(22, 'otro', '1250.00', '../img/../img/new.png', 1, NULL, '2019-04-08 22:38:29', 0),
+(23, 'sa', '32.00', '../img/newc.png', 1, NULL, '2019-04-08 22:40:12', 0),
+(24, 'Prueba', '502.00', '../img/globo.png', 1, NULL, '2019-05-20 20:18:26', 1);
 
 -- --------------------------------------------------------
 
@@ -654,80 +661,8 @@ CREATE TABLE `servicios_vuelo_temp` (
 --
 
 INSERT INTO `servicios_vuelo_temp` (`id_sv`, `idtemp_sv`, `idservi_sv`, `tipo_sv`, `cantidad_sv`, `register`, `status`) VALUES
-(21, 27, 1, 1, 0, '2019-05-12 13:33:25', 2),
-(22, 27, 1, 2, 0, '2019-05-12 13:33:25', 2),
-(23, 27, 2, 1, 0, '2019-05-12 13:33:25', 2),
-(24, 27, 2, 2, 0, '2019-05-12 13:33:25', 2),
-(25, 27, 3, 1, 0, '2019-05-12 13:33:25', 2),
-(26, 27, 3, 2, 0, '2019-05-12 13:33:25', 2),
-(27, 27, 4, 1, 0, '2019-05-12 13:33:25', 2),
-(28, 27, 4, 2, 0, '2019-05-12 13:33:25', 2),
-(29, 27, 5, 1, 0, '2019-05-12 13:33:25', 2),
-(30, 27, 5, 2, 0, '2019-05-12 13:33:25', 2),
-(31, 27, 6, 1, 0, '2019-05-12 13:33:25', 2),
-(32, 27, 6, 2, 0, '2019-05-12 13:33:25', 2),
-(33, 27, 7, 1, 0, '2019-05-12 13:33:25', 2),
-(34, 27, 7, 2, 0, '2019-05-12 13:33:25', 2),
-(35, 27, 8, 1, 0, '2019-05-12 13:33:25', 2),
-(36, 27, 8, 2, 0, '2019-05-12 13:33:25', 2),
-(37, 27, 9, 1, 0, '2019-05-12 13:33:25', 2),
-(38, 27, 9, 2, 0, '2019-05-12 13:33:25', 2),
-(39, 27, 10, 1, 0, '2019-05-12 13:33:25', 2),
-(40, 27, 10, 2, 0, '2019-05-12 13:33:25', 2),
-(41, 27, 11, 1, 0, '2019-05-12 13:33:25', 2),
-(42, 27, 11, 2, 0, '2019-05-12 13:33:25', 2),
-(43, 27, 12, 1, 0, '2019-05-12 13:33:25', 2),
-(44, 27, 12, 2, 0, '2019-05-12 13:33:25', 2),
-(45, 27, 13, 1, 0, '2019-05-12 13:33:25', 2),
-(46, 27, 13, 2, 0, '2019-05-12 13:33:25', 2),
-(47, 27, 14, 1, 0, '2019-05-12 13:33:25', 2),
-(48, 27, 14, 2, 0, '2019-05-12 13:33:25', 2),
-(49, 27, 15, 1, 0, '2019-05-12 13:33:25', 2),
-(50, 27, 15, 2, 0, '2019-05-12 13:33:25', 2),
-(51, 27, 16, 1, 0, '2019-05-12 13:33:25', 2),
-(52, 27, 16, 2, 0, '2019-05-12 13:33:25', 2),
-(53, 27, 17, 1, 0, '2019-05-12 13:33:25', 2),
-(54, 27, 17, 2, 0, '2019-05-12 13:33:25', 2),
-(55, 27, 18, 1, 0, '2019-05-12 13:33:25', 2),
-(56, 27, 18, 2, 0, '2019-05-12 13:33:25', 2),
-(57, 1, 1, 1, 0, '2019-05-12 15:26:36', 2),
-(58, 1, 1, 2, 0, '2019-05-12 15:26:36', 2),
-(59, 1, 2, 1, 0, '2019-05-12 15:26:36', 2),
-(60, 1, 2, 2, 0, '2019-05-12 15:26:36', 2),
-(61, 1, 3, 1, 0, '2019-05-12 15:26:36', 2),
-(62, 1, 3, 2, 0, '2019-05-12 15:26:36', 2),
-(63, 1, 4, 1, 0, '2019-05-12 15:26:36', 2),
-(64, 1, 4, 2, 0, '2019-05-12 15:26:36', 2),
-(65, 1, 5, 1, 0, '2019-05-12 15:26:36', 2),
-(66, 1, 5, 2, 0, '2019-05-12 15:26:36', 2),
-(67, 1, 6, 1, 0, '2019-05-12 15:26:36', 2),
-(68, 1, 6, 2, 0, '2019-05-12 15:26:36', 2),
-(69, 1, 7, 1, 0, '2019-05-12 15:26:36', 2),
-(70, 1, 7, 2, 0, '2019-05-12 15:26:36', 2),
-(71, 1, 8, 1, 0, '2019-05-12 15:26:36', 2),
-(72, 1, 8, 2, 0, '2019-05-12 15:26:37', 2),
-(73, 1, 9, 1, 0, '2019-05-12 15:26:37', 2),
-(74, 1, 9, 2, 0, '2019-05-12 15:26:37', 2),
-(75, 1, 10, 1, 0, '2019-05-12 15:26:37', 2),
-(76, 1, 10, 2, 0, '2019-05-12 15:26:37', 2),
-(77, 1, 11, 1, 0, '2019-05-12 15:26:37', 2),
-(78, 1, 11, 2, 0, '2019-05-12 15:26:37', 2),
-(79, 1, 12, 1, 0, '2019-05-12 15:26:37', 2),
-(80, 1, 12, 2, 0, '2019-05-12 15:26:37', 2),
-(81, 1, 13, 1, 0, '2019-05-12 15:26:37', 2),
-(82, 1, 13, 2, 0, '2019-05-12 15:26:37', 2),
-(83, 1, 14, 1, 0, '2019-05-12 15:26:37', 2),
-(84, 1, 14, 2, 0, '2019-05-12 15:26:37', 2),
-(85, 1, 15, 1, 0, '2019-05-12 15:26:37', 2),
-(86, 1, 15, 2, 0, '2019-05-12 15:26:37', 2),
-(87, 1, 16, 1, 0, '2019-05-12 15:26:37', 2),
-(88, 1, 16, 2, 0, '2019-05-12 15:26:37', 2),
-(89, 1, 17, 1, 0, '2019-05-12 15:26:37', 2),
-(90, 1, 17, 2, 0, '2019-05-12 15:26:37', 2),
-(91, 1, 18, 1, 0, '2019-05-12 15:26:37', 2),
-(92, 1, 18, 2, 0, '2019-05-12 15:26:37', 2),
-(93, 29, 1, 1, 0, '2019-05-12 15:31:35', 2),
-(94, 29, 1, 2, 0, '2019-05-12 15:31:35', 2),
+(93, 29, 1, 1, 3, '2019-05-12 15:31:35', 2),
+(94, 29, 1, 2, 2, '2019-05-12 15:31:35', 2),
 (95, 29, 2, 1, 0, '2019-05-12 15:31:35', 2),
 (96, 29, 2, 2, 0, '2019-05-12 15:31:35', 2),
 (97, 29, 3, 1, 0, '2019-05-12 15:31:35', 2),
@@ -913,7 +848,121 @@ INSERT INTO `servicios_vuelo_temp` (`id_sv`, `idtemp_sv`, `idservi_sv`, `tipo_sv
 (277, 33, 18, 1, 0, '2019-05-21 17:19:22', 2),
 (278, 33, 18, 2, 0, '2019-05-21 17:19:22', 2),
 (279, 33, 24, 1, 0, '2019-05-21 17:19:22', 2),
-(280, 33, 24, 2, 0, '2019-05-21 17:19:22', 2);
+(280, 33, 24, 2, 0, '2019-05-21 17:19:22', 2),
+(281, 34, 1, 1, 0, '2019-05-29 16:44:35', 2),
+(282, 34, 1, 2, 0, '2019-05-29 16:44:35', 2),
+(283, 34, 2, 1, 0, '2019-05-29 16:44:35', 2),
+(284, 34, 2, 2, 0, '2019-05-29 16:44:35', 2),
+(285, 34, 3, 1, 0, '2019-05-29 16:44:35', 2),
+(286, 34, 3, 2, 0, '2019-05-29 16:44:35', 2),
+(287, 34, 4, 1, 0, '2019-05-29 16:44:35', 2),
+(288, 34, 4, 2, 0, '2019-05-29 16:44:35', 2),
+(289, 34, 5, 1, 0, '2019-05-29 16:44:35', 2),
+(290, 34, 5, 2, 0, '2019-05-29 16:44:35', 2),
+(291, 34, 6, 1, 0, '2019-05-29 16:44:35', 2),
+(292, 34, 6, 2, 0, '2019-05-29 16:44:35', 2),
+(293, 34, 7, 1, 0, '2019-05-29 16:44:35', 2),
+(294, 34, 7, 2, 0, '2019-05-29 16:44:35', 2),
+(295, 34, 8, 1, 0, '2019-05-29 16:44:35', 2),
+(296, 34, 8, 2, 0, '2019-05-29 16:44:35', 2),
+(297, 34, 9, 1, 0, '2019-05-29 16:44:35', 2),
+(298, 34, 9, 2, 0, '2019-05-29 16:44:35', 2),
+(299, 34, 10, 1, 0, '2019-05-29 16:44:35', 2),
+(300, 34, 10, 2, 0, '2019-05-29 16:44:35', 2),
+(301, 34, 11, 1, 0, '2019-05-29 16:44:35', 2),
+(302, 34, 11, 2, 0, '2019-05-29 16:44:35', 2),
+(303, 34, 12, 1, 0, '2019-05-29 16:44:35', 2),
+(304, 34, 12, 2, 0, '2019-05-29 16:44:35', 2),
+(305, 34, 13, 1, 0, '2019-05-29 16:44:35', 2),
+(306, 34, 13, 2, 0, '2019-05-29 16:44:35', 2),
+(307, 34, 14, 1, 5, '2019-05-29 16:44:35', 2),
+(308, 34, 14, 2, 0, '2019-05-29 16:44:35', 2),
+(309, 34, 15, 1, 0, '2019-05-29 16:44:35', 2),
+(310, 34, 15, 2, 0, '2019-05-29 16:44:35', 2),
+(311, 34, 16, 1, 0, '2019-05-29 16:44:35', 2),
+(312, 34, 16, 2, 0, '2019-05-29 16:44:35', 2),
+(313, 34, 17, 1, 0, '2019-05-29 16:44:35', 2),
+(314, 34, 17, 2, 0, '2019-05-29 16:44:35', 2),
+(315, 34, 18, 1, 0, '2019-05-29 16:44:35', 2),
+(316, 34, 18, 2, 0, '2019-05-29 16:44:35', 2),
+(317, 34, 24, 1, 0, '2019-05-29 16:44:35', 2),
+(318, 34, 24, 2, 0, '2019-05-29 16:44:35', 2),
+(319, 35, 1, 1, 0, '2019-05-29 17:01:47', 2),
+(320, 35, 1, 2, 0, '2019-05-29 17:01:47', 2),
+(321, 35, 2, 1, 0, '2019-05-29 17:01:47', 2),
+(322, 35, 2, 2, 0, '2019-05-29 17:01:47', 2),
+(323, 35, 3, 1, 0, '2019-05-29 17:01:47', 2),
+(324, 35, 3, 2, 0, '2019-05-29 17:01:47', 2),
+(325, 35, 4, 1, 0, '2019-05-29 17:01:47', 2),
+(326, 35, 4, 2, 0, '2019-05-29 17:01:47', 2),
+(327, 35, 5, 1, 0, '2019-05-29 17:01:47', 2),
+(328, 35, 5, 2, 0, '2019-05-29 17:01:47', 2),
+(329, 35, 6, 1, 0, '2019-05-29 17:01:47', 2),
+(330, 35, 6, 2, 0, '2019-05-29 17:01:47', 2),
+(331, 35, 7, 1, 0, '2019-05-29 17:01:47', 2),
+(332, 35, 7, 2, 0, '2019-05-29 17:01:47', 2),
+(333, 35, 8, 1, 0, '2019-05-29 17:01:47', 2),
+(334, 35, 8, 2, 0, '2019-05-29 17:01:47', 2),
+(335, 35, 9, 1, 0, '2019-05-29 17:01:47', 2),
+(336, 35, 9, 2, 0, '2019-05-29 17:01:47', 2),
+(337, 35, 10, 1, 0, '2019-05-29 17:01:47', 2),
+(338, 35, 10, 2, 0, '2019-05-29 17:01:47', 2),
+(339, 35, 11, 1, 0, '2019-05-29 17:01:47', 2),
+(340, 35, 11, 2, 0, '2019-05-29 17:01:47', 2),
+(341, 35, 12, 1, 0, '2019-05-29 17:01:47', 2),
+(342, 35, 12, 2, 0, '2019-05-29 17:01:47', 2),
+(343, 35, 13, 1, 0, '2019-05-29 17:01:47', 2),
+(344, 35, 13, 2, 0, '2019-05-29 17:01:47', 2),
+(345, 35, 14, 1, 0, '2019-05-29 17:01:47', 2),
+(346, 35, 14, 2, 0, '2019-05-29 17:01:47', 2),
+(347, 35, 15, 1, 0, '2019-05-29 17:01:47', 2),
+(348, 35, 15, 2, 0, '2019-05-29 17:01:47', 2),
+(349, 35, 16, 1, 0, '2019-05-29 17:01:47', 2),
+(350, 35, 16, 2, 0, '2019-05-29 17:01:47', 2),
+(351, 35, 17, 1, 0, '2019-05-29 17:01:47', 2),
+(352, 35, 17, 2, 0, '2019-05-29 17:01:47', 2),
+(353, 35, 18, 1, 0, '2019-05-29 17:01:47', 2),
+(354, 35, 18, 2, 0, '2019-05-29 17:01:47', 2),
+(355, 35, 24, 1, 0, '2019-05-29 17:01:47', 2),
+(356, 35, 24, 2, 0, '2019-05-29 17:01:47', 2),
+(357, 36, 1, 1, 0, '2019-05-29 17:30:17', 2),
+(358, 36, 1, 2, 0, '2019-05-29 17:30:17', 2),
+(359, 36, 2, 1, 0, '2019-05-29 17:30:17', 2),
+(360, 36, 2, 2, 0, '2019-05-29 17:30:17', 2),
+(361, 36, 3, 1, 0, '2019-05-29 17:30:17', 2),
+(362, 36, 3, 2, 0, '2019-05-29 17:30:17', 2),
+(363, 36, 4, 1, 0, '2019-05-29 17:30:17', 2),
+(364, 36, 4, 2, 0, '2019-05-29 17:30:17', 2),
+(365, 36, 5, 1, 0, '2019-05-29 17:30:17', 2),
+(366, 36, 5, 2, 0, '2019-05-29 17:30:17', 2),
+(367, 36, 6, 1, 0, '2019-05-29 17:30:17', 2),
+(368, 36, 6, 2, 0, '2019-05-29 17:30:17', 2),
+(369, 36, 7, 1, 0, '2019-05-29 17:30:17', 2),
+(370, 36, 7, 2, 0, '2019-05-29 17:30:17', 2),
+(371, 36, 8, 1, 0, '2019-05-29 17:30:17', 2),
+(372, 36, 8, 2, 0, '2019-05-29 17:30:17', 2),
+(373, 36, 9, 1, 0, '2019-05-29 17:30:17', 2),
+(374, 36, 9, 2, 0, '2019-05-29 17:30:17', 2),
+(375, 36, 10, 1, 0, '2019-05-29 17:30:17', 2),
+(376, 36, 10, 2, 0, '2019-05-29 17:30:17', 2),
+(377, 36, 11, 1, 0, '2019-05-29 17:30:17', 2),
+(378, 36, 11, 2, 0, '2019-05-29 17:30:17', 2),
+(379, 36, 12, 1, 0, '2019-05-29 17:30:17', 2),
+(380, 36, 12, 2, 0, '2019-05-29 17:30:17', 2),
+(381, 36, 13, 1, 0, '2019-05-29 17:30:17', 2),
+(382, 36, 13, 2, 0, '2019-05-29 17:30:17', 2),
+(383, 36, 14, 1, 0, '2019-05-29 17:30:17', 2),
+(384, 36, 14, 2, 0, '2019-05-29 17:30:17', 2),
+(385, 36, 15, 1, 0, '2019-05-29 17:30:17', 2),
+(386, 36, 15, 2, 0, '2019-05-29 17:30:17', 2),
+(387, 36, 16, 1, 0, '2019-05-29 17:30:17', 2),
+(388, 36, 16, 2, 0, '2019-05-29 17:30:17', 2),
+(389, 36, 17, 1, 0, '2019-05-29 17:30:17', 2),
+(390, 36, 17, 2, 0, '2019-05-29 17:30:17', 2),
+(391, 36, 18, 1, 0, '2019-05-29 17:30:17', 2),
+(392, 36, 18, 2, 0, '2019-05-29 17:30:17', 2),
+(393, 36, 24, 1, 0, '2019-05-29 17:30:17', 2),
+(394, 36, 24, 2, 0, '2019-05-29 17:30:17', 2);
 
 -- --------------------------------------------------------
 
@@ -974,7 +1023,9 @@ INSERT INTO `subpermisos_volar` (`id_sp`, `nombre_sp`, `permiso_sp`, `register`,
 (41, 'EDITAR', 11, '2019-05-16 20:45:11', 1),
 (42, 'ELIMINAR', 11, '2019-05-16 20:45:11', 1),
 (43, 'GASTOS', 12, '2019-05-18 20:45:26', 1),
-(44, 'NOMINA', 8, '2019-05-19 22:03:04', 1);
+(44, 'NOMINA', 8, '2019-05-19 22:03:04', 1),
+(45, 'ELIMINAR', 5, '2019-06-02 14:21:41', 1),
+(46, 'EDITAR', 5, '2019-06-02 14:21:41', 1);
 
 -- --------------------------------------------------------
 
@@ -1022,11 +1073,14 @@ CREATE TABLE `temp_volar` (
 --
 
 INSERT INTO `temp_volar` (`id_temp`, `idusu_temp`, `clave_temp`, `nombre_temp`, `apellidos_temp`, `mail_temp`, `telfijo_temp`, `telcelular_temp`, `procedencia_temp`, `pasajerosa_temp`, `pasajerosn_temp`, `motivo_temp`, `tipo_temp`, `fechavuelo_temp`, `tarifa_temp`, `hotel_temp`, `habitacion_temp`, `checkin_temp`, `checkout_temp`, `comentario_temp`, `otroscar1_temp`, `precio1_temp`, `otroscar2_temp`, `precio2_temp`, `tdescuento_temp`, `cantdescuento_temp`, `total_temp`, `piloto_temp`, `kg_temp`, `globo_temp`, `register`, `status`) VALUES
-(29, 1, NULL, 'ENRIQUE', 'DAMASCO', 'enriquealducin@outlook.com', NULL, '5529227672', 5, 8, 0, 37, 2, '2019-05-09', 49, 1, 3, '2019-05-21', '2019-05-22', NULL, NULL, NULL, NULL, NULL, NULL, '0.00', 21192.00, 0, '0.00', 0, '2019-05-12 15:31:35', 3),
+(29, 1, NULL, 'ENRIQUE', 'DAMASCO', 'enriquealducin@outlook.com', NULL, '5529227672', 5, 8, 0, 37, 2, '2019-05-09', 49, 1, 3, '2019-05-21', '2019-05-22', NULL, NULL, NULL, NULL, NULL, 1, '0.00', 21792.00, 0, '0.00', 0, '2019-05-12 15:31:35', 4),
 (30, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0.00', 0.00, 0, '0.00', 0, '2019-05-20 20:18:37', 0),
 (31, 9, NULL, 'JORGE', 'RAMIREZ', 'enriquealducin@outlook.com', '555555555', '55555555', NULL, 3, 1, 38, 4, '2019-05-23', 48, NULL, NULL, NULL, NULL, 'vuelo prueba', 'FOTO', '600.00', NULL, NULL, 2, '14000.00', 9197.00, 0, '0.00', 0, '2019-05-21 16:40:08', 4),
 (32, 9, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0.00', 0.00, 0, '0.00', 0, '2019-05-21 17:09:55', 2),
-(33, 9, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2, '0.00', 0.00, 0, '0.00', 0, '2019-05-21 17:19:22', 2);
+(33, 9, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2, '0.00', 0.00, 0, '0.00', 0, '2019-05-21 17:19:22', 2),
+(34, 1, NULL, 'JUAN', 'FERNANDEZ', 'volarenglobo@yahoo.es', NULL, '5555023615', 19, 4, 1, 43, 4, '2019-06-12', 48, 1, 3, '2019-05-12', '2019-05-13', NULL, NULL, NULL, NULL, NULL, NULL, '0.00', 0.00, 0, '0.00', 0, '2019-05-29 16:44:35', 2),
+(35, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0.00', 0.00, 0, '0.00', 0, '2019-05-29 17:01:47', 2),
+(36, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0.00', 0.00, 0, '0.00', 0, '2019-05-29 17:30:17', 2);
 
 -- --------------------------------------------------------
 
@@ -1100,7 +1154,7 @@ INSERT INTO `vueloscat_volar` (`id_vc`, `nombre_vc`, `tipo_vc`, `precioa_vc`, `p
 (1, 'Compartido básico', 47, '2299.00', '1700.00', '2019-04-05 11:03:46', 1),
 (2, 'Compartido Plus', 47, '2399.00', '1799.00', '2019-04-05 11:03:46', 1),
 (3, 'Cumpleañero', 47, '2399.00', '1799.00', '2019-04-05 11:04:31', 1),
-(4, 'Privado', 46, '7000.00', '1700.00', '2019-04-05 11:28:14', 1),
+(4, 'Privado ', 46, '3500.00', '1700.00', '2019-04-05 11:28:14', 1),
 (5, 'Privado VIP', 46, '9000.00', '1700.00', '2019-04-05 11:28:53', 1),
 (14, ' preuba', 47, '43.00', '22.00', '2019-04-09 12:52:38', 0),
 (15, ' prueba35', 47, '3.00', '2.00', '2019-04-09 12:56:06', 0);
@@ -1249,7 +1303,7 @@ ALTER TABLE `bitacora_actualizaciones_volar`
 -- AUTO_INCREMENT de la tabla `bitpagos_volar`
 --
 ALTER TABLE `bitpagos_volar`
-  MODIFY `id_bp` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Llave Primaria', AUTO_INCREMENT=2;
+  MODIFY `id_bp` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Llave Primaria', AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `cat_servicios_volar`
@@ -1279,13 +1333,13 @@ ALTER TABLE `globos_volar`
 -- AUTO_INCREMENT de la tabla `habitaciones_volar`
 --
 ALTER TABLE `habitaciones_volar`
-  MODIFY `id_habitacion` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Llave Primaria', AUTO_INCREMENT=4;
+  MODIFY `id_habitacion` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Llave Primaria', AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `hoteles_volar`
 --
 ALTER TABLE `hoteles_volar`
-  MODIFY `id_hotel` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Llave Primaria', AUTO_INCREMENT=4;
+  MODIFY `id_hotel` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Llave Primaria', AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `imghoteles_volar`
@@ -1297,7 +1351,7 @@ ALTER TABLE `imghoteles_volar`
 -- AUTO_INCREMENT de la tabla `permisosusuarios_volar`
 --
 ALTER TABLE `permisosusuarios_volar`
-  MODIFY `id_puv` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Llave Primaria', AUTO_INCREMENT=98;
+  MODIFY `id_puv` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Llave Primaria', AUTO_INCREMENT=100;
 
 --
 -- AUTO_INCREMENT de la tabla `permisos_volar`
@@ -1333,19 +1387,19 @@ ALTER TABLE `servicios_volar`
 -- AUTO_INCREMENT de la tabla `servicios_vuelo_temp`
 --
 ALTER TABLE `servicios_vuelo_temp`
-  MODIFY `id_sv` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Llave Primaria', AUTO_INCREMENT=281;
+  MODIFY `id_sv` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Llave Primaria', AUTO_INCREMENT=395;
 
 --
 -- AUTO_INCREMENT de la tabla `subpermisos_volar`
 --
 ALTER TABLE `subpermisos_volar`
-  MODIFY `id_sp` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Llave Primaria', AUTO_INCREMENT=45;
+  MODIFY `id_sp` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Llave Primaria', AUTO_INCREMENT=47;
 
 --
 -- AUTO_INCREMENT de la tabla `temp_volar`
 --
 ALTER TABLE `temp_volar`
-  MODIFY `id_temp` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Llave Primaria', AUTO_INCREMENT=34;
+  MODIFY `id_temp` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Llave Primaria', AUTO_INCREMENT=37;
 
 --
 -- AUTO_INCREMENT de la tabla `volar_usuarios`
