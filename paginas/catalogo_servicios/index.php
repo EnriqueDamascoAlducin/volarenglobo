@@ -17,7 +17,7 @@
 		<input type="text" name="nombre" id="nombre" class="form-control">
 	</div>
 </div>
-<button type="button" class="btn btn-success" onclick="enviar_crud(event)">Guardar</button>
+<button type="button" class="btn btn-success" onclick="enviar_crud(event,'<?php echo $_SESSION['modulo'] ?>',<?php echo $_SESSION['idpagina'] ?>)">Guardar</button>
 </form>
 <br><br><br><br>
 <table class="table display DataTable" style="max-width: 30%">

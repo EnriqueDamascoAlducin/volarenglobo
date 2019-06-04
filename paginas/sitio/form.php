@@ -20,7 +20,7 @@
 	$options=["","",$gastos,"","","","","","","","","","",""];
 	$req=["required","required","required","required","required","required","required","required","required","required","","","",""];
 ?>
-<form name="formulario" id="formulario" onsubmit="enviar_crud(event);">
+<form name="formulario" id="formulario" onsubmit="enviar_crud(event,'<?php echo $_SESSION['modulo'] ?>',<?php echo $_SESSION['idpagina'] ?>);">
 	<?php 
 	if(isset($_POST['id'])){
 		echo "<input type='hidden' name='id' id='id' value='".$_POST['id']."'>";

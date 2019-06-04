@@ -291,7 +291,7 @@ $permisos=$cons->consultas($campos,$tablas,$filtro,"");
 		$("#"+id).remove();
 	}
 
-	function enviar_crud(event){
+	function enviar_crud(event,modulo,idpagina){
 		param=$("#formulario").serialize();
 		url="../crud/crud.php";
 		$.ajax({                        
@@ -311,7 +311,7 @@ $permisos=$cons->consultas($campos,$tablas,$filtro,"");
        	});
        	event.preventDefault();
 		setTimeout(function(){
-			cargar_pagina("<?php echo $_SESSION['modulo'] ?>",<?php echo $_SESSION['idpagina'] ?>);
+			cargar_pagina(modulo,idpagina);
 		},1000);
 		
 	}

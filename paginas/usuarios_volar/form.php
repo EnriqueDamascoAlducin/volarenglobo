@@ -27,7 +27,7 @@
 	$array=["nombre_usu","apellidop_usu","apellidom_usu","depto_usu","puesto_usu","correo_usu","telefono_usu","usuario_usu"];
 
 ?>
-<form name="formulario" id="formulario" onsubmit="enviar_crud(event);">
+<form name="formulario" id="formulario" onsubmit="enviar_crud(event,'<?php echo $_SESSION['modulo'] ?>',<?php echo $_SESSION['idpagina'] ?>);">
 	<?php 
 	if(isset($_POST['id'])){
 		echo "<input type='hidden' name='id' id='id' value='".$_POST['id']."'>";
