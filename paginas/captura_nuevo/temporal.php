@@ -1,10 +1,7 @@
 <?php 
-	if(!isset($_SESSION['id'])){
-		session_start();	
-	}
 	include_once "../../css/log/c/conexion.php";
+	include "../../crud/fin_session.php";
 	if(!isset($_POST['servicio'])){
-		session_start();
 		$id=$_POST['id'];
 	 	$campo=$_POST['campo'];
 	 	$valor="'".$_POST['valor']."'";
@@ -21,10 +18,16 @@
 	 	}
 	 }else{
 	 	$servicio=$_POST['servicio'];
-	 	$valor=$_POST['valor'];
-	 	$reserva=$_POST['reserva'];
+	 	$cantidad=$_POST['cantidad'];
+	 	$reserva=$_POST['id'];
 	 	$tipo=$_POST['tipo'];
-	 	$actualizar=$cons->consultas("cantidad_sv=".$valor,"servicios_vuelo_temp","idtemp_sv=".$reserva." and tipo_sv=".$tipo." and idservi_sv=".$servicio,"update");	 	
+	 	$validar_servicio=$cons->consultas("id_sv as id ","servicios_vuelo_temp","idtemp_sv=".$reserva." "." and idservi_sv=".$servicio,"");
+	 	if(sizeof($validar_servicio)>0){
+	 		$actualizar=$cons->consultas("cantidad_sv=".$cantidad.", tipo_sv = ".$tipo,"servicios_vuelo_temp","id_sv=".$validar_servicio[0]->id,"update");
+	 	}else{
+	 		$ingresar=$cons->consultas("idtemp_sv,idservi_sv,tipo_sv,cantidad_sv","servicios_vuelo_temp",$reserva.",".$servicio.",".$tipo.",".$cantidad,"insert");
+	 	}
+	 		 	
 	 	
 	 }
  	

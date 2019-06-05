@@ -1,4 +1,4 @@
-
+	$("input[id^='pasajeros']").attr("step",1);
 	$("input[name='tdescuento']").on("click",function(){
 		if($(this).val()=="1"){
 			$("#cantdescuento1").attr("disabled","disabled");
@@ -36,18 +36,46 @@
 	$("textarea").on("change",function(){
 		save_Data($(this).attr("name"),$(this).val());
 	});
-
+	function validate_service(check, defa){
+		campo=check.id;
+		id=campo.split("_");
+		servicio=id[1];
+		
+		if(id[0]=="precio"){
+			$("#cortesia_"+id[1]).prop("checked",false);
+			value=defa;
+			tipo=1;
+		}else{
+			$("#precio_"+id[1]).prop("checked",false);
+			value=defa;
+			tipo=2;
+		}
+		if(!$("#cortesia_"+servicio).is(":checked") && !$("#precio_"+servicio).is(":checked") ){
+			value=0;
+		}
+		//2 es de cortesia ;1 es de paga
+		parametros={servicio:servicio,cantidad:value,tipo:tipo,id:act_temp};
+		$.ajax({
+			url:"captura_nuevo/temporal.php",
+			method: "POST",
+			async:false,
+	  		data: parametros,
+	  		success:function(response){
+	  			console.log(campo+" Agregado " +response);
+	  		},
+	  		error:function(){
+	  			alert("Error");
+	  		},
+	  		statusCode: {
+			    404: function() {
+			      alert( "No encontró el archivo de registro" );
+			    }
+			 }
+		});
+	}
 	function save_Data(campo,value){
 		parametros={campo:campo,valor:value,id:act_temp,tipo:tipo};
-		if(campo.includes("precio_") || campo.includes("cortesia_")){
-			if(campo.includes("cortesia_")){
-				tipo=2; //actualizar cortesia
-			}else{
-				tipo=1; //actualizar de paga
-			}
-			servicio=campo.split("_");
-			parametros={servicio:servicio[1],valor:value,reserva:act_temp,tipo:tipo};
-		}
+		
 		$.ajax({
 			url:"captura_nuevo/temporal.php",
 			method: "POST",

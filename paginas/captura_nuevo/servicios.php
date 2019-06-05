@@ -31,7 +31,7 @@ $checked2="";
 						$checked="";
 					}
 					?>
-					<input type="checkbox" name="precio_<?php echo $servicio->id_servicio ?>" id="precio_<?php echo $servicio->id_servicio ?>" value="1" <?php echo $checked; ?> >
+					<input type="checkbox" name="precio_<?php echo $servicio->id_servicio ?>" id="precio_<?php echo $servicio->id_servicio ?>" value="1" <?php echo $checked; ?> onclick="validate_service(this,<?php echo $servicio->cantmax_servicio ?>)" >
 				</div>
 				<div class="pull-right" style="border-style: groove;border-width: 3px;max-height: 100%;height: 100%;width:40%;max-width: 40%;vertical-align: middle;">
 					<?php if($servicio->cortesia_servicio==1){ ?>
@@ -44,7 +44,7 @@ $checked2="";
 						}else {
 							$checked2="";
 						} ?>		
-						<input type="checkbox" name="cortesia_<?php echo $servicio->id_servicio ?>" id="cortesia_<?php echo $servicio->id_servicio ?>" <?php echo $checked2 ?> onclick="cargar_check(this)" value="">				
+						<input type="checkbox" name="cortesia_<?php echo $servicio->id_servicio ?>" id="cortesia_<?php echo $servicio->id_servicio ?>" <?php echo $checked2 ?> onclick="validate_service(this,<?php echo $servicio->cantmax_servicio ?>)" value="">				
 					<?php } else{?>
 						<label class="copy" style="color:black">No Aplica </label>
 					<?php } ?>
