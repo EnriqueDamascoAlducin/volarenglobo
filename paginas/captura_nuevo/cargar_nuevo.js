@@ -1,4 +1,22 @@
 	$("input[id^='pasajeros']").attr("step",1);
+	var currentDate = new Date();
+
+	var dia = currentDate.getDate();
+	var mes = currentDate.getMonth(); //Be careful! January is 0 not 1
+	var year = currentDate.getFullYear();
+	dia++;
+	mes++;
+	if(dia < 10){
+		dia = "0"+dia;
+	}
+
+	if(mes < 10){
+		mes = "0"+mes;
+	}
+	var fecha = year + "-" + (mes) + "-" + (dia);
+	alert(fecha);
+	$("#fechavuelo").attr("min",fecha);
+	$("input[id^='check']").attr("min",fecha);
 	$("input[name='tdescuento']").on("click",function(){
 		if($(this).val()=="1"){
 			$("#cantdescuento1").attr("disabled","disabled");
