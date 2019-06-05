@@ -26,9 +26,7 @@
 	 		$actualizar=$cons->consultas("cantidad_sv=".$cantidad.", tipo_sv = ".$tipo,"servicios_vuelo_temp","id_sv=".$validar_servicio[0]->id,"update");
 	 	}else{
 	 		$ingresar=$cons->consultas("idtemp_sv,idservi_sv,tipo_sv,cantidad_sv","servicios_vuelo_temp",$reserva.",".$servicio.",".$tipo.",".$cantidad,"insert");
-	 	}
-	 		 	
-	 	
+	 	}	
 	 }
  	
 ?>

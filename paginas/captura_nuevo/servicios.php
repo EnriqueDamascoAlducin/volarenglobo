@@ -25,7 +25,7 @@ $checked2="";
 						<img src="<?php echo $servicio->img_servicio ?>" title="<?php echo $servicio->nombre_servicio.'('.$servicio->precio_servicio.')' ?>" alt="<?php echo $servicio->nombre_servicio ?>" style="margin:0;height: 70%;max-height: 70%;width: 90%;max-width: 90%;">		
 					</label>
 					
-					<?php if(isset($serviciosPago->cantidad_sv) && $serviciosPago[0]->cantidad_sv>0){ 
+					<?php if(isset($serviciosPago[0]->cantidad_sv) && $serviciosPago[0]->cantidad_sv>0){ 
 						$checked="checked";
 					}else {
 						$checked="";

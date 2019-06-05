@@ -40,17 +40,17 @@
 		campo=check.id;
 		id=campo.split("_");
 		servicio=id[1];
-			if (defa==0) {
-				pasajerosa = $("#pasajerosa").val();
-				pasajerosn = $("#pasajerosn").val();
-				if(pasajerosa==""){
-					pasajerosa=0;
-				}
-				if(pasajerosn==""){
-					pasajerosn=0;
-				}
-				defa=parseInt(pasajerosa)+parseInt(pasajerosn);
+		if (defa==0) {
+			pasajerosa = $("#pasajerosa").val();
+			pasajerosn = $("#pasajerosn").val();
+			if(pasajerosa==""){
+				pasajerosa=0;
 			}
+			if(pasajerosn==""){
+				pasajerosn=0;
+			}
+			defa=(pasajerosa)+(pasajerosn);
+		}
 		if(id[0]=="precio"){
 			$("#cortesia_"+id[1]).prop("checked",false);
 			value=defa;
