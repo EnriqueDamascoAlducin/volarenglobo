@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 05-06-2019 a las 06:00:47
+-- Tiempo de generación: 06-06-2019 a las 06:38:05
 -- Versión del servidor: 10.1.38-MariaDB
 -- Versión de PHP: 7.3.3
 
@@ -80,7 +80,11 @@ CREATE TABLE `bitpagos_volar` (
 INSERT INTO `bitpagos_volar` (`id_bp`, `idres_bp`, `idreg_bp`, `metodo_bp`, `banco_bp`, `referencia_bp`, `cantidad_bp`, `fecha_bp`, `idconc_bp`, `fechaconc_bp`, `register`, `status`) VALUES
 (1, 31, 9, 57, 64, '123', '2000.00', '2019-05-20', 8, '2019-05-21 17:02:36', '2019-05-21 16:58:39', 3),
 (2, 29, 1, 55, 64, '3', '3.00', '1997-12-12', 1, '2019-05-26 18:14:02', '2019-05-26 18:13:50', 3),
-(3, 29, 1, 56, 64, '12', '11.00', '2019-05-09', NULL, NULL, '2019-05-26 20:31:25', 3);
+(3, 29, 1, 56, 64, '12', '11.00', '2019-05-09', NULL, NULL, '2019-05-26 20:31:25', 3),
+(4, 37, 1, 56, 64, 'JAJAJALV', '2000.00', '2019-06-04', 1, '2019-06-05 19:11:46', '2019-06-05 19:10:40', 3),
+(5, 37, 1, 57, 64, 'JAJAJAAHORAALV', '200.00', '2019-06-21', 1, '2019-06-05 19:13:40', '2019-06-05 19:13:10', 3),
+(6, 37, 1, 57, 64, 'lala', '300.00', '1122-12-12', 1, '2019-06-05 19:16:29', '2019-06-05 19:16:15', 3),
+(7, 37, 1, 55, 64, 'oop', '500.00', '2019-01-09', 1, '2019-06-05 19:17:42', '2019-06-05 19:17:30', 3);
 
 -- --------------------------------------------------------
 
@@ -274,9 +278,12 @@ CREATE TABLE `habitaciones_volar` (
 --
 
 INSERT INTO `habitaciones_volar` (`id_habitacion`, `nombre_habitacion`, `idhotel_habitacion`, `precio_habitacion`, `capacidad_habitacion`, `descripcion_habitacion`, `register`, `status`) VALUES
-(1, 'Sencilla', 1, '500.00', NULL, 'Habitación Sencilla para 1 persona', '0000-00-00 00:00:00', 0),
-(3, 'Doble', 1, '500.00', 6, 'Habitación Sencilla', '2019-05-12 18:20:32', 1),
-(4, 'Sencilla', 1, '500.00', 1, 'Habitación Sencilla', '2019-06-03 22:59:58', 1);
+(5, 'Sencilla', 1, '950.00', 1, 'Habitación Sencilla', '2019-06-05 23:09:16', 1),
+(6, 'Doble', 1, '1300.00', 2, 'Habitación Doble', '2019-06-05 23:09:46', 1),
+(7, 'Triple', 1, '1450.00', 3, 'Habitación Triple', '2019-06-05 23:11:06', 1),
+(8, 'Cuádruple', 1, '1650.00', 4, 'Habitación Cuádruple', '2019-06-05 23:12:35', 1),
+(9, 'Suite', 1, '1850.00', 5, 'Habitación Suite', '2019-06-05 23:15:16', 1),
+(10, 'Doble', 6, '650.00', 2, 'Habitación Doble', '2019-06-05 23:20:14', 1);
 
 -- --------------------------------------------------------
 
@@ -309,9 +316,8 @@ CREATE TABLE `hoteles_volar` (
 
 INSERT INTO `hoteles_volar` (`id_hotel`, `nombre_hotel`, `calle_hotel`, `noint_hotel`, `noext_hotel`, `colonia_hotel`, `municipio_hotel`, `estado_hotel`, `cp_hotel`, `telefono_hotel`, `telefono2_hotel`, `correo_hotel`, `img_hotel`, `pagina_hotel`, `register`, `status`) VALUES
 (1, 'Quinto Sol', 'Ninguna', '24', NULL, 'Teotihuacan', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2019-05-12 18:12:51', 1),
-(2, 'Otro', 'p', NULL, NULL, 'a', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2019-05-17 16:14:56', 0),
-(3, 'a', 's', NULL, NULL, 'd', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2019-05-17 16:15:06', 0),
-(4, 'o', 'Z', NULL, NULL, 'FD', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2019-06-03 23:02:01', 1);
+(5, 'Villas Arqueólogicas', 'A', NULL, NULL, 'V', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2019-06-05 19:41:39', 1),
+(6, 'Posada Jade', 'Calle Cuernavaca', '1', NULL, 'San Sebastián Xolalpa', 'Teotihuacan', 17, NULL, '59-4101-6112', NULL, NULL, NULL, NULL, '2019-06-05 23:19:56', 1);
 
 -- --------------------------------------------------------
 
@@ -358,11 +364,11 @@ INSERT INTO `permisosusuarios_volar` (`id_puv`, `idusu_puv`, `idsp_puv`, `regist
 (40, 1, 2, '2019-04-10 20:44:52', 1),
 (41, 1, 7, '2019-04-10 21:05:58', 1),
 (42, 1, 8, '2019-04-10 21:26:30', 1),
-(43, 1, 9, '2019-04-10 21:26:32', 0),
+(43, 1, 9, '2019-04-10 21:26:32', 1),
 (44, 1, 11, '2019-04-10 22:32:03', 1),
 (45, 1, 12, '2019-04-11 11:03:16', 1),
 (46, 1, 13, '2019-04-11 11:41:39', 1),
-(47, 1, 26, '2019-04-11 14:37:28', 0),
+(47, 1, 26, '2019-04-11 14:37:28', 1),
 (48, 1, 10, '2019-04-14 10:32:03', 1),
 (49, 1, 28, '2019-04-14 15:06:41', 1),
 (50, 1, 27, '2019-04-15 11:34:03', 1),
@@ -382,7 +388,7 @@ INSERT INTO `permisosusuarios_volar` (`id_puv`, `idusu_puv`, `idsp_puv`, `regist
 (64, 1, 33, '2019-05-12 14:37:42', 1),
 (65, 1, 34, '2019-05-12 15:07:31', 1),
 (66, 1, 35, '2019-05-12 15:07:32', 1),
-(67, 1, 36, '2019-05-12 15:26:05', 1),
+(67, 1, 36, '2019-05-12 15:26:05', 0),
 (68, 1, 37, '2019-05-12 18:13:26', 1),
 (69, 1, 38, '2019-05-12 18:14:24', 1),
 (70, 1, 39, '2019-05-12 18:14:25', 1),
@@ -414,7 +420,9 @@ INSERT INTO `permisosusuarios_volar` (`id_puv`, `idusu_puv`, `idsp_puv`, `regist
 (96, 9, 41, '2019-05-21 17:10:02', 1),
 (97, 9, 42, '2019-05-21 17:10:03', 1),
 (98, 1, 45, '2019-06-02 14:21:54', 1),
-(99, 1, 46, '2019-06-02 14:21:56', 1);
+(99, 1, 46, '2019-06-02 14:21:56', 1),
+(100, 1, 25, '2019-06-05 19:28:10', 1),
+(101, 1, 29, '2019-06-05 19:29:05', 1);
 
 -- --------------------------------------------------------
 
@@ -615,8 +623,8 @@ CREATE TABLE `servicios_volar` (
 --
 
 INSERT INTO `servicios_volar` (`id_servicio`, `nombre_servicio`, `precio_servicio`, `img_servicio`, `cortesia_servicio`, `cantmax_servicio`, `register`, `status`) VALUES
-(1, 'Flores', '200.00', '../img/flores.png', 1, 1, '2019-03-31 20:21:40', 1),
-(2, 'Vino', '1350.00', '../img/vino.png', 1, 1, '2019-03-31 20:22:30', 1),
+(1, 'Rosas', '200.00', '../img/flores.png', 1, 1, '2019-03-31 20:21:40', 1),
+(2, 'Champagne', '1350.00', '../img/vino.png', 1, 1, '2019-03-31 20:22:30', 1),
 (3, 'Lona Personalizada', '600.00', '../img/lona_personalizada.png', 1, 1, '2019-03-31 20:25:04', 1),
 (4, 'Trio', '2000.00', '../img/trio.jpg', 1, 1, '2019-03-31 20:29:58', 1),
 (5, 'Desayuno', '140.00', '../img/desayuno.png', 1, 0, '2019-03-31 20:31:16', 1),
@@ -624,12 +632,12 @@ INSERT INTO `servicios_volar` (`id_servicio`, `nombre_servicio`, `precio_servici
 (7, 'Fotos', '500.00', '../img/foto.jpg', 1, 0, '2019-03-31 21:33:58', 1),
 (8, 'Video', '500.00', '../img/video.png', 1, 1, '2019-03-31 21:35:45', 1),
 (9, 'Teotihuacan en Bici', '500.00', '../img/bici.png', 1, 0, '2019-03-31 21:36:20', 1),
-(10, 'spa', '1500.00', '../img/spa.png', 1, 0, '2019-03-31 21:37:07', 1),
+(10, 'Spa', '1500.00', '../img/spa.png', 1, 0, '2019-03-31 21:37:07', 1),
 (11, 'Temazcal', '600.00', '../img/temazcal.jpg', 1, 0, '2019-03-31 21:37:26', 1),
 (12, 'Cuatrimotos', '800.00', '../img/cuatrimotos.png', 1, 0, '2019-03-31 21:37:42', 1),
 (13, 'Entremes', '400.00', '../img/entremes.jpeg', 1, 0, '2019-03-31 21:38:01', 1),
 (14, 'Transporte Redondo', '500.00', '../img/vredondo.jpg', 1, 0, '2019-03-31 21:38:32', 1),
-(15, 'Viaje Sencillo', '300.00', '../img/vsencillo.png', 1, 0, '2019-03-31 21:39:28', 1),
+(15, 'Transporte Sencillo', '300.00', '../img/vsencillo.png', 1, 0, '2019-03-31 21:39:28', 1),
 (16, 'Foto Impresa', '200.00', '../img/fimpresa.png', 1, 1, '2019-03-31 21:39:50', 1),
 (17, 'Guia de 1 a 4', '900.00', '../img/3pers.png', 1, 1, '2019-03-31 21:40:15', 1),
 (18, 'Guia de 5 a 10', '1500.00', '../img/5pers.jpg', 1, 1, '2019-03-31 21:40:35', 1),
@@ -664,7 +672,19 @@ INSERT INTO `servicios_vuelo_temp` (`id_sv`, `idtemp_sv`, `idservi_sv`, `tipo_sv
 (395, 29, 1, 2, 0, '2019-06-04 20:17:03', 2),
 (397, 29, 2, 1, 1, '2019-06-04 20:42:16', 2),
 (398, 29, 4, 1, 1, '2019-06-04 20:42:33', 2),
-(399, 29, 5, 1, 0, '2019-06-04 20:42:35', 2);
+(399, 29, 5, 1, 144, '2019-06-04 20:42:35', 2),
+(400, 29, 12, 2, 144, '2019-06-04 23:07:11', 2),
+(401, 29, 8, 1, 1, '2019-06-04 23:07:13', 2),
+(402, 29, 3, 1, 1, '2019-06-04 23:08:40', 2),
+(403, 29, 17, 1, 1, '2019-06-04 23:10:21', 2),
+(404, 29, 6, 2, 1, '2019-06-04 23:11:47', 2),
+(405, 29, 18, 2, 1, '2019-06-04 23:11:50', 2),
+(406, 37, 1, 1, 1, '2019-06-05 19:07:21', 2),
+(407, 37, 8, 1, 1, '2019-06-05 19:07:21', 2),
+(408, 37, 16, 2, 1, '2019-06-05 19:07:23', 2),
+(409, 38, 1, 1, 1, '2019-06-05 23:23:06', 2),
+(410, 38, 2, 1, 1, '2019-06-05 23:23:07', 2),
+(411, 38, 10, 1, 5, '2019-06-05 23:23:09', 2);
 
 -- --------------------------------------------------------
 
@@ -775,14 +795,16 @@ CREATE TABLE `temp_volar` (
 --
 
 INSERT INTO `temp_volar` (`id_temp`, `idusu_temp`, `clave_temp`, `nombre_temp`, `apellidos_temp`, `mail_temp`, `telfijo_temp`, `telcelular_temp`, `procedencia_temp`, `pasajerosa_temp`, `pasajerosn_temp`, `motivo_temp`, `tipo_temp`, `fechavuelo_temp`, `tarifa_temp`, `hotel_temp`, `habitacion_temp`, `checkin_temp`, `checkout_temp`, `comentario_temp`, `otroscar1_temp`, `precio1_temp`, `otroscar2_temp`, `precio2_temp`, `tdescuento_temp`, `cantdescuento_temp`, `total_temp`, `piloto_temp`, `kg_temp`, `globo_temp`, `register`, `status`) VALUES
-(29, 1, NULL, 'ENRIQUE', 'DAMASCO', 'enriquealducin@outlook.com', NULL, '5529227672', 5, 14, 4, 37, 2, '2019-05-09', 49, 1, 3, '2019-05-21', '2019-05-22', NULL, NULL, NULL, 'NINGUNO', '0.04', 2, '0.00', 21792.00, 0, '0.00', 0, '2019-05-12 15:31:35', 4),
+(29, 1, NULL, 'ENRIQUE', 'DAMASCO', 'enriquealducin@outlook.com', NULL, '5529227672', 5, 16, 4, 37, 2, '2019-05-09', 49, 1, 3, '2019-05-21', '2019-05-22', NULL, NULL, NULL, 'NINGUNO', '0.04', 2, '0.00', 21792.00, 0, '0.00', 0, '2019-05-12 15:31:35', 4),
 (30, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0.00', 0.00, 0, '0.00', 0, '2019-05-20 20:18:37', 0),
 (31, 9, NULL, 'JORGE', 'RAMIREZ', 'enriquealducin@outlook.com', '555555555', '55555555', NULL, 3, 1, 38, 4, '2019-05-23', 48, NULL, NULL, NULL, NULL, 'vuelo prueba', 'FOTO', '600.00', NULL, NULL, 2, '14000.00', 9197.00, 0, '0.00', 0, '2019-05-21 16:40:08', 4),
 (32, 9, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0.00', 0.00, 0, '0.00', 0, '2019-05-21 17:09:55', 2),
 (33, 9, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2, '0.00', 0.00, 0, '0.00', 0, '2019-05-21 17:19:22', 2),
-(34, 1, NULL, 'JUAN', 'FERNANDEZ', 'volarenglobo@yahoo.es', NULL, '5555023615', 19, 4, 1, 43, 4, '2019-06-12', 48, 1, 3, '2019-05-12', '2019-05-13', NULL, NULL, NULL, NULL, NULL, NULL, '0.00', 0.00, 0, '0.00', 0, '2019-05-29 16:44:35', 2),
-(35, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0.00', 0.00, 0, '0.00', 0, '2019-05-29 17:01:47', 2),
-(36, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0.00', 0.00, 0, '0.00', 0, '2019-05-29 17:30:17', 2);
+(34, 1, NULL, 'JUAN', 'FERNANDEZ', 'volarenglobo@yahoo.es', NULL, '5555023615', 19, 4, 1, 43, 4, '2019-06-12', 48, 1, 3, '2019-05-12', '2019-05-13', NULL, NULL, NULL, NULL, NULL, NULL, '0.00', 0.00, 0, '0.00', 0, '2019-05-29 16:44:35', 0),
+(35, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0.00', 0.00, 0, '0.00', 0, '2019-05-29 17:01:47', 0),
+(36, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0.00', 0.00, 0, '0.00', 0, '2019-05-29 17:30:17', 0),
+(37, 1, NULL, 'DANIEL', 'SANCHEZ', 'dsanchezsantillan@gmail.com', NULL, '5545196776', 17, 3, NULL, 36, 4, '2019-06-19', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0.00', 11200.00, 0, '0.00', 0, '2019-06-05 19:06:06', 0),
+(38, 1, NULL, 'ENRIQUE', 'DAMASCO ALDUCIN', 'enriquealducin@outlook.com', NULL, '5529227672', 17, 5, 0, 39, 1, '2019-06-07', NULL, 6, 10, '2019-06-06', '2019-06-07', NULL, NULL, NULL, NULL, NULL, NULL, '0.00', 0.00, 0, '0.00', 0, '2019-06-05 23:20:53', 2);
 
 -- --------------------------------------------------------
 
@@ -853,13 +875,14 @@ CREATE TABLE `vueloscat_volar` (
 --
 
 INSERT INTO `vueloscat_volar` (`id_vc`, `nombre_vc`, `tipo_vc`, `precioa_vc`, `precion_vc`, `register`, `status`) VALUES
-(1, 'Compartido básico', 47, '2299.00', '1700.00', '2019-04-05 11:03:46', 1),
-(2, 'Compartido Plus', 47, '2399.00', '1799.00', '2019-04-05 11:03:46', 1),
-(3, 'Cumpleañero', 47, '2399.00', '1799.00', '2019-04-05 11:04:31', 1),
-(4, 'Privado ', 46, '3500.00', '1700.00', '2019-04-05 11:28:14', 1),
-(5, 'Privado VIP', 46, '9000.00', '1700.00', '2019-04-05 11:28:53', 1),
+(1, 'Compartido Normal', 47, '2300.00', '1700.00', '2019-04-05 11:03:46', 1),
+(2, 'Compartido Promo 1', 47, '2100.00', '1600.00', '2019-04-05 11:03:46', 1),
+(3, 'Compartido Promo 2', 47, '1950.00', '1500.00', '2019-04-05 11:04:31', 1),
+(4, 'Privado Normal', 46, '3500.00', '1700.00', '2019-04-05 11:28:14', 1),
+(5, 'Privado Promo 1', 46, '3000.00', '1600.00', '2019-04-05 11:28:53', 1),
 (14, ' preuba', 47, '43.00', '22.00', '2019-04-09 12:52:38', 0),
-(15, ' prueba35', 47, '3.00', '2.00', '2019-04-09 12:56:06', 0);
+(15, ' prueba35', 47, '3.00', '2.00', '2019-04-09 12:56:06', 0),
+(16, ' Privado Promo 2', 46, '2750.00', '1500.00', '2019-06-05 23:06:53', 1);
 
 --
 -- Índices para tablas volcadas
@@ -1005,7 +1028,7 @@ ALTER TABLE `bitacora_actualizaciones_volar`
 -- AUTO_INCREMENT de la tabla `bitpagos_volar`
 --
 ALTER TABLE `bitpagos_volar`
-  MODIFY `id_bp` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Llave Primaria', AUTO_INCREMENT=4;
+  MODIFY `id_bp` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Llave Primaria', AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT de la tabla `cat_servicios_volar`
@@ -1035,13 +1058,13 @@ ALTER TABLE `globos_volar`
 -- AUTO_INCREMENT de la tabla `habitaciones_volar`
 --
 ALTER TABLE `habitaciones_volar`
-  MODIFY `id_habitacion` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Llave Primaria', AUTO_INCREMENT=5;
+  MODIFY `id_habitacion` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Llave Primaria', AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT de la tabla `hoteles_volar`
 --
 ALTER TABLE `hoteles_volar`
-  MODIFY `id_hotel` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Llave Primaria', AUTO_INCREMENT=5;
+  MODIFY `id_hotel` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Llave Primaria', AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de la tabla `imghoteles_volar`
@@ -1053,7 +1076,7 @@ ALTER TABLE `imghoteles_volar`
 -- AUTO_INCREMENT de la tabla `permisosusuarios_volar`
 --
 ALTER TABLE `permisosusuarios_volar`
-  MODIFY `id_puv` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Llave Primaria', AUTO_INCREMENT=100;
+  MODIFY `id_puv` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Llave Primaria', AUTO_INCREMENT=102;
 
 --
 -- AUTO_INCREMENT de la tabla `permisos_volar`
@@ -1089,7 +1112,7 @@ ALTER TABLE `servicios_volar`
 -- AUTO_INCREMENT de la tabla `servicios_vuelo_temp`
 --
 ALTER TABLE `servicios_vuelo_temp`
-  MODIFY `id_sv` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Llave Primaria', AUTO_INCREMENT=400;
+  MODIFY `id_sv` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Llave Primaria', AUTO_INCREMENT=412;
 
 --
 -- AUTO_INCREMENT de la tabla `subpermisos_volar`
@@ -1101,7 +1124,7 @@ ALTER TABLE `subpermisos_volar`
 -- AUTO_INCREMENT de la tabla `temp_volar`
 --
 ALTER TABLE `temp_volar`
-  MODIFY `id_temp` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Llave Primaria', AUTO_INCREMENT=37;
+  MODIFY `id_temp` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Llave Primaria', AUTO_INCREMENT=39;
 
 --
 -- AUTO_INCREMENT de la tabla `volar_usuarios`
@@ -1113,7 +1136,7 @@ ALTER TABLE `volar_usuarios`
 -- AUTO_INCREMENT de la tabla `vueloscat_volar`
 --
 ALTER TABLE `vueloscat_volar`
-  MODIFY `id_vc` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Llave Primaria', AUTO_INCREMENT=16;
+  MODIFY `id_vc` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Llave Primaria', AUTO_INCREMENT=17;
 
 --
 -- Restricciones para tablas volcadas

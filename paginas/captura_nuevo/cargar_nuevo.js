@@ -66,7 +66,7 @@
 			if(pasajerosn==""){
 				pasajerosn=0;
 			}
-			defa=(pasajerosa)+(pasajerosn);
+			defa=parseInt(pasajerosa)+parseInt(pasajerosn);
 		}
 		if(id[0]=="precio"){
 			$("#cortesia_"+id[1]).prop("checked",false);
