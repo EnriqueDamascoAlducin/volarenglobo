@@ -32,13 +32,14 @@
             ?>
       	  <div class=" col-sm-3 col-lg-3 col-md-3">
             <div class="form-group">
-              <label for="check<?php echo $subpermiso->id_sp; ?>"><span id="spancheck<?php echo $subpermiso->id_sp; ?>" style="color:<?php echo $color; ?>" class="glyphicon glyphicon-check" style="font-size: 150%"></span> <?php echo $subpermiso->nombre_sp; ?></label>
-              <input type="checkbox" <?php echo $check; ?> class="form-control" style="display: none;" name="check<?php echo $subpermiso->id_sp; ?>" onclick='agregar_permisos(this.id)' id="check<?php echo $subpermiso->id_sp; ?>" value="<?php echo $subpermiso->id_sp; ?>">
+              <label for="check<?php echo $subpermiso->id_sp; ?>"><span id="spancheck_<?php echo $subpermiso->id_sp; ?>" style="color:<?php echo $color; ?>" class="glyphicon glyphicon-check" style="font-size: 150%"></span> <?php echo $subpermiso->nombre_sp; ?></label>
+              <input type="checkbox" <?php echo $check; ?> class="form-control" style="display: none;" name="check<?php echo $subpermiso->id_sp; ?>" onclick='agregar_permisos(this.id)' id="check_<?php echo $subpermiso->id_sp; ?>" value="<?php echo $subpermiso->id_sp; ?>">
             </div> 
           </div>
           <?php } ?>
       	</form>
       </div>
+      <table></table>
       <div class="modal-footer">
       		
         <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
@@ -54,12 +55,16 @@
       }else{
         $("#span"+id).css("color","#ff4444");
       }
-      upd_permisos();
+      permiso=id.split("_");
+      upd_permisos(permiso[1]);
+      alert("sa");
     }
   </script>
   <script type="text/javascript">
-  function upd_permisos(){
-    param=$("#formularioext").serialize();
+  function upd_permisos(permiso){
+    modulo = $("#modulo").val();
+    usuario = $("#usuario").val();
+    param={permiso:permiso,modulo:modulo,usuario:usuario};
     
     url="usuarios_volar/registro1.php";
     $.ajax({                        
@@ -67,10 +72,14 @@
            url: url,                     
            data: param, 
            success: function(data)             
-           {
+           {  
+            alert(data);
             if(data.includes("Actualizado")){
-              alert("Permisos Actualizados");              
+              abrir_alert("info","Permisos Actualizados");              
             }
+           },
+           error:function(){
+            alert(2);
            }
        });
     setTimeout(function(){

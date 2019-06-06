@@ -173,15 +173,26 @@ $permisos=$cons->consultas($campos,$tablas,$filtro,"");
 			});
 			cargar_pagina(modulo,idpag);
 		}
-		function abrir_modal(titulo,id,url){
-			$("#modal-confirmacion").load("modales/"+url,{id:id,titulo:titulo},function(response, status, xhr){
-				if ( xhr.status == 404 ) {
-				    $( "#cuerpo_modal" ).html("<img src='../img/404.jpg' style='margin-left:20%;margin-rigth:20%;width:60%'>");
-				}
-			setTimeout(function() {
-		      tables();
-		    },200);
-			});
+		function abrir_modal(titulo,id,url,idsub=0){
+			if(idsub==0){
+				$("#modal-confirmacion").load("modales/"+url,{id:id,titulo:titulo},function(response, status, xhr){
+					if ( xhr.status == 404 ) {
+					    $( "#cuerpo_modal" ).html("<img src='../img/404.jpg' style='margin-left:20%;margin-rigth:20%;width:60%'>");
+					}
+					setTimeout(function() {
+				      tables();
+				    },200);	
+				});
+			}else{
+				$("#modal-confirmacion").load("modales/"+url,{id:id,titulo:titulo,idsub:idsub},function(response, status, xhr){
+					if ( xhr.status == 404 ) {
+					    $( "#cuerpo_modal" ).html("<img src='../img/404.jpg' style='margin-left:20%;margin-rigth:20%;width:60%'>");
+					}
+					setTimeout(function() {
+				      tables();
+				    },200);	
+				});
+			}
 		}
 		function ocultar(id,tipo){
 			if(tipo==0){

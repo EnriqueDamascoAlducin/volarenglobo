@@ -3,7 +3,7 @@
 	$titulo=$_POST['titulo'];
 	include_once "../../css/log/c/conexion.php";
   
-include "../../crud/fin_session.php";
+  include "../../crud/fin_session.php";
 	$servicios=$cons->consultas("nombre_cat,id_cat","cat_servicios_volar"," status=1 and id_cat not in(select idcat_rel from rel_catvuelos_volar where status=1 and idvc_rel=".$id.")","");
   $serviciossi=$cons->consultas("nombre_cat,id_cat","cat_servicios_volar csv,rel_catvuelos_volar rcv "," csv.status=1 and rcv.status=1 and rcv.idcat_rel=csv.id_cat and idvc_rel=".$id." order by rcv.register asc","");
 ?>

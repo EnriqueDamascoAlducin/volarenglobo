@@ -6,9 +6,8 @@
 	if(isset($permiso[1])){
 		$titulo=$permiso[0];
 	}
-	if(!isset($_SESSION['id'])){
-		session_start();
-	}
+	
+	include "../../crud/fin_session.php";
 	if($id!=""){
 		include_once "../../css/log/c/conexion.php";
 		$principales=$cons->consultas("*","temp_volar","status<>0 and id_temp=".$id,"");
@@ -29,7 +28,6 @@
 		$servicios=$cons->consultas("nombre_cat as nombre","cat_servicios_volar csv,rel_catvuelos_volar rcv"," csv.status<>0 and rcv.status<>0 and id_cat=idcat_rel and idvc_rel=".$principales[0]->tipo_temp,"");
 	}
 
-include "../../crud/fin_session.php";
 ?>
 <style type="text/css">
 	.tdtitulo{

@@ -16,7 +16,7 @@ $campos=$cons->consultas("show full columns",$_SESSION['tabla'],"","");
 		<div  class="col-sm-<?php echo $tamano; ?> col-md-<?php echo $tamano; ?> col-lg-<?php echo $tamano; ?> col-xs-6" id="div_<?php echo $campo; ?>">
 			<div class="form-group">
 				<label for="<?php echo $campo ?>" <?php echo $color; ?> > <?php echo utf8_encode($comentario); ?></label>
-				<input autocomplete="false" type="text"  name="<?php echo $campo ?>" placeholder="<?php echo utf8_encode($comentario) ?>" class="form-control" id="<?php echo $campo; ?>" value="<?php if($datos!='' && $datos[0]->$campo2!=''){ echo($datos[0]->$campo2);}else{ echo '';} ?>"<?php echo $req; ?> />
+				<input autocomplete="false" type="text"  name="<?php echo $campo ?>" placeholder="<?php echo utf8_encode($comentario) ?>" class="form-control" id="<?php echo $campo; ?>" value="<?php if($datos!='' && $datos[0]->$campo2!=''){ echo utf8_encode($datos[0]->$campo2);}else{ echo '';} ?>"<?php echo $req; ?> />
 			</div>
 		</div>
 	<?php } else if($tipo==2) { ?>
@@ -61,7 +61,7 @@ $campos=$cons->consultas("show full columns",$_SESSION['tabla'],"","");
 								$attr="selected";
 							}
 						?>
-						<option value='<?php echo $data->value; ?>' <?php echo $attr; ?>><?php echo $data->text; ?></option>
+						<option value='<?php echo $data->value; ?>' <?php echo $attr; ?>><?php echo utf8_encode( $data->text); ?></option>
 					<?php } ?>
 				</select>
 			</div>
@@ -70,7 +70,7 @@ $campos=$cons->consultas("show full columns",$_SESSION['tabla'],"","");
 	<div class="col-sm-<?php echo $tamano; ?> col-md-<?php echo $tamano; ?> col-lg-<?php echo $tamano; ?> col-xs-12" id="div_<?php echo $campo; ?>">
 			<div class="form-group">
 				<label for="<?php echo $campo ?>" <?php echo $color; ?>><?php echo utf8_encode($comentario); ?></label>
-				<textarea   name="<?php echo $campo ?>" placeholder="<?php echo utf8_encode($comentario) ?>" class="form-control" id="<?php echo $campo; ?>" <?php echo $req; ?> ><?php if($datos!='' && $datos[0]->$campo2!=''){ echo($datos[0]->$campo2);}else{ echo '';} ?></textarea>
+				<textarea   name="<?php echo $campo ?>" placeholder="<?php echo utf8_encode($comentario) ?>" class="form-control" id="<?php echo $campo; ?>" <?php echo $req; ?> ><?php if($datos!='' && $datos[0]->$campo2!=''){ echo utf8_encode($datos[0]->$campo2);}else{ echo '';} ?></textarea>
 			</div>
 		</div>
 	

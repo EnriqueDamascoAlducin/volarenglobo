@@ -1,7 +1,5 @@
 <?php
-  if(!isset($_SESSION['id'])){
-    session_start();  
-  }
+  
 	$id=$_POST['id'];
 	$titulo=explode("|",$_POST['titulo']);
   $opcion=$titulo[1];

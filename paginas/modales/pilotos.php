@@ -1,11 +1,9 @@
 
 <?php
 	include_once "../../css/log/c/conexion.php";
-	if(!isset($_SESSION['id'])){
-    session_start();  
-  }
-  $_SESSION['extraquery']="../paginas/captura_nuevo/queries/asignacion_vuelo.php";
   include "../../crud/fin_session.php";
+	
+  $_SESSION['extraquery']="../paginas/captura_nuevo/queries/asignacion_vuelo.php";
 	$_SESSION['tabla']="temp_volar";
 	$id=$_POST['id'];
 	$titulo=$_POST['titulo'];

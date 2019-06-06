@@ -6,9 +6,7 @@
 	$habitaciones=['habitacion_temp'];
 	include_once "../../css/log/c/conexion.php";
 	include "../../crud/fin_session.php";
-	if(!isset($_SESSION['id'])){
-		session_start();	
-	}
+	
 	$_SESSION['tabla']="bitacora_actualizaciones_volar";
 	
 	$id=$_POST['id'];
