@@ -14,7 +14,6 @@
 		mes = "0"+mes;
 	}
 	var fecha = year + "-" + (mes) + "-" + (dia);
-	alert(fecha);
 	$("#fechavuelo").attr("min",fecha);
 	$("input[id^='check']").attr("min",fecha);
 	$("input[name='tdescuento']").on("click",function(){

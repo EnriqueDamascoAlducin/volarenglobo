@@ -66,17 +66,17 @@ function get_salerinfo($id,$cons){
 			color:white;
 			text-align:center;
 		}
-		#direccionvga{
+		.direccionvga{
 				background:#aa66cc;
 				width:100%;
 				height:35px;
 				color:white;
 
 			}
-			#direccionvga:hover{
-				background:#9933CC;
+		.direccionvga:hover{
+			background:#9933CC;
 
-			}
+		}
 			
 		</style>";
 		$cuerpo .= '<img src="http://volarenglobo.com.mx/admin/imgs/bannersito.png" style="width:100%; 100%;" alt="Confirmación de Vuelo">';
@@ -165,8 +165,11 @@ function get_salerinfo($id,$cons){
 				$cuerpo .= ' </tr>';
 				$cuerpo .= ' <tr>';
 					$cuerpo .= '<td class="tdtitulo">Por Pagar</td>';
-					$cuerpo .= '<td > '.$vendedor[0].'</td>';
-				$cuerpo .= ' </tr>';$cuerpo.='<td colspan="2">Los esperamos el día <b>'.$fecha.'</b> partir de las <b>'.$datos[0]->hora.'</b> horas en nuestra recepción, sin embargo esta hora sera <b><i>CONFIRMADA UN DIA ANTES</i></b> de acuerdo a la logística de operación del día o a las condiciones meteorológicas, te pido estés al tanto ya que recibirás una llamada para confirmar horario.</td>';
+					$cuerpo .= '<td > '. ($pasajeros[0]->total - $pasajeros[0]->sumaactual).'</td>';
+					if($datos[0]->hora!=""){
+						$datos[0]->hora= " a partir de las <b>". $datos[0]->hora. "</b> horas";
+					}
+				$cuerpo .= ' </tr>';$cuerpo.='<td colspan="2">Los esperamos el día <b>'.$pasajeros[0]->fechavuelo.'</b> '. $datos[0]->hora.' en nuestra recepción, sin embargo esta hora sera <b><i>CONFIRMADA UN DIA ANTES</i></b> de acuerdo a la logística de operación del día o a las condiciones meteorológicas, te pido estés al tanto ya que recibirás una llamada para confirmar horario.</td>';
 	$cuerpo.='</tr>';
 	$cuerpo.='<tr>';
 		$cuerpo.='<td colspan="2" class="tdseparador">PUNTO DE REUNION:</td>';
@@ -217,8 +220,8 @@ function get_salerinfo($id,$cons){
 		$cuerpo.='<td colspan="2">';
 			$cuerpo.='Tomar insurgentes hacia Pachuca numero de autopistá 132-D en cuanto llegues a las casetas tomar las del lado derecho mas con dirección a pirámides - Tulancingo, ( extremo derecho ), ahí pagaras una caseta de $75.00, INMEDIATAMENTE PEGARTE A LADO DERECHO Y SEGUIR LOS SEÑALAMIENTOS HACIA PIRAMIDES seguir sobre la autopista en el Km. 17 y pasandoÂ  la gasolinera tomar la desviación hacia pirámidesÂ y continuar hasta la desviación a Tulancingo continuas sobre esta carretera donde a tu mano izquierda vas a encontrar una Estación de Policía Federal, un poco más adelante encontraras una salida a mano izquierda antes del puente, debes girar a la izquierda nuevamente y allí encontraras nuestra recepción.
 				<hr>
-				<a href="https://www.google.com.mx/maps/place/VOLAR+EN+GLOBO/@19.694916,-98.823688,19z/data=!3m1!4b1!4m2!3m1!1s0x0000000000000000:0xff4f4587c24e2324">
-				<button type="button" id="direccionvga">Ver Dirección</button></a>
+				<a href="https://www.google.com/maps/place//data=!4m2!3m1!1s0x85d1c03008c08e6d:0x2cd1a4cc8c3f3d5c?utm_source=mstt_1&utm_medium=mstt_2">
+				<button type="button" id="direccionvga" class="direccionvga">Ver Dirección</button></a>
 				<hr>
 				Sin más por el momento quedo a sus órdenes para cualquier duda o aclaración respecto al servicio contratado.';
 		$cuerpo.='</td>';

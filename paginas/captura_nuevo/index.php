@@ -153,7 +153,15 @@ $reservas=$cons->consultas("id_temp,CONCAT(ifnull(nombre_temp,''),' ',ifnull(ape
 								<span class="glyphicon glyphicon-edit" onclick='editar_reserva(<?php echo $reserva->id_temp ?>,1)' title='Editar'  style='color:#33b5e5;font-size:100%' style="margin-right: 2px"></span>
 							<?php } ?>
 							<?php if(($permiso->nombre=="ELIMINAR" && $reserva->idusu_temp==$_SESSION['id']) || $permiso->nombre=="ELIMINAR GRL" ){ ?>
-								<span class="glyphicon glyphicon-trash " onclick='editar_reserva(<?php echo $reserva->id_temp ?>,0)' title='Eliminar'  style='color:#ff4444;font-size:100%' ></span>
+								<span id='trash_<?php echo $reserva->id_temp ?>' class='glyphicon glyphicon-trash' style='color:red' onclick='confirmar_icon(this.id,1)' >
+                  				</span>
+                  				<div  style='display:none'>
+                      				<span class='glyphicon glyphicon-ok-circle' data-dismiss='modal'  style='color:#00C851;font-size:16px' onclick="actualizar_status(0,<?php echo $reserva->id_temp ?>,'<?php echo $_SESSION["modulo"]?>',<?php echo $_SESSION['idpagina'] ?>)"></span>
+                    				<span class='glyphicon glyphicon-remove-circle' style='color:#ffbb33;font-size:16px' id='opc_<?php echo $reserva->id_temp ?>' onclick='confirmar_icon(this.id,0)'></span>
+                  				</div>
+
+
+
 							<?php } ?>
 							<?php if(($permiso->nombre=="VER" && $reserva->idusu_temp==$_SESSION['id']) || $permiso->nombre=="VER GRAL" ){ ?>
 								<span class="glyphicon glyphicon-eye-open" onclick='editar_reserva(<?php echo $reserva->id_temp ?>,2)' title='Ver'  style='color:blue;font-size:100%'></span>
@@ -194,9 +202,8 @@ $reservas=$cons->consultas("id_temp,CONCAT(ifnull(nombre_temp,''),' ',ifnull(ape
 				guardar_datos_temp("status",0,id);
 			}
 		}else if(tipo==1){
-			if(confirm("Editar el vuelo #"+id)){
 				$("#contenido").load("captura_nuevo/nuevo.php",{id:id});
-			} 
+			
 		}else if(tipo==2){
 				$("#contenido").load("captura_nuevo/nuevo.php",{id:id,tipo:0});
 		}

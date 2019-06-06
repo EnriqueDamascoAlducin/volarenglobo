@@ -1,7 +1,7 @@
 <?php 
 $usuarios=$cons->consultas("DISTINCT( CONCAT(nombre_usu,' ',apellidop_usu,' ',apellidom_usu) )as usuario ,id_usu","volar_usuarios","status<>0 order by nombre_usu asc, apellidop_usu asc",""); 
 
-$filhotel=$cons->consultas('id_hotel,nombre_hotel',"hoteles_volar","status<>0 ","");
+$servicios=$cons->consultas('id_servicio as id,nombre_servicio as nombre',$_SESSION['tabla'],"status<>0 ","");
 
 
  ?>
@@ -20,11 +20,11 @@ $filhotel=$cons->consultas('id_hotel,nombre_hotel',"hoteles_volar","status<>0 ",
 </div>
 <div class="col-sm-3 col-md-3 col-lg-3 col-xs-6">
 	<div class="form-group">
-		<label for="hotel">Hoteles</label>
-		<select class="selectpicker form-control" id="hotel" name="hotel" data-live-search="true">
+		<label for="servicio">Servicios</label>
+		<select class="selectpicker form-control" id="servicio" name="servicio" data-live-search="true">
 			<option value='0'>Todos...</option>
-			<?php foreach ($filhotel as $hotele) { ?>
-				<option value="<?php echo $hotele->id_hotel ?>"><?php echo $hotele->nombre_hotel; ?></option>
+			<?php foreach ($servicios as $servicio) { ?>
+				<option value="<?php echo $servicio->id ?>"><?php echo $servicio->nombre; ?></option>
 			<?php } ?>
 		</select>
 	</div>

@@ -23,7 +23,7 @@
 			$filtro.=" and register<'".$_POST['fechaf']." 23:59:59'";
 		}
 		if(isset($_POST['servicio'])  && $_POST['servicio']!="0"){
-			$filtro.=" and id_servicio=".$_POST['hotel'];
+			$filtro.=" and id_servicio=".$_POST['servicio'];
 		}
 	}
 
