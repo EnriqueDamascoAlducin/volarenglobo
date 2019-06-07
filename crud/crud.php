@@ -1,7 +1,5 @@
 <?php
-	if(!isset($_SESSION['id'])){
-    	session_start();	
-    }
+	
     include_once '../crud/fin_session.php';
 	include_once"../css/log/c/conexion.php";
 	$tabla=$_SESSION['tabla'];

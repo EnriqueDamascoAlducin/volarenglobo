@@ -43,8 +43,8 @@
 
             <div class="col-sm-3 col-md-3 col-lg-3 col-xs-6" id="div_confirmarcontra">
                 <div class="form-group">
-                  <label for="confirmar_contrasena" >Cambio de Contraseña</label>
-                  <input type="password" autocomplete="false" title="Cambio de Contraseña" required class="form-control" id="confirmar_contrasena" value="">
+                  <label for="confirmar_contrasena" >Confirmar Contraseña</label>
+                  <input type="password" autocomplete="false" title="Confirmar Contraseña" required class="form-control" id="confirmar_contrasena" placeholder="Confirmar Contraseña" >
                 </div>
             </div>
 
@@ -52,7 +52,7 @@
       		
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary"  id="asignarcontras" onclick="save_extra(<?php echo "'".$_SESSION['modulo']."login.php'".",".$_SESSION['idpagina']; ?>,<?php echo "'".$_POST['titulo']."',".$id.",'pilotos.php'"; ?>)" disabled >Asignar</button>
+        <button type="button" class="btn btn-primary"  id="asignarcontras" onclick="save_extra(<?php echo "'".$_SESSION['modulo']."login.php'".",".$_SESSION['idpagina']; ?>,<?php echo "'".$_POST['titulo']."',".$id.",'cambiocontra.php'"; ?>)" disabled >Asignar</button>
         <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
       </div>
     </div>
