@@ -174,26 +174,35 @@ $permisos=$cons->consultas($campos,$tablas,$filtro,"");
 			cargar_pagina(modulo,idpag);
 		}
 		function abrir_modal(titulo,id,url,idsub=0){
+			
 			if(idsub==0){
-				$("#modal-confirmacion").load("modales/"+url,{id:id,titulo:titulo},function(response, status, xhr){
-					if ( xhr.status == 404 ) {
-					    $( "#cuerpo_modal" ).html("<img src='../img/404.jpg' style='margin-left:20%;margin-rigth:20%;width:60%'>");
-					}
-					setTimeout(function() {
-				      tables();
-				    },200);	
-				});
-			}else{
-				$("#modal-confirmacion").load("modales/"+url,{id:id,titulo:titulo,idsub:idsub},function(response, status, xhr){
-					if ( xhr.status == 404 ) {
-					    $( "#cuerpo_modal" ).html("<img src='../img/404.jpg' style='margin-left:20%;margin-rigth:20%;width:60%'>");
-					}
-					setTimeout(function() {
-				      tables();
-				    },200);	
-				});
+				parametros={id:id,titulo:titulo};
 			}
+			else{
+				parametros={id:id,titulo:titulo,idsub:idsub}
+			}
+			$.ajax({
+				url:"modales/"+url,
+				method: "POST",
+				async:false,
+		  		data: parametros,
+		  		success:function(response){
+		  			$("#modal-confirmacion").html(response);
+		  			setTimeout(function() {
+				      tables();
+				    },200);	
+		  		},
+		  		error:function(){
+		  			alert("Error");
+		  		},
+		  		statusCode: {
+				    404: function() {
+				       $( "#cuerpo_modal" ).html("<h3>Error al modificar</h3><img src='../img/queryerror.png' style='margin-left:20%;margin-rigth:20%;width:20%;max-width:20%;max-height:30%'>");
+				    }
+				  }
+			});
 		}
+
 		function ocultar(id,tipo){
 			if(tipo==0){
 				$("#"+id).css("max-width","0%").children().find("img").css("width","150%").find("small").css("font-size","8px");
@@ -234,7 +243,8 @@ $permisos=$cons->consultas($campos,$tablas,$filtro,"");
     $.ajax({                        
            type: "POST",                 
            url: url,                     
-           data: param, 
+           data: param,
+           async:true, 
            success: function(data)             
            {
             if(data.includes("Actualizado")){
@@ -243,7 +253,7 @@ $permisos=$cons->consultas($campos,$tablas,$filtro,"");
             	 abrir_alert("success","Registro Agregado");     
             }
             console.log(data);
-            //alert(data);
+            alert(data);
             if(idpag!=0){
             	cargar_pagina(url1,idpag);
             }else{
