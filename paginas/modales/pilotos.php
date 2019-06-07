@@ -12,8 +12,8 @@
 	$datos="";
   $datos=$cons->consultas("piloto_temp,globo_temp,hora_temp,kg_temp","temp_volar","id_temp=".$id,"");
 	$size=[3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,1,1,1,1,1,1,1,1,1,1,3,3,3,3,3];
-  $type=[1,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,1,1,1,1,1,1,1,1,1,1,0,4,4,12,2];
- 	$options=["1","2","3","2","","6","7","8","","10","","12","","","","","","","","","","","","","",$pilotos,$globos,$pilotos,$globos,"","","","",""];
+  $type=[1,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,1,1,1,1,1,1,1,1,1,1,0,4,2,4,12];
+ 	$options=["1","2","3","2","","6","7","8","","10","","12","","","","","","","","","","","","","",$pilotos,$globos,$pilotos,$globos,$globos,"","","",""];
 	$extraprop=["required","required","required","required","required","required","required","required","","","","","","","","","","","","","","","","","","","","","","","","","",""];
  	$array=["piloto_temp","globo_temp","hora_temp","kg_temp"];
 	include "../../dinamicos/inputs.php";

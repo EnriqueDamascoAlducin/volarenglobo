@@ -198,7 +198,7 @@
 					<td> <?php echo  "$". number_format($preciototal, 2, '.', ',') ?> </td>
 				</tr>
 				<?php
-				if(!is_null($principales[0]->tdescuento_temp)) {
+				if(!is_null($principales[0]->tdescuento_temp ) && $principales[0]->cantdescuento_temp>0) {
 					$cuerpo='<tr>
 								<td class="tddesc">Descuento</td>';
 					if  ($principales[0]->tdescuento_temp==1){

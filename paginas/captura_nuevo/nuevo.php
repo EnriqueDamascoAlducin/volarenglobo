@@ -243,7 +243,7 @@ $size=[1,1,1,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,12,3,3,3,3,3];
 	<?php if(isset($datos[0]->hotel_temp)){ ?>
 		mostrar_habitacion();
 		<?php if(isset($datos[0]->habitacion_temp)){ ?>
-			puesto=<?php echo $datos[0]->habitacion_temp?>;
+			habitacion=<?php echo $datos[0]->habitacion_temp?>;
 		<?php } ?>
 	<?php } ?>
 	function mostrar_habitacion(){
@@ -254,8 +254,10 @@ $size=[1,1,1,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,12,3,3,3,3,3];
 		var1="id_habitacion as value, nombre_habitacion as text";
 		var2="habitaciones_volar";
 		var3="status<>0 AND idhotel_habitacion="+hotel;
+
+		//alert("select " + var1 + " from "+ var2+ " where " + var3);
         parametros={var1:var1,var2:var2,var3:var3};
-      	$("#habitacion").empty().append("<option value=''>Selecciona un Puesto </option>");
+      	$("#habitacion").empty().append("<option value=''>Selecciona una habitación </option>");
 	    $.ajax({
 	      data: parametros,
 	      dataType:"json",
@@ -266,14 +268,14 @@ $size=[1,1,1,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,12,3,3,3,3,3];
 			  text=value.text;
 			  val=value.value;
 			  attr="";
-			  if(val==puesto){
+			  if(val==habitacion){
 			  	attr="selected";
 			  }
 			  $("#habitacion").append("<option value='"+val+"' "+attr+">"+text+"</option>");
 			});
 	      },
 	      error:function(){
-	      	alert("dangerdsa");
+	      	alert("Error al cargar habitación");
 	      }
 
 	    }); 

@@ -187,7 +187,7 @@ $correos=[array($principales[0]->mail_temp,$principales[0]->nombre_temp." ".$pri
 				<td class="tdtotal">Sub Total</td>
 				<td> $'.number_format($preciototal, 2, '.', ',') . '</td>
 			</tr>';
-	if(!is_null($principales[0]->tdescuento_temp)) {
+		if(!is_null($principales[0]->tdescuento ) && $principales[0]->cantdescuento>0) {
 		$cuerpo.='<tr>
 					<td class="tddesc">Descuento</td>';
 		if  ($principales[0]->tdescuento_temp==1){

@@ -130,25 +130,29 @@ function get_salerinfo($id,$cons){
 
 					$cuerpo .= ' </tr>';
 				}
-
-				if($pasajeros[0]->tdescuento==1){
-					$signo="$" . $pasajeros[0]->cantdescuento;
-					$total= $pasajeros[0]->total - $pasajeros[0]->cantdescuento;
-					$total=  "$ ".$total;
-				}else{
-					$signo=$pasajeros[0]->cantdescuento."%";
-					$total=$pasajeros[0]->total -($pasajeros[0]->total * ($pasajeros[0]->cantdescuento / 100 ));
-					$total = $total . " " . $signo;
+				$total=$pasajeros[0]->total;
+				if(!is_null($principales[0]->tdescuento ) && $principales[0]->cantdescuento>0) {
+					if($pasajeros[0]->tdescuento==1){
+						$signo="$" . $pasajeros[0]->cantdescuento;
+						$total= $pasajeros[0]->total - $pasajeros[0]->cantdescuento;
+						$total=  "$ ".$total;
+					}else{
+						$signo=$pasajeros[0]->cantdescuento."%";
+						$total=$pasajeros[0]->total -($pasajeros[0]->total * ($pasajeros[0]->cantdescuento / 100 ));
+						$total = $total . " " . $signo;
+					}
 				}
 				$cuerpo .= ' <tr>';
 					$cuerpo .= '<td class="tdtitulo">Subtotal</td>';
 					$cuerpo .= '<td > '.$total.'</td>';
 				$cuerpo .= ' </tr>';
 				///////////////
-				$cuerpo .= ' <tr>';
-					$cuerpo .= '<td class="tdtitulo">Descuento</td>';
-					$cuerpo .= '<td > '.$signo.'</td>';
-				$cuerpo .= ' </tr>';
+				if(!is_null($principales[0]->tdescuento ) && $principales[0]->cantdescuento>0) {
+					$cuerpo .= ' <tr>';
+						$cuerpo .= '<td class="tdtitulo">Descuentossss</td>';
+						$cuerpo .= '<td > '.$signo.'</td>';
+					$cuerpo .= ' </tr>';
+				}
 				////////////////
 
 				$cuerpo .= ' <tr>';
