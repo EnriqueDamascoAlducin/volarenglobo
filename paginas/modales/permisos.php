@@ -18,8 +18,8 @@
       </div>
       <div class="modal-body " id="cuerpo_modal" >
       	<form name="formularioext" id="formularioext">
-          <input type="hidden" name="modulo" value="<?php echo $id; ?>">
-          <input type="hidden" name="usuario" value="<?php echo $titulo[1]; ?>">
+          <input type="hidden" name="modulo" id="modulo" value="<?php echo $id; ?>">
+          <input type="hidden" name="usuario" id="usuario" value="<?php echo $titulo[1]; ?>">
           <?php foreach($subpermisos as $subpermiso){ ?>
             <?php 
             $color="#ff4444";
@@ -32,7 +32,9 @@
             ?>
       	  <div class=" col-sm-3 col-lg-3 col-md-3">
             <div class="form-group">
-              <label for="check<?php echo $subpermiso->id_sp; ?>"><span id="spancheck_<?php echo $subpermiso->id_sp; ?>" style="color:<?php echo $color; ?>" class="glyphicon glyphicon-check" style="font-size: 150%"></span> <?php echo $subpermiso->nombre_sp; ?></label>
+              <label for="check_<?php echo $subpermiso->id_sp; ?>">
+                <span id="spancheck_<?php echo $subpermiso->id_sp; ?>" style="color:<?php echo $color; ?>" class="glyphicon glyphicon-check" style="font-size: 150%"></span> <?php echo $subpermiso->nombre_sp; ?>
+              </label>
               <input type="checkbox" <?php echo $check; ?> class="form-control" style="display: none;" name="check<?php echo $subpermiso->id_sp; ?>" onclick='agregar_permisos(this.id)' id="check_<?php echo $subpermiso->id_sp; ?>" value="<?php echo $subpermiso->id_sp; ?>">
             </div> 
           </div>
@@ -57,7 +59,6 @@
       }
       permiso=id.split("_");
       upd_permisos(permiso[1]);
-      alert("sa");
     }
   </script>
   <script type="text/javascript">
@@ -73,13 +74,8 @@
            data: param, 
            success: function(data)             
            {  
-            alert(data);
-            if(data.includes("Actualizado")){
-              abrir_alert("info","Permisos Actualizados");              
-            }
-           },
-           error:function(){
-            alert(2);
+              abrir_alert("info",data);              
+            
            }
        });
     setTimeout(function(){

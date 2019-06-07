@@ -1,10 +1,9 @@
 <?php 
 
 	include_once "../../css/log/c/conexion.php";
-	$idsp=$_POST['modulo'];
+	$modulo=$_POST['modulo'];
 	$usuario=$_POST['usuario'];
 	$permiso=$_POST['permiso'];
-	$valores="";
 
 	$valid_permiso=$cons->consultas("id_puv,status","permisosusuarios_volar","idsp_puv=".$permiso." and idusu_puv=".$usuario,"");
 
@@ -16,7 +15,7 @@
 		}
 		
 	}else{
-		$insertar_permiso=$cons->consultas("idusu_puv,idsp_puv","permisosusuarios_volar",$usuario.",".$permiso,"");
+		$insertar_permiso=$cons->consultas("idusu_puv,idsp_puv","permisosusuarios_volar",$usuario.",".$permiso,"insert");
 	}
 	
 ?>
