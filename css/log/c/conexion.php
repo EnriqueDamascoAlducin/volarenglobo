@@ -12,8 +12,8 @@
        	public function Conection()
        	{
 	       	$this->server="localhost";
-			$this->user="root";
-			$this->pass="";
+			$this->user="Siswebs";
+			$this->pass="Portero1";
 			$this->db="volarenglobo";  
 			try
 			{

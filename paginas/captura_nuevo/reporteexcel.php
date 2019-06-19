@@ -230,104 +230,11 @@ $fila++;
 }
 $fila--;
 $objphp->getActiveSheet()->setSharedStyle($estiloInformacion, "A3:Q".$fila);
-header("Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet");
-header('Content-Disposition: attachment;filename="Reservas.xlsx"');
-header('Cache-Control: max-age=0');
+$objWriter = PHPExcel_IOFactory::createWriter($objphp, 'Excel5');
+header('Content-Type: application/vnd.ms-excel');
+header('Content-Disposition: attachment;filename="userList.xls"');
 
-$objWriter = PHPExcel_IOFactory::createWriter($objphp, 'Excel2007');
+ob_end_clean();
 $objWriter->save('php://output');
+exit;
 ?>
-<?php if (!true){ ?>
- <!-- 
-<div id="tabla-reservas">
-	<table class="table DataTable display" border="2" >
-	<thead>
-		<tr>
-			<th style="text-align: center;vertical-align: middle;max-width: 1%;width: 1%;"># Reserva</th>
-			<th style="text-align: center;vertical-align: middle;max-width: 1%;width: 1%;">Nombre</th>
-			<th style="text-align: center;vertical-align: middle;max-width: 1%;width: 1%;">Empleado</th>
-			
-			<th style="text-align: center;vertical-align: middle;max-width: 1%;width: 1%;">Correo</th>
-			<th style="text-align: center;vertical-align: middle;max-width: 1%;width: 1%;">Telefonos Fijo/Celular</th>
-			<th style="text-align: center;vertical-align: middle;max-width: 1%;width: 1%;">Fecha de Vuelo</th>
-			<th style="text-align: center;vertical-align: middle;max-width: 1%;width: 1%">Procedencia</th>
-			<th style="text-align: center;vertical-align: middle;max-width: 1%;width: 1%">P. Adultos</th>
-			<th style="text-align: center;vertical-align: middle;max-width: 1%;width: 1%">P. Ninos</th>
-			<th style="text-align: center;vertical-align: middle;max-width: 1%;width: 1%">Motivo</th>
-			<th style="text-align: center;vertical-align: middle;max-width: 1%;width: 1%">Tipo</th>
-			<th style="text-align: center;vertical-align: middle;max-width: 1%;width: 1%">Hotel</th>
-			<th style="text-align: center;vertical-align: middle;max-width: 1%;width: 1%">Habitacion</th>
-			<th style="text-align: center;vertical-align: middle;max-width: 1%;width: 1%">Cotizado</th>
-			<th style="text-align: center;vertical-align: middle;max-width: 1%;width: 1%">Piloto</th>
-			<th style="text-align: center;vertical-align: middle;max-width: 1%;width: 1%">Globo</th>
-			<th style="text-align: center;vertical-align: middle;max-width: 1%;width: 1%">Peso (kg)</th>
-			<th style="text-align: center;vertical-align: middle;max-width: 1%;width: 1%;">Status</th>
-		</tr>
-	</thead>
-	<tbody>
-		<?php foreach ($reservas as $reserva) { ?>
-			<tr>
-				<td style="max-width: 1%;width: 1%;text-align: center;vertical-align: middle;"><?php echo $reserva->reserva ?></td>
-				<td style="max-width: 1%;width: 1%;text-align: center;vertical-align: middle;"><?php echo $reserva->cliente ?></td>
-
-				
-				<td style="text-align: center;vertical-align: middle;max-width: 1%;width: 1%;"><?php echo $reserva->vendedor; ?></td>
-				
-				<td style="max-width: 1%;width: 1%;text-align: center;vertical-align: middle;"><?php echo $reserva->correo ?></td>
-				<td style="max-width: 1%;width: 1%;text-align: center;vertical-align: middle;"><?php echo $reserva->telefono ?></td>
-				<td style="max-width: 1%;width: 1%;text-align: center;vertical-align: middle;"><?php echo $reserva->fechavuelo;?> 
-				</td>
-				<td style="max-width: 1%;width: 1%;text-align: center;vertical-align: middle;"><?php echo $reserva->procedencia;?> 
-				</td>
-				<td style="max-width: 1%;width: 1%;text-align: center;vertical-align: middle;"><?php echo $reserva->adultos;?> 
-				</td>
-				<td style="max-width: 1%;width: 1%;text-align: center;vertical-align: middle;"><?php echo $reserva->ninos;?> 
-				</td>
-				<td style="max-width: 1%;width: 1%;text-align: center;vertical-align: middle;"><?php echo $reserva->motivo;?> 
-				</td>
-				<td style="max-width: 1%;width: 1%;text-align: center;vertical-align: middle;"><?php echo $reserva->tipo;?> 
-				</td>
-				<td style="max-width: 1%;width: 1%;text-align: center;vertical-align: middle;"><?php echo $reserva->hotel;?> 
-				</td>
-				<td style="max-width: 1%;width: 1%;text-align: center;vertical-align: middle;"><?php echo $reserva->habitacion;?> 
-				</td>
-				<td style="max-width: 1%;width: 1%;text-align: center;vertical-align: middle;"><?php echo $reserva->cotizado;?> 
-				</td>
-				<td style="max-width: 1%;width: 1%;text-align: center;vertical-align: middle;"><?php echo $reserva->piloto;?> 
-				</td>
-				<td style="max-width: 1%;width: 1%;text-align: center;vertical-align: middle;"><?php echo $reserva->globo;?> 
-				</td>
-				<td style="max-width: 1%;width: 1%;text-align: center;vertical-align: middle;"><?php echo $reserva->peso;?> 
-				</td>
-				<td style="max-width: 1%;width: 1%;text-align: center;vertical-align: middle;">
-					<?php if( $reserva->status ==4){
-						$text="Confirmada";
-						$class="info";
-					}else if($reserva->status==2){
-						$text="Sin Cotización";
-						$class="danger";
-					}else if($reserva->status==3){
-						$text="Pendiente de Pago";
-						$class="warning";
-					}else if($reserva->status==1){
-						$text="Terminado";
-						$class="success";
-					}else if($reserva->status==5){
-						$text="Esperando Autorización";
-						$class="success";
-					}else{
-						$text="Error";
-						$class="danger";
-					}
-					?>
-					    <?php echo $text; ?>
-					  
-				</td>
-
-				
-			</tr>
-		<?php } ?>
-	</tbody>
-</table>
-</div> -->
-<?php } ?>

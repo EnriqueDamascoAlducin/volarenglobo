@@ -22,13 +22,13 @@ $permisos=$cons->consultas($campos,$tablas,$filtro,"");
 ?>
 <!DOCTYPE html>
 <html lang="es">
-<head>
+<head><meta http-equiv="Content-Type" content="text/html; charset=euc-jp">
 	<style type="text/css">
 		div .form-control{
 			text-align:center;
 		}
 	</style>
-	<meta charset="utf-8">
+	
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" type="text/css" href="../css/index.css">
 	<link rel="stylesheet" type="text/css" href="../css/botones.css">
@@ -137,6 +137,7 @@ $permisos=$cons->consultas($campos,$tablas,$filtro,"");
 		  			//$("#contenido").html(response);
 		  			abrir_alert("info","Correo Enviado Exitosamente");
 		  			console.log(response);
+		  			//alert(response);
 		  		},
 		  		error:function(){
 		  			alert("Error");

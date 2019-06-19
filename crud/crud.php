@@ -21,7 +21,8 @@
 				if($val==""){
 					$filtro.="null,";
 				}else{
-					$filtro.= "'".utf8_decode($val)."',";
+					$filtro.= "'".($val)."',";
+					echo $filtro;
 				}
 			}
 			$campos=substr($campos,0,-1). "\n";
@@ -42,7 +43,7 @@
 						if($val==""){
 							$campos.=$name."=null,";
 						}else{
-							$campos.=$name."='".utf8_decode( $val)."',";
+							$campos.=$name."='".( $val)."',";
 						}
 						
 					}

@@ -79,7 +79,7 @@ $size=[1,1,1,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,12,3,3,3,3,3];
 <center>
 <div id="contenido_cn" class="col-sm-12 col-lg-12 col-md-12 col-xs-12">
 	<div class="col-lg-12 col-md-12 col-sm-2">
-		<label><b>Captura de Nueva Cotización	</b></label>	
+		<label><b>Captura una Nueva Cotización	</b></label>	
 	</div>
 	<div id="datogenerales" class="col-sm-12 col-xs-12 col-lg-12 col-md-12" style="background: #3674B2;color:white">
 		Datos Generales
