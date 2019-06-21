@@ -102,6 +102,26 @@
           servicesValue.push(servicios[index].value);
         }
       });
-      alert(servicesName.length);
+      url="sitio/save_services.php";
+      param={
+        'nombres': servicesName,
+        'valores': servicesValue
+      };
+    $.ajax({                        
+           type: "POST",                 
+           url: url,                     
+           data: param, 
+           success: function(data)             
+           {
+            alert(data);
+            if(data.includes("Agregado")){
+             abrir_alert("success","Agregado Exitosamente");         
+            }else if(data.includes("Actualizado")){
+              abrir_alert("info","Actualizado Exitosamente");
+            }else{
+              abrir_alert("danger","Error en la consulta");
+            }
+           }
+        });
   }
 </script>
