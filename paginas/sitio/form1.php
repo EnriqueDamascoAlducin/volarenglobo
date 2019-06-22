@@ -42,6 +42,8 @@
 </div>
 
 <form name="formulario" id="formulario" onsubmit="enviar_crud(event,'<?php echo $_SESSION['modulo'] ?>',<?php echo $_SESSION['idpagina'] ?>);">
+  
+  <input type="hidden" value="<?php echo $_SESSION['id'] ?>" name="idusu" id="idusu">
   <?php 
   if(isset($_POST['id'])){
     echo "<input type='hidden' name='id' id='id' value='".$_POST['id']."'>";
@@ -93,6 +95,7 @@
 </div>
 <script type="text/javascript">
   function enviarVenta(){
+      $("#formulario")[0].submit();
       servicios = $("input[name^='precio_']");
       servicesName = [];
       servicesValue = [];
