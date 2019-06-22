@@ -22,7 +22,7 @@
   $options=["","",$gastos,"","","","","","","","","","",""];
   $req=["required","required","required","","","required","","","","","","","",""];
 ?>
-
+<div class="col-sm-12 col-lg-12 col-md-12 col-xs-12">
 <div class="row">
 <?php foreach ($servicios as $servicio) { ?>
 
@@ -40,7 +40,7 @@
 
 <?php } ?>
 </div>
-
+</div>
 <form name="formulario" id="formulario" onsubmit="enviar_crud(event,'<?php echo $_SESSION['modulo'] ?>',<?php echo $_SESSION['idpagina'] ?>);">
   <?php 
   if(isset($_POST['id'])){
