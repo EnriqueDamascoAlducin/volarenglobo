@@ -22,11 +22,6 @@
   $options=["","",$gastos,"","","","","","","","","","",""];
   $req=["required","required","required","","","required","","","","","","","",""];
 ?>
-<<<<<<< HEAD
-<div class="col-sm-12 col-lg-12 col-md-12 col-xs-12">
-<div class="row">
-<?php foreach ($servicios as $servicio) { ?>
-=======
 <div class="col-sm-12 col-md-12 col-lg-12 col-xs-12" id="<?php echo 'div_'.$idtemp;?>" style="background: #3674B2;color:white">
   Servicios 
 </div>
@@ -45,15 +40,10 @@
           </div>
         
     </div>
->>>>>>> quique
 
   <?php } ?>
   </div>
 </div>
-<<<<<<< HEAD
-</div>
-=======
->>>>>>> quique
 <form name="formulario" id="formulario" onsubmit="enviar_crud(event,'<?php echo $_SESSION['modulo'] ?>',<?php echo $_SESSION['idpagina'] ?>);">
 
   <input type="hidden" value="<?php echo $_SESSION['id'] ?>" name="idusu" id="idusu">
