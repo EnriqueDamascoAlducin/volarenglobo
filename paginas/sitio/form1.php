@@ -14,35 +14,38 @@
   $servicios=$cons->consultas("*","servicios_volar","status=1","");
   $cont=0;
   include "../../dinamicos/inputs.php";
-  $array=["comentario_venta","otroscargos_venta","precio_venta"];
+  $array=["comentario_venta","otroscar1_venta","precio1_venta",  "otroscar2_venta","precio2_venta"];
   $array2=["cantdesc_venta","pagoefectivo_venta","pagotarjeta_venta"];
   $size=[1,12,3,3,3,3,3,3,3,3,3,3,1,4];
-  $type=[5,5,1,2,1,2,2,2,2,10,10,9,6,1];
+  $type=[5,5,1,1,2,1,2,2,2,10,10,9,6,1];
   $gastos=["id_extra as value, nombre_extra as text","extras_volar","clasificacion_extra='tipogastos' and status=1"];
   $options=["","",$gastos,"","","","","","","","","","",""];
   $req=["required","required","required","","","required","","","","","","","",""];
 ?>
-
-<div class="row">
-<?php foreach ($servicios as $servicio) { ?>
-
-  <div class="col-sm-2 col-md-2 col-lg-1 col-xs-6" style="border-style: groove; border-width: 5px;height: 160px;max-height: 160px;">
-        <div class="pull-left" style="border-style: groove;border-width: 3px;max-height: 100%;height: 100%;width:98%;max-width:98%; ">
-          <label for="precio_<?php echo $servicio->id_servicio ?>"  style="width:100%;max-width:100%;margin:0;height: 40%;max-height: 40%;color:black">
-            <img src="<?php echo $servicio->img_servicio ?>" title="<?php echo $servicio->nombre_servicio.'('.$servicio->precio_servicio.')' ?>" alt="<?php echo $servicio->nombre_servicio ?>" style="margin:0;height: 100%;max-height: 100%;width: 90%;max-width: 90%;"> 
-            <small class="text-warning"><?php echo substr($servicio->nombre_servicio, 0,8) .'<br>('.$servicio->precio_servicio.')' ?></small>
-          </label>
-           
-          <input type="number" style="width: 100%;" name="precio_<?php echo $servicio->id_servicio ?>" id="precio_<?php echo $servicio->id_servicio ?>" value="<?php if(isset($res->cantidad_sv)){ echo $res->cantidad_sv;}else {echo 0;} ?>"> 
-        </div>
-      
-  </div>
-
-<?php } ?>
+<div class="col-sm-12 col-md-12 col-lg-12 col-xs-12" id="<?php echo 'div_'.$idtemp;?>" style="background: #3674B2;color:white">
+  Servicios 
 </div>
+<div class="col-sm-12 col-md-12 col-lg-12 col-xs-12">
+  <div class="row">
+  <?php foreach ($servicios as $servicio) { ?>
 
+    <div class="col-sm-2 col-md-2 col-lg-1 col-xs-6" style="border-style: groove; border-width: 5px;height: 160px;max-height: 160px;padding: 0">
+          <div class="pull-left" style="border-style: groove;border-width: 3px;max-height: 100%;height: 100%;width:98%;max-width:98%; ">
+            <label for="precio_<?php echo $servicio->id_servicio ?>"  style="width:100%;max-width:100%;margin:0;height: 40%;max-height: 40%;color:black">
+              <img src="<?php echo $servicio->img_servicio ?>" title="<?php echo $servicio->nombre_servicio.'('.$servicio->precio_servicio.')' ?>" alt="<?php echo $servicio->nombre_servicio ?>" style="margin:0;height: 100%;max-height: 100%;width: 100%;max-width: 100%;"> 
+              <small class="text-warning"><?php echo substr($servicio->nombre_servicio, 0,8) .'<br>('.$servicio->precio_servicio.')' ?></small>
+            </label>
+             
+            <input type="number" style="width: 100%;" name="precio_<?php echo $servicio->id_servicio ?>" id="precio_<?php echo $servicio->id_servicio ?>" value="<?php if(isset($res->cantidad_sv)){ echo $res->cantidad_sv;}else {echo 0;} ?>"> 
+          </div>
+        
+    </div>
+
+  <?php } ?>
+  </div>
+</div>
 <form name="formulario" id="formulario" onsubmit="enviar_crud(event,'<?php echo $_SESSION['modulo'] ?>',<?php echo $_SESSION['idpagina'] ?>);">
-  
+
   <input type="hidden" value="<?php echo $_SESSION['id'] ?>" name="idusu" id="idusu">
   <?php 
   if(isset($_POST['id'])){
@@ -56,7 +59,7 @@
     $cont++;
   } ?>
   <?php $tamano=3;
-   $campo="metodo";
+   $campo="tipodesc";
    $color="black";
    $comentario="Tipo de descuento: "; ?>
 
@@ -90,12 +93,11 @@
     </div>
 </form>
 
-<div class="col-sm-12 col-md-12 col-lg-12 col-xs-12" id="<?php echo 'div_'.$idtemp;?>" style="background: #3674B2;color:white">
-  Servicios 
-</div>
+
 <script type="text/javascript">
   function enviarVenta(){
-      $("#formulario")[0].submit();
+      $("#formulario").submit();
+      alert("enviado");
       servicios = $("input[name^='precio_']");
       servicesName = [];
       servicesValue = [];
