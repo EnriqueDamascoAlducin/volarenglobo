@@ -24,15 +24,17 @@ if(!isset($_POST['status'])){
 }
 $correo_envia=[$_SESSION['correo'],$_SESSION['nombre_completo']];
 if(!isset($_POST['status']) ){
-	$asunto="Nueva Solicitud de ConciliaciÃ³n";
-	$titulo="Solicitud de ConciliaciÃ³n para Reserva ".$pasajeros[0]->vuelo;
+	$asunto="Nueva Solicitud de Conciliaci¨®n";
+	$titulo="Solicitud de Conciliaci¨®n para Reserva ".$pasajeros[0]->vuelo;
 	
 	
 }else{
 	$asunto="ConfirmaciÃ³n de Pago";
 	$titulo="Su id de Pago es: ".$id;
 }
-
-include"../correos/solicitud_conciliacion.php.";
-echo ". Correo enviado";
+ if(@include ("../correos/solicitud_conciliacion.php")) {
+    
+ }else {
+     echo " No se pudo enviar el correo";
+ }
 ?>

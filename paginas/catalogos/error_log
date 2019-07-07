@@ -1,1 +1,38 @@
 [09-Jun-2019 17:38:04 UTC] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; Conection has a deprecated constructor in /home/tyjkeoif025c/public_html/proyectos/volarenglobo/css/log/c/conexion.php on line 2
+[25-Jun-2019 14:15:59 UTC] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; Conection has a deprecated constructor in /home/tyjkeoif025c/public_html/proyectos/volarenglobo/css/log/c/conexion.php on line 2
+[25-Jun-2019 14:16:01 UTC] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; Conection has a deprecated constructor in /home/tyjkeoif025c/public_html/proyectos/volarenglobo/css/log/c/conexion.php on line 2
+[25-Jun-2019 14:16:01 UTC] PHP Notice:  Uninitialized string offset: 0 in /home/tyjkeoif025c/public_html/proyectos/volarenglobo/dinamicos/inputs.php on line 60
+[25-Jun-2019 14:16:01 UTC] PHP Notice:  Trying to get property 'clasificacion_extra' of non-object in /home/tyjkeoif025c/public_html/proyectos/volarenglobo/dinamicos/inputs.php on line 60
+[25-Jun-2019 14:16:01 UTC] PHP Notice:  Uninitialized string offset: 0 in /home/tyjkeoif025c/public_html/proyectos/volarenglobo/dinamicos/inputs.php on line 60
+[25-Jun-2019 14:16:01 UTC] PHP Notice:  Trying to get property 'clasificacion_extra' of non-object in /home/tyjkeoif025c/public_html/proyectos/volarenglobo/dinamicos/inputs.php on line 60
+[25-Jun-2019 14:16:01 UTC] PHP Notice:  Uninitialized string offset: 0 in /home/tyjkeoif025c/public_html/proyectos/volarenglobo/dinamicos/inputs.php on line 60
+[25-Jun-2019 14:16:01 UTC] PHP Notice:  Trying to get property 'clasificacion_extra' of non-object in /home/tyjkeoif025c/public_html/proyectos/volarenglobo/dinamicos/inputs.php on line 60
+[25-Jun-2019 14:16:01 UTC] PHP Notice:  Uninitialized string offset: 0 in /home/tyjkeoif025c/public_html/proyectos/volarenglobo/dinamicos/inputs.php on line 60
+[25-Jun-2019 14:16:01 UTC] PHP Notice:  Trying to get property 'clasificacion_extra' of non-object in /home/tyjkeoif025c/public_html/proyectos/volarenglobo/dinamicos/inputs.php on line 60
+[25-Jun-2019 14:16:01 UTC] PHP Notice:  Uninitialized string offset: 0 in /home/tyjkeoif025c/public_html/proyectos/volarenglobo/dinamicos/inputs.php on line 60
+[25-Jun-2019 14:16:01 UTC] PHP Notice:  Trying to get property 'clasificacion_extra' of non-object in /home/tyjkeoif025c/public_html/proyectos/volarenglobo/dinamicos/inputs.php on line 60
+[25-Jun-2019 14:16:01 UTC] PHP Notice:  Uninitialized string offset: 0 in /home/tyjkeoif025c/public_html/proyectos/volarenglobo/dinamicos/inputs.php on line 60
+[25-Jun-2019 14:16:01 UTC] PHP Notice:  Trying to get property 'clasificacion_extra' of non-object in /home/tyjkeoif025c/public_html/proyectos/volarenglobo/dinamicos/inputs.php on line 60
+[25-Jun-2019 14:16:01 UTC] PHP Notice:  Uninitialized string offset: 0 in /home/tyjkeoif025c/public_html/proyectos/volarenglobo/dinamicos/inputs.php on line 60
+[25-Jun-2019 14:16:01 UTC] PHP Notice:  Trying to get property 'clasificacion_extra' of non-object in /home/tyjkeoif025c/public_html/proyectos/volarenglobo/dinamicos/inputs.php on line 60
+[25-Jun-2019 14:16:01 UTC] PHP Notice:  Uninitialized string offset: 0 in /home/tyjkeoif025c/public_html/proyectos/volarenglobo/dinamicos/inputs.php on line 60
+[25-Jun-2019 14:16:01 UTC] PHP Notice:  Trying to get property 'clasificacion_extra' of non-object in /home/tyjkeoif025c/public_html/proyectos/volarenglobo/dinamicos/inputs.php on line 60
+[25-Jun-2019 14:16:28 UTC] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; Conection has a deprecated constructor in /home/tyjkeoif025c/public_html/proyectos/volarenglobo/css/log/c/conexion.php on line 2
+[25-Jun-2019 14:16:34 UTC] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; Conection has a deprecated constructor in /home/tyjkeoif025c/public_html/proyectos/volarenglobo/css/log/c/conexion.php on line 2
+[25-Jun-2019 15:01:33 UTC] PHP Notice:  Undefined index: max-tiempo in /home/tyjkeoif025c/public_html/proyectos/volarenglobo/crud/fin_session.php on line 4
+[25-Jun-2019 15:01:33 UTC] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; Conection has a deprecated constructor in /home/tyjkeoif025c/public_html/proyectos/volarenglobo/css/log/c/conexion.php on line 2
+[25-Jun-2019 15:01:33 UTC] PHP Notice:  Undefined index: id in /home/tyjkeoif025c/public_html/proyectos/volarenglobo/paginas/catalogos/index.php on line 11
+[25-Jun-2019 15:01:33 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetchALL() on boolean in /home/tyjkeoif025c/public_html/proyectos/volarenglobo/css/log/c/conexion.php:55
+Stack trace:
+#0 /home/tyjkeoif025c/public_html/proyectos/volarenglobo/paginas/catalogos/index.php(11): Conection->consultas('nombre_sp as no...', 'permisosusuario...', 'id_sp=idsp_puv ...', '')
+#1 {main}
+  thrown in /home/tyjkeoif025c/public_html/proyectos/volarenglobo/css/log/c/conexion.php on line 55
+[25-Jun-2019 15:01:33 UTC] PHP Notice:  Undefined index: max-tiempo in /home/tyjkeoif025c/public_html/proyectos/volarenglobo/crud/fin_session.php on line 4
+[25-Jun-2019 15:01:33 UTC] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; Conection has a deprecated constructor in /home/tyjkeoif025c/public_html/proyectos/volarenglobo/css/log/c/conexion.php on line 2
+[25-Jun-2019 15:01:34 UTC] PHP Notice:  Undefined index: id in /home/tyjkeoif025c/public_html/proyectos/volarenglobo/paginas/catalogos/index.php on line 11
+[25-Jun-2019 15:01:34 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetchALL() on boolean in /home/tyjkeoif025c/public_html/proyectos/volarenglobo/css/log/c/conexion.php:55
+Stack trace:
+#0 /home/tyjkeoif025c/public_html/proyectos/volarenglobo/paginas/catalogos/index.php(11): Conection->consultas('nombre_sp as no...', 'permisosusuario...', 'id_sp=idsp_puv ...', '')
+#1 {main}
+  thrown in /home/tyjkeoif025c/public_html/proyectos/volarenglobo/css/log/c/conexion.php on line 55
+[03-Jul-2019 17:59:45 UTC] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; Conection has a deprecated constructor in /home/tyjkeoif025c/public_html/proyectos/volarenglobo/css/log/c/conexion.php on line 2

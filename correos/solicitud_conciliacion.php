@@ -1,4 +1,5 @@
 <?php
+echo "algo";
 function get_salerinfo($id,$cons){
 	$vendedor=$cons->consultas("CONCAT(ifnull(nombre_usu,''),' ',ifnull(apellidop_usu,''),' ',ifnull(apellidom_usu,'')) as nombre,correo_usu,telefono_usu","volar_usuarios","id_usu=".$id,"");
 	$salename=$vendedor[0]->nombre;

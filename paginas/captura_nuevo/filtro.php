@@ -2,7 +2,7 @@
 
 $clientes=$cons->consultas("DISTINCT( CONCAT(nombre_temp,' - ',apellidos_temp) )as cliente","temp_volar","status<>0 order by nombre_temp asc, apellidos_temp asc",""); 
  $status=$cons->consultas('DISTINCT(status) as status',"temp_volar","status<>0","");?>
-<form name="form-filtro" target="_new" id="form-filtro" method="POST" action="captura_nuevo/reporteexcel.php">
+<form name="form-filtro" target="_parent" id="form-filtro" method="POST" action="captura_nuevo/reporteexcel.php">
 <div class="col-sm-2 col-md-2 col-lg-2  col-xs-6">
 	<div class="form-group">
 		<label for="fechai">Fecha Inicial</label>

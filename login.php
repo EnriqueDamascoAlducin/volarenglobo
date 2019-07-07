@@ -42,7 +42,7 @@
 				<span class="login100-form-title p-b-41" >
 					Sistema de Administración de Volar en Globo
 				</span>
-				<form id="loginform"  class="login100-form validate-form p-b-33 p-t-5" style="background: transparent;"   onsubmit=" mandar_datos(event);">
+				<form id="loginform"  class="login100-form validate-form p-b-33 p-t-5" style="background: transparent;" method="POST"  onsubmit=" mandar_datos(event);">
 
 					<div class="wrap-input100 validate-input" style="background: transparent ;" data-validate = "Ingresa tu Usuario">
 						<input autocomplete="off" style="background: transparent ;color:white" class="input100" type="text" name="user" id="user" placeholder="Usuario" autofocus="">

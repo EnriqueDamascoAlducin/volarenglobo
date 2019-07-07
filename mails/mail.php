@@ -29,7 +29,7 @@ try {
       $mail->setFrom('enriquedamasco58@gmail.com','Sisweb CEO');
       
       */
-    $mail->addAddress('enriquealducin@outlook.com', 'Enrique Alducin');     // Add a recipient
+    //$mail->addAddress('enriquealducin@outlook.com', 'Enrique Alducin');     // Add a recipient
     //$mail->addAddress('enriquedamasco58@gmail.com');               // Name is optional
     /// para responder $mail->addReplyTo('info@example.com', 'Information');
     // con copia $mail->addCC('cc@example.com');

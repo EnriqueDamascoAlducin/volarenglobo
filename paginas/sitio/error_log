@@ -1,0 +1,98 @@
+[24-Jun-2019 17:02:16 UTC] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; Conection has a deprecated constructor in /home/tyjkeoif025c/public_html/proyectos/volarenglobo/css/log/c/conexion.php on line 2
+[24-Jun-2019 17:02:16 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetchALL() on boolean in /home/tyjkeoif025c/public_html/proyectos/volarenglobo/css/log/c/conexion.php:55
+Stack trace:
+#0 /home/tyjkeoif025c/public_html/proyectos/volarenglobo/dinamicos/inputs.php(3): Conection->consultas('show full colum...', 'ventas_volar', '', '')
+#1 /home/tyjkeoif025c/public_html/proyectos/volarenglobo/paginas/sitio/form1.php(16): include('/home/tyjkeoif0...')
+#2 {main}
+  thrown in /home/tyjkeoif025c/public_html/proyectos/volarenglobo/css/log/c/conexion.php on line 55
+[24-Jun-2019 17:02:17 UTC] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; Conection has a deprecated constructor in /home/tyjkeoif025c/public_html/proyectos/volarenglobo/css/log/c/conexion.php on line 2
+[24-Jun-2019 17:02:17 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetchALL() on boolean in /home/tyjkeoif025c/public_html/proyectos/volarenglobo/css/log/c/conexion.php:55
+Stack trace:
+#0 /home/tyjkeoif025c/public_html/proyectos/volarenglobo/dinamicos/inputs.php(3): Conection->consultas('show full colum...', 'ventas_volar', '', '')
+#1 /home/tyjkeoif025c/public_html/proyectos/volarenglobo/paginas/sitio/form1.php(16): include('/home/tyjkeoif0...')
+#2 {main}
+  thrown in /home/tyjkeoif025c/public_html/proyectos/volarenglobo/css/log/c/conexion.php on line 55
+[24-Jun-2019 17:02:18 UTC] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; Conection has a deprecated constructor in /home/tyjkeoif025c/public_html/proyectos/volarenglobo/css/log/c/conexion.php on line 2
+[24-Jun-2019 17:02:18 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetchALL() on boolean in /home/tyjkeoif025c/public_html/proyectos/volarenglobo/css/log/c/conexion.php:55
+Stack trace:
+#0 /home/tyjkeoif025c/public_html/proyectos/volarenglobo/dinamicos/inputs.php(3): Conection->consultas('show full colum...', 'ventas_volar', '', '')
+#1 /home/tyjkeoif025c/public_html/proyectos/volarenglobo/paginas/sitio/form1.php(16): include('/home/tyjkeoif0...')
+#2 {main}
+  thrown in /home/tyjkeoif025c/public_html/proyectos/volarenglobo/css/log/c/conexion.php on line 55
+[24-Jun-2019 17:02:20 UTC] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; Conection has a deprecated constructor in /home/tyjkeoif025c/public_html/proyectos/volarenglobo/css/log/c/conexion.php on line 2
+[24-Jun-2019 17:02:24 UTC] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; Conection has a deprecated constructor in /home/tyjkeoif025c/public_html/proyectos/volarenglobo/css/log/c/conexion.php on line 2
+[24-Jun-2019 17:02:24 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetchALL() on boolean in /home/tyjkeoif025c/public_html/proyectos/volarenglobo/css/log/c/conexion.php:55
+Stack trace:
+#0 /home/tyjkeoif025c/public_html/proyectos/volarenglobo/dinamicos/inputs.php(3): Conection->consultas('show full colum...', 'ventas_volar', '', '')
+#1 /home/tyjkeoif025c/public_html/proyectos/volarenglobo/paginas/sitio/form1.php(16): include('/home/tyjkeoif0...')
+#2 {main}
+  thrown in /home/tyjkeoif025c/public_html/proyectos/volarenglobo/css/log/c/conexion.php on line 55
+[24-Jun-2019 17:02:56 UTC] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; Conection has a deprecated constructor in /home/tyjkeoif025c/public_html/proyectos/volarenglobo/css/log/c/conexion.php on line 2
+[24-Jun-2019 17:02:57 UTC] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; Conection has a deprecated constructor in /home/tyjkeoif025c/public_html/proyectos/volarenglobo/css/log/c/conexion.php on line 2
+[24-Jun-2019 17:02:57 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetchALL() on boolean in /home/tyjkeoif025c/public_html/proyectos/volarenglobo/css/log/c/conexion.php:55
+Stack trace:
+#0 /home/tyjkeoif025c/public_html/proyectos/volarenglobo/dinamicos/inputs.php(3): Conection->consultas('show full colum...', 'ventas_volar', '', '')
+#1 /home/tyjkeoif025c/public_html/proyectos/volarenglobo/paginas/sitio/form1.php(16): include('/home/tyjkeoif0...')
+#2 {main}
+  thrown in /home/tyjkeoif025c/public_html/proyectos/volarenglobo/css/log/c/conexion.php on line 55
+[24-Jun-2019 17:03:06 UTC] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; Conection has a deprecated constructor in /home/tyjkeoif025c/public_html/proyectos/volarenglobo/css/log/c/conexion.php on line 2
+[24-Jun-2019 17:03:06 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetchALL() on boolean in /home/tyjkeoif025c/public_html/proyectos/volarenglobo/css/log/c/conexion.php:55
+Stack trace:
+#0 /home/tyjkeoif025c/public_html/proyectos/volarenglobo/dinamicos/inputs.php(3): Conection->consultas('show full colum...', 'ventas_volar', '', '')
+#1 /home/tyjkeoif025c/public_html/proyectos/volarenglobo/paginas/sitio/form1.php(16): include('/home/tyjkeoif0...')
+#2 {main}
+  thrown in /home/tyjkeoif025c/public_html/proyectos/volarenglobo/css/log/c/conexion.php on line 55
+[24-Jun-2019 17:05:30 UTC] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; Conection has a deprecated constructor in /home/tyjkeoif025c/public_html/proyectos/volarenglobo/css/log/c/conexion.php on line 2
+[24-Jun-2019 17:05:30 UTC] PHP Notice:  Undefined variable: idtemp in /home/tyjkeoif025c/public_html/proyectos/volarenglobo/paginas/sitio/form1.php on line 25
+[25-Jun-2019 14:55:38 UTC] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; Conection has a deprecated constructor in /home/tyjkeoif025c/public_html/proyectos/volarenglobo/css/log/c/conexion.php on line 2
+[25-Jun-2019 14:55:41 UTC] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; Conection has a deprecated constructor in /home/tyjkeoif025c/public_html/proyectos/volarenglobo/css/log/c/conexion.php on line 2
+[25-Jun-2019 14:55:41 UTC] PHP Notice:  Uninitialized string offset: 0 in /home/tyjkeoif025c/public_html/proyectos/volarenglobo/dinamicos/inputs.php on line 60
+[25-Jun-2019 14:55:41 UTC] PHP Notice:  Trying to get property 'tipo_gasto' of non-object in /home/tyjkeoif025c/public_html/proyectos/volarenglobo/dinamicos/inputs.php on line 60
+[25-Jun-2019 14:55:41 UTC] PHP Notice:  Uninitialized string offset: 0 in /home/tyjkeoif025c/public_html/proyectos/volarenglobo/dinamicos/inputs.php on line 60
+[25-Jun-2019 14:55:41 UTC] PHP Notice:  Trying to get property 'tipo_gasto' of non-object in /home/tyjkeoif025c/public_html/proyectos/volarenglobo/dinamicos/inputs.php on line 60
+[25-Jun-2019 14:55:41 UTC] PHP Notice:  Uninitialized string offset: 0 in /home/tyjkeoif025c/public_html/proyectos/volarenglobo/dinamicos/inputs.php on line 60
+[25-Jun-2019 14:55:41 UTC] PHP Notice:  Trying to get property 'tipo_gasto' of non-object in /home/tyjkeoif025c/public_html/proyectos/volarenglobo/dinamicos/inputs.php on line 60
+[25-Jun-2019 14:55:41 UTC] PHP Notice:  Uninitialized string offset: 0 in /home/tyjkeoif025c/public_html/proyectos/volarenglobo/dinamicos/inputs.php on line 60
+[25-Jun-2019 14:55:41 UTC] PHP Notice:  Trying to get property 'tipo_gasto' of non-object in /home/tyjkeoif025c/public_html/proyectos/volarenglobo/dinamicos/inputs.php on line 60
+[25-Jun-2019 15:01:39 UTC] PHP Notice:  Undefined index: max-tiempo in /home/tyjkeoif025c/public_html/proyectos/volarenglobo/crud/fin_session.php on line 4
+[25-Jun-2019 15:01:39 UTC] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; Conection has a deprecated constructor in /home/tyjkeoif025c/public_html/proyectos/volarenglobo/css/log/c/conexion.php on line 2
+[25-Jun-2019 15:01:39 UTC] PHP Notice:  Undefined index: id in /home/tyjkeoif025c/public_html/proyectos/volarenglobo/paginas/sitio/index.php on line 11
+[25-Jun-2019 15:01:39 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetchALL() on boolean in /home/tyjkeoif025c/public_html/proyectos/volarenglobo/css/log/c/conexion.php:55
+Stack trace:
+#0 /home/tyjkeoif025c/public_html/proyectos/volarenglobo/paginas/sitio/index.php(11): Conection->consultas('nombre_sp as no...', 'permisosusuario...', 'id_sp=idsp_puv ...', '')
+#1 {main}
+  thrown in /home/tyjkeoif025c/public_html/proyectos/volarenglobo/css/log/c/conexion.php on line 55
+[25-Jun-2019 15:01:39 UTC] PHP Notice:  Undefined index: max-tiempo in /home/tyjkeoif025c/public_html/proyectos/volarenglobo/crud/fin_session.php on line 4
+[25-Jun-2019 15:01:39 UTC] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; Conection has a deprecated constructor in /home/tyjkeoif025c/public_html/proyectos/volarenglobo/css/log/c/conexion.php on line 2
+[25-Jun-2019 15:01:39 UTC] PHP Notice:  Undefined index: id in /home/tyjkeoif025c/public_html/proyectos/volarenglobo/paginas/sitio/index.php on line 11
+[25-Jun-2019 15:01:39 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetchALL() on boolean in /home/tyjkeoif025c/public_html/proyectos/volarenglobo/css/log/c/conexion.php:55
+Stack trace:
+#0 /home/tyjkeoif025c/public_html/proyectos/volarenglobo/paginas/sitio/index.php(11): Conection->consultas('nombre_sp as no...', 'permisosusuario...', 'id_sp=idsp_puv ...', '')
+#1 {main}
+  thrown in /home/tyjkeoif025c/public_html/proyectos/volarenglobo/css/log/c/conexion.php on line 55
+[25-Jun-2019 15:01:39 UTC] PHP Notice:  Undefined index: max-tiempo in /home/tyjkeoif025c/public_html/proyectos/volarenglobo/crud/fin_session.php on line 4
+[25-Jun-2019 15:01:39 UTC] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; Conection has a deprecated constructor in /home/tyjkeoif025c/public_html/proyectos/volarenglobo/css/log/c/conexion.php on line 2
+[25-Jun-2019 15:01:39 UTC] PHP Notice:  Undefined index: id in /home/tyjkeoif025c/public_html/proyectos/volarenglobo/paginas/sitio/index.php on line 11
+[25-Jun-2019 15:01:39 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetchALL() on boolean in /home/tyjkeoif025c/public_html/proyectos/volarenglobo/css/log/c/conexion.php:55
+Stack trace:
+#0 /home/tyjkeoif025c/public_html/proyectos/volarenglobo/paginas/sitio/index.php(11): Conection->consultas('nombre_sp as no...', 'permisosusuario...', 'id_sp=idsp_puv ...', '')
+#1 {main}
+  thrown in /home/tyjkeoif025c/public_html/proyectos/volarenglobo/css/log/c/conexion.php on line 55
+[25-Jun-2019 15:01:39 UTC] PHP Notice:  Undefined index: max-tiempo in /home/tyjkeoif025c/public_html/proyectos/volarenglobo/crud/fin_session.php on line 4
+[25-Jun-2019 15:01:39 UTC] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; Conection has a deprecated constructor in /home/tyjkeoif025c/public_html/proyectos/volarenglobo/css/log/c/conexion.php on line 2
+[25-Jun-2019 15:01:39 UTC] PHP Notice:  Undefined index: id in /home/tyjkeoif025c/public_html/proyectos/volarenglobo/paginas/sitio/index.php on line 11
+[25-Jun-2019 15:01:39 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetchALL() on boolean in /home/tyjkeoif025c/public_html/proyectos/volarenglobo/css/log/c/conexion.php:55
+Stack trace:
+#0 /home/tyjkeoif025c/public_html/proyectos/volarenglobo/paginas/sitio/index.php(11): Conection->consultas('nombre_sp as no...', 'permisosusuario...', 'id_sp=idsp_puv ...', '')
+#1 {main}
+  thrown in /home/tyjkeoif025c/public_html/proyectos/volarenglobo/css/log/c/conexion.php on line 55
+[25-Jun-2019 15:01:39 UTC] PHP Notice:  Undefined index: max-tiempo in /home/tyjkeoif025c/public_html/proyectos/volarenglobo/crud/fin_session.php on line 4
+[25-Jun-2019 15:01:39 UTC] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; Conection has a deprecated constructor in /home/tyjkeoif025c/public_html/proyectos/volarenglobo/css/log/c/conexion.php on line 2
+[25-Jun-2019 15:01:39 UTC] PHP Notice:  Undefined index: id in /home/tyjkeoif025c/public_html/proyectos/volarenglobo/paginas/sitio/index.php on line 11
+[25-Jun-2019 15:01:39 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetchALL() on boolean in /home/tyjkeoif025c/public_html/proyectos/volarenglobo/css/log/c/conexion.php:55
+Stack trace:
+#0 /home/tyjkeoif025c/public_html/proyectos/volarenglobo/paginas/sitio/index.php(11): Conection->consultas('nombre_sp as no...', 'permisosusuario...', 'id_sp=idsp_puv ...', '')
+#1 {main}
+  thrown in /home/tyjkeoif025c/public_html/proyectos/volarenglobo/css/log/c/conexion.php on line 55
+[25-Jun-2019 15:01:43 UTC] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; Conection has a deprecated constructor in /home/tyjkeoif025c/public_html/proyectos/volarenglobo/css/log/c/conexion.php on line 2
+[25-Jun-2019 15:57:07 UTC] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; Conection has a deprecated constructor in /home/tyjkeoif025c/public_html/proyectos/volarenglobo/css/log/c/conexion.php on line 2

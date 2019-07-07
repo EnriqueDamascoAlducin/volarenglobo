@@ -62,7 +62,7 @@
               ?>
               <thead>
                 <tr>
-                  <th>M√©todo</th>
+                  <th>M®¶todo</th>
                   <th>Referencia</th>
                   <th>Cantidad</th>
                   <?php if ($opcion==13) { ?>
@@ -104,10 +104,10 @@
                   $stat="Conciliado";
                   $class="primary";
                 }else if($pago->status==2){
-                  $stat="Esperando Conciliaci√≥n";
+                  $stat="Esperando Conciliaci®Æn";
                   $class="info";
                 }else if($pago->status==3){
-                  $stat="Confirmaci√≥n Enviada";
+                  $stat="Confirmaci®Æn Enviada";
                   $class="success";
                 }else {
                   $stat="Status Desconocido";
@@ -117,7 +117,8 @@
                 <td>
                   <div class="progress" style="max-width: 100%">
                     <div class="progress-bar progress-bar-<?php echo $class; ?>" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width:100%;max-width: 100%;">
-                      <?php echo $stat; ?>
+                      
+                      <?php echo  ($stat); ?>
                     </div>
                   </div>
                 </td>
@@ -125,21 +126,21 @@
                 if($pago->status==2 && $opcion==12){
                   echo  
                     "<td>
-                      <span id='trash_".$pago->id_bp."' class='glyphicon glyphicon-trash' style='color:red' onclick='confirmar_icon(this.id,1)' >
+                      <span id='trash_".$pago->id_bp."m' class='glyphicon glyphicon-trash' style='color:red' onclick='confirmar_icon(this.id,1)' >
                       </span>
                       <div  style='display:none'>
                           <span class='glyphicon glyphicon-ok-circle' data-dismiss='modal'  style='color:#00C851;font-size:16px' onclick=actualizar_status(0,".$pago->id_bp. ",'".$_SESSION['modulo']."',".$_SESSION['idpagina'].")></span>
-                        <span class='glyphicon glyphicon-remove-circle' style='color:#ffbb33;font-size:16px' id='opc_".$pago->id_bp."' onclick='confirmar_icon(this.id,0)'></span>
+                        <span class='glyphicon glyphicon-remove-circle' style='color:#ffbb33;font-size:16px' id='opc_".$pago->id_bp."m' onclick='confirmar_icon(this.id,0)'></span>
                       </div>
                     </td>";
                 }else if($pago->status==1 && $opcion==12) {
 
                   echo
                     "<td>
-                      <span id='trash_".$pago->id_bp."' class='glyphicon glyphicon-envelope' style='color:#2BBBAD' onclick='confirmar_icon(this.id,1)' ></span>
+                      <span id='trash_".$pago->id_bp."m' class='glyphicon glyphicon-envelope' style='color:#2BBBAD' onclick='confirmar_icon(this.id,1)' ></span>
                       <div  style='display:none'>
                         <span class='glyphicon glyphicon-ok-circle' data-dismiss='modal'  style='color:#00C851;font-size:16px' onclick=actualizar_status(3,".$pago->id_bp. ",'".$_SESSION['modulo']."',".$_SESSION['idpagina'].")></span>
-                        <span class='glyphicon glyphicon-remove-circle' style='color:#ffbb33;font-size:16px' id='opc_".$pago->id_bp."' onclick='confirmar_icon(this.id,0)'></span>
+                        <span class='glyphicon glyphicon-remove-circle' style='color:#ffbb33;font-size:16px' id='opc_".$pago->id_bp."m' onclick='confirmar_icon(this.id,0)'></span>
                       </div>
                     </td>";
                 }else if($pago->status==2 && $opcion==2) {

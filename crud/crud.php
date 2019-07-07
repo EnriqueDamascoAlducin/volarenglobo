@@ -22,7 +22,6 @@
 					$filtro.="null,";
 				}else{
 					$filtro.= "'".($val)."',";
-					echo $filtro;
 				}
 			}
 			$campos=substr($campos,0,-1). "\n";
@@ -30,9 +29,9 @@
 			$tipo="insert";
 		}else{
 			if(isset($_FILE)){
-				echo "si existe";
+			//	echo "si existe";
 			}else{
-				echo " no existe";
+				//echo " no existe";
 			}
 			foreach ($_POST as $val) {
 				$name=$names[$i]."_".$clave;
