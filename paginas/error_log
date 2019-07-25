@@ -233,3 +233,56 @@ Stack trace:
 #1 {main}
   thrown in /home/tyjkeoif025c/public_html/proyectos/volarenglobo/css/log/c/conexion.php on line 55
 [05-Jul-2019 19:09:37 UTC] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; Conection has a deprecated constructor in /home/tyjkeoif025c/public_html/proyectos/volarenglobo/css/log/c/conexion.php on line 2
+[09-Jul-2019 01:21:00 UTC] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; Conection has a deprecated constructor in /home/tyjkeoif025c/public_html/proyectos/volarenglobo/css/log/c/conexion.php on line 2
+[09-Jul-2019 02:52:11 UTC] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; Conection has a deprecated constructor in /home/tyjkeoif025c/public_html/proyectos/volarenglobo/css/log/c/conexion.php on line 2
+[09-Jul-2019 02:58:46 UTC] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; Conection has a deprecated constructor in /home/tyjkeoif025c/public_html/proyectos/volarenglobo/css/log/c/conexion.php on line 2
+[09-Jul-2019 21:25:39 UTC] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; Conection has a deprecated constructor in /home/tyjkeoif025c/public_html/proyectos/volarenglobo/css/log/c/conexion.php on line 2
+[10-Jul-2019 00:06:33 UTC] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; Conection has a deprecated constructor in /home/tyjkeoif025c/public_html/proyectos/volarenglobo/css/log/c/conexion.php on line 2
+[10-Jul-2019 00:30:15 UTC] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; Conection has a deprecated constructor in /home/tyjkeoif025c/public_html/proyectos/volarenglobo/css/log/c/conexion.php on line 2
+[10-Jul-2019 00:31:23 UTC] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; Conection has a deprecated constructor in /home/tyjkeoif025c/public_html/proyectos/volarenglobo/css/log/c/conexion.php on line 2
+[10-Jul-2019 00:31:46 UTC] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; Conection has a deprecated constructor in /home/tyjkeoif025c/public_html/proyectos/volarenglobo/css/log/c/conexion.php on line 2
+[10-Jul-2019 00:32:21 UTC] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; Conection has a deprecated constructor in /home/tyjkeoif025c/public_html/proyectos/volarenglobo/css/log/c/conexion.php on line 2
+[10-Jul-2019 00:33:03 UTC] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; Conection has a deprecated constructor in /home/tyjkeoif025c/public_html/proyectos/volarenglobo/css/log/c/conexion.php on line 2
+[10-Jul-2019 00:51:44 UTC] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; Conection has a deprecated constructor in /home/tyjkeoif025c/public_html/proyectos/volarenglobo/css/log/c/conexion.php on line 2
+[09-Jul-2019 19:51:44 America/Mexico_City] PHP Notice:  Undefined index: id in /home/tyjkeoif025c/public_html/proyectos/volarenglobo/paginas/index.php on line 15
+[09-Jul-2019 19:51:44 America/Mexico_City] PHP Notice:  Undefined index: id in /home/tyjkeoif025c/public_html/proyectos/volarenglobo/paginas/index.php on line 19
+[09-Jul-2019 19:51:44 America/Mexico_City] PHP Fatal error:  Uncaught Error: Call to a member function fetchALL() on boolean in /home/tyjkeoif025c/public_html/proyectos/volarenglobo/css/log/c/conexion.php:55
+Stack trace:
+#0 /home/tyjkeoif025c/public_html/proyectos/volarenglobo/paginas/index.php(20): Conection->consultas(' Distinct modul...', 'permisos_volar ...', 'modulo.id_per=s...', '')
+#1 {main}
+  thrown in /home/tyjkeoif025c/public_html/proyectos/volarenglobo/css/log/c/conexion.php on line 55
+[10-Jul-2019 00:51:47 UTC] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; Conection has a deprecated constructor in /home/tyjkeoif025c/public_html/proyectos/volarenglobo/css/log/c/conexion.php on line 2
+[10-Jul-2019 01:00:47 UTC] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; Conection has a deprecated constructor in /home/tyjkeoif025c/public_html/proyectos/volarenglobo/css/log/c/conexion.php on line 2
+[10-Jul-2019 01:06:44 UTC] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; Conection has a deprecated constructor in /home/tyjkeoif025c/public_html/proyectos/volarenglobo/css/log/c/conexion.php on line 2
+[10-Jul-2019 01:07:12 UTC] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; Conection has a deprecated constructor in /home/tyjkeoif025c/public_html/proyectos/volarenglobo/css/log/c/conexion.php on line 2
+[09-Jul-2019 20:07:12 America/Mexico_City] PHP Notice:  Undefined index: id in /home/tyjkeoif025c/public_html/proyectos/volarenglobo/paginas/index.php on line 15
+[09-Jul-2019 20:07:12 America/Mexico_City] PHP Notice:  Undefined index: id in /home/tyjkeoif025c/public_html/proyectos/volarenglobo/paginas/index.php on line 19
+[09-Jul-2019 20:07:12 America/Mexico_City] PHP Fatal error:  Uncaught Error: Call to a member function fetchALL() on boolean in /home/tyjkeoif025c/public_html/proyectos/volarenglobo/css/log/c/conexion.php:55
+Stack trace:
+#0 /home/tyjkeoif025c/public_html/proyectos/volarenglobo/paginas/index.php(20): Conection->consultas(' Distinct modul...', 'permisos_volar ...', 'modulo.id_per=s...', '')
+#1 {main}
+  thrown in /home/tyjkeoif025c/public_html/proyectos/volarenglobo/css/log/c/conexion.php on line 55
+[10-Jul-2019 01:07:15 UTC] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; Conection has a deprecated constructor in /home/tyjkeoif025c/public_html/proyectos/volarenglobo/css/log/c/conexion.php on line 2
+[11-Jul-2019 01:14:14 UTC] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; Conection has a deprecated constructor in /home/tyjkeoif025c/public_html/proyectos/volarenglobo/css/log/c/conexion.php on line 2
+[13-Jul-2019 23:46:09 UTC] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; Conection has a deprecated constructor in /home/tyjkeoif025c/public_html/proyectos/volarenglobo/css/log/c/conexion.php on line 2
+[13-Jul-2019 18:46:09 America/Mexico_City] PHP Notice:  Undefined index: id in /home/tyjkeoif025c/public_html/proyectos/volarenglobo/paginas/index.php on line 15
+[13-Jul-2019 18:46:09 America/Mexico_City] PHP Notice:  Undefined index: id in /home/tyjkeoif025c/public_html/proyectos/volarenglobo/paginas/index.php on line 19
+[13-Jul-2019 18:46:09 America/Mexico_City] PHP Fatal error:  Uncaught Error: Call to a member function fetchALL() on boolean in /home/tyjkeoif025c/public_html/proyectos/volarenglobo/css/log/c/conexion.php:55
+Stack trace:
+#0 /home/tyjkeoif025c/public_html/proyectos/volarenglobo/paginas/index.php(20): Conection->consultas(' Distinct modul...', 'permisos_volar ...', 'modulo.id_per=s...', '')
+#1 {main}
+  thrown in /home/tyjkeoif025c/public_html/proyectos/volarenglobo/css/log/c/conexion.php on line 55
+[13-Jul-2019 23:46:19 UTC] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; Conection has a deprecated constructor in /home/tyjkeoif025c/public_html/proyectos/volarenglobo/css/log/c/conexion.php on line 2
+[14-Jul-2019 15:49:27 UTC] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; Conection has a deprecated constructor in /home/tyjkeoif025c/public_html/proyectos/volarenglobo/css/log/c/conexion.php on line 2
+[14-Jul-2019 17:52:20 UTC] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; Conection has a deprecated constructor in /home/tyjkeoif025c/public_html/proyectos/volarenglobo/css/log/c/conexion.php on line 2
+[14-Jul-2019 12:52:20 America/Mexico_City] PHP Notice:  Undefined index: id in /home/tyjkeoif025c/public_html/proyectos/volarenglobo/paginas/index.php on line 15
+[14-Jul-2019 12:52:20 America/Mexico_City] PHP Notice:  Undefined index: id in /home/tyjkeoif025c/public_html/proyectos/volarenglobo/paginas/index.php on line 19
+[14-Jul-2019 12:52:20 America/Mexico_City] PHP Fatal error:  Uncaught Error: Call to a member function fetchALL() on boolean in /home/tyjkeoif025c/public_html/proyectos/volarenglobo/css/log/c/conexion.php:55
+Stack trace:
+#0 /home/tyjkeoif025c/public_html/proyectos/volarenglobo/paginas/index.php(20): Conection->consultas(' Distinct modul...', 'permisos_volar ...', 'modulo.id_per=s...', '')
+#1 {main}
+  thrown in /home/tyjkeoif025c/public_html/proyectos/volarenglobo/css/log/c/conexion.php on line 55
+[14-Jul-2019 17:52:25 UTC] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; Conection has a deprecated constructor in /home/tyjkeoif025c/public_html/proyectos/volarenglobo/css/log/c/conexion.php on line 2
+[23-Jul-2019 22:11:37 UTC] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; Conection has a deprecated constructor in /home/tyjkeoif025c/public_html/proyectos/volarenglobo/css/log/c/conexion.php on line 2
+[23-Jul-2019 22:12:56 UTC] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; Conection has a deprecated constructor in /home/tyjkeoif025c/public_html/proyectos/volarenglobo/css/log/c/conexion.php on line 2
+[25-Jul-2019 01:59:35 UTC] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; Conection has a deprecated constructor in /home/tyjkeoif025c/public_html/proyectos/volarenglobo/css/log/c/conexion.php on line 2

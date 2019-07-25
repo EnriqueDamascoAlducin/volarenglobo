@@ -1,7 +1,7 @@
 <?php
 include_once "../../css/log/c/conexion.php";
-$filtro="tv.status <>0 and tv.idusu_temp=vu.id_usu";
-$campos ="id_temp as reserva,CONCAT(ifnull(nombre_usu,''),' ', ifnull(apellidop_usu,''),' ',ifnull(apellidom_usu,'')) as vendedor,
+$filtro="tv.status <>0 and tv.idusu_temp=vu.id_usu ";
+$campos =" id_temp as reserva,CONCAT(ifnull(nombre_usu,''),' ', ifnull(apellidop_usu,''),' ',ifnull(apellidom_usu,'')) as vendedor,
     CONCAT(ifnull(nombre_temp,''),' ',ifnull(apellidos_temp,'')) as cliente,
     mail_temp as correo,
     CONCAT( ifnull(telfijo_temp,''),' / ',ifnull(telcelular_temp,'') )as telefono,
@@ -16,7 +16,7 @@ $campos ="id_temp as reserva,CONCAT(ifnull(nombre_usu,''),' ', ifnull(apellidop_
     ifnull(total_temp,'0') as cotizado,
     ifnull((SELECT CONCAT(ifnull(nombre_usu,''),' ', ifnull(apellidop_usu,''),' ',ifnull(apellidom_usu,'')) from volar_usuarios where id_usu=piloto_temp),'') as piloto,
     ifnull((SELECT nombre_globo from globos_volar where id_globo=globo_temp),'') as globo,
-    ifnull(kg_temp,'NA') as peso, tv.status";
+    ifnull(kg_temp,'NA') as peso, tv.status,ifnull(total_temp,0) as total, IFNULL((SELECT SUM(cantidad_bp) from bitpagos_volar where idres_bp = id_temp and status in (1,3)  ),0) as pagos";
 if(isset($_POST['fechaf'])){
 	if($_POST['fechai']!=""){
 		$filtro.=" and fechavuelo_temp>='".$_POST['fechai']."'";
@@ -44,11 +44,11 @@ if(isset($_POST['fechaf'])){
 $fila=3;
 $titulo=1;
 $enc=2;
-$reservas=$cons->consultas($campos,"volar_usuarios vu, temp_volar tv ",$filtro,"");
+$reservas=$cons->consultas($campos,"volar_usuarios vu, temp_volar tv",$filtro,"");
 include '../../excel/Classes/PHPExcel.php';
 $objphp= new PHPExcel();
 
-	
+header("Content-Type: text/html;charset=utf-8");
 $gdImage = imagecreatefrompng('../../img/logo.png');//Logotipo
 $objphp->getProperties()
         ->setCreator("Volar en Globo")
@@ -151,8 +151,8 @@ $objphp->getActiveSheet()->getColumnDimension('A')->setWidth(15);
 
 
 $objphp->getActiveSheet()->setCellValue('B'.$titulo, 'Reporte de Reservas de Volar en Globo');
-$objphp->getActiveSheet()->mergeCells('B'.$titulo.':Q'.$titulo);
-$objphp->getActiveSheet()->getStyle('A'.$enc.':Q'.$enc)->applyFromArray($estiloTituloColumnas);
+$objphp->getActiveSheet()->mergeCells('B'.$titulo.':T'.$titulo);
+$objphp->getActiveSheet()->getStyle('A'.$enc.':T'.$enc)->applyFromArray($estiloTituloColumnas);
 
 $objphp->getActiveSheet()->setCellValue('A'.$enc, 'Reserva');
 $objphp->getActiveSheet()->getColumnDimension('A')->setWidth(15);
@@ -170,7 +170,7 @@ $objphp->getActiveSheet()->setCellValue('G'.$enc, 'Procedencia');
 $objphp->getActiveSheet()->getColumnDimension('G')->setWidth(15);
 $objphp->getActiveSheet()->setCellValue('H'.$enc, 'P. Adultos');
 $objphp->getActiveSheet()->getColumnDimension('H')->setWidth(15);
-$objphp->getActiveSheet()->setCellValue('I'.$enc, 'P. Ni帽os');
+$objphp->getActiveSheet()->setCellValue('I'.$enc, ('P. Niños'));
 $objphp->getActiveSheet()->getColumnDimension('I')->setWidth(22);
 $objphp->getActiveSheet()->setCellValue('J'.$enc, 'Motivo');
 $objphp->getActiveSheet()->getColumnDimension('J')->setWidth(15);
@@ -178,7 +178,7 @@ $objphp->getActiveSheet()->setCellValue('K'.$enc, 'Tipo');
 $objphp->getActiveSheet()->getColumnDimension('K')->setWidth(15);
 $objphp->getActiveSheet()->setCellValue('L'.$enc, 'Hotel');
 $objphp->getActiveSheet()->getColumnDimension('L')->setWidth(15);
-$objphp->getActiveSheet()->setCellValue('M'.$enc, 'Habitaci贸n');
+$objphp->getActiveSheet()->setCellValue('M'.$enc, ('Habitación'));
 $objphp->getActiveSheet()->getColumnDimension('M')->setWidth(15);
 $objphp->getActiveSheet()->setCellValue('N'.$enc, 'Cotizado');
 $objphp->getActiveSheet()->getColumnDimension('N')->setWidth(15);
@@ -188,6 +188,12 @@ $objphp->getActiveSheet()->setCellValue('P'.$enc, 'Peso (kg)');
 $objphp->getActiveSheet()->getColumnDimension('P')->setWidth(15);
 $objphp->getActiveSheet()->setCellValue('Q'.$enc, 'Status');
 $objphp->getActiveSheet()->getColumnDimension('Q')->setWidth(15);
+$objphp->getActiveSheet()->setCellValue('R'.$enc, 'Total');
+$objphp->getActiveSheet()->getColumnDimension('R')->setWidth(15);
+$objphp->getActiveSheet()->setCellValue('S'.$enc, 'Pagado');
+$objphp->getActiveSheet()->getColumnDimension('S')->setWidth(15);
+$objphp->getActiveSheet()->setCellValue('T'.$enc, 'CPP');
+$objphp->getActiveSheet()->getColumnDimension('T')->setWidth(15);
 foreach ($reservas as $reserva) {
 
 $objphp->getActiveSheet()->setCellValue('A'.$fila, $reserva->reserva );
@@ -199,18 +205,18 @@ $objphp->getActiveSheet()->setCellValue('F'.$fila, $reserva->fechavuelo);
 $objphp->getActiveSheet()->setCellValue('G'.$fila, ($reserva->procedencia) );
 $objphp->getActiveSheet()->setCellValue('H'.$fila, $reserva->adultos );
 $objphp->getActiveSheet()->setCellValue('I'.$fila, $reserva->ninos );
-$objphp->getActiveSheet()->setCellValue('J'.$fila, utf8_encode($reserva->motivo) );
-$objphp->getActiveSheet()->setCellValue('K'.$fila, utf8_encode($reserva->tipo) );
-$objphp->getActiveSheet()->setCellValue('L'.$fila, utf8_encode($reserva->hotel) );
-$objphp->getActiveSheet()->setCellValue('M'.$fila, utf8_encode($reserva->habitacion) );
+$objphp->getActiveSheet()->setCellValue('J'.$fila, ($reserva->motivo) );
+$objphp->getActiveSheet()->setCellValue('K'.$fila, ($reserva->tipo) );
+$objphp->getActiveSheet()->setCellValue('L'.$fila, ($reserva->hotel) );
+$objphp->getActiveSheet()->setCellValue('M'.$fila, ($reserva->habitacion) );
 $objphp->getActiveSheet()->setCellValue('N'.$fila, $reserva->cotizado );
-$objphp->getActiveSheet()->setCellValue('O'.$fila, utf8_encode($reserva->globo) );
+$objphp->getActiveSheet()->setCellValue('O'.$fila, ($reserva->globo) );
 $objphp->getActiveSheet()->setCellValue('P'.$fila, $reserva->peso );
 if( $reserva->status ==4){
 						$text="Confirmada";
 						$class="info";
 					}else if($reserva->status==2){
-						$text="Sin Cotizaci贸n";
+						$text="Sin Cotización";
 						$class="danger";
 					}else if($reserva->status==3){
 						$text="Pendiente de Pago";
@@ -219,19 +225,22 @@ if( $reserva->status ==4){
 						$text="Terminado";
 						$class="success";
 					}else if($reserva->status==5){
-						$text="Esperando Autorizaci贸n";
+						$text="Esperando Autorización";
 						$class="success";
 					}else{
 						$text="Error";
 						$class="danger";
 					}
 $objphp->getActiveSheet()->setCellValue('Q'.$fila, $text );
+$objphp->getActiveSheet()->setCellValue('R'.$fila, $reserva->total );
+$objphp->getActiveSheet()->setCellValue('S'.$fila, $reserva->pagos );
+$objphp->getActiveSheet()->setCellValue('T'.$fila, "=R".$fila."-S".$fila );
 $fila++;
 }
 $fila--;
-$objphp->getActiveSheet()->setSharedStyle($estiloInformacion, "A3:Q".$fila);
+$objphp->getActiveSheet()->setSharedStyle($estiloInformacion, "A3:T".$fila);
 $objWriter = PHPExcel_IOFactory::createWriter($objphp, 'Excel5');
-header('Content-Type: application/vnd.ms-excel');
+header("Content-Type: text/html; charset=utf-8");
 header('Content-Disposition: attachment;filename="ventas.xls"');
 
 ob_end_clean();

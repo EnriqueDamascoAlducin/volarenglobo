@@ -96,3 +96,17 @@ Stack trace:
   thrown in /home/tyjkeoif025c/public_html/proyectos/volarenglobo/css/log/c/conexion.php on line 55
 [25-Jun-2019 15:01:43 UTC] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; Conection has a deprecated constructor in /home/tyjkeoif025c/public_html/proyectos/volarenglobo/css/log/c/conexion.php on line 2
 [25-Jun-2019 15:57:07 UTC] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; Conection has a deprecated constructor in /home/tyjkeoif025c/public_html/proyectos/volarenglobo/css/log/c/conexion.php on line 2
+[10-Jul-2019 01:00:51 UTC] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; Conection has a deprecated constructor in /home/tyjkeoif025c/public_html/proyectos/volarenglobo/css/log/c/conexion.php on line 2
+[10-Jul-2019 01:00:56 UTC] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; Conection has a deprecated constructor in /home/tyjkeoif025c/public_html/proyectos/volarenglobo/css/log/c/conexion.php on line 2
+[10-Jul-2019 01:00:56 UTC] PHP Notice:  Uninitialized string offset: 0 in /home/tyjkeoif025c/public_html/proyectos/volarenglobo/dinamicos/inputs.php on line 60
+[10-Jul-2019 01:00:56 UTC] PHP Notice:  Trying to get property 'tipo_gasto' of non-object in /home/tyjkeoif025c/public_html/proyectos/volarenglobo/dinamicos/inputs.php on line 60
+[10-Jul-2019 01:00:56 UTC] PHP Notice:  Uninitialized string offset: 0 in /home/tyjkeoif025c/public_html/proyectos/volarenglobo/dinamicos/inputs.php on line 60
+[10-Jul-2019 01:00:56 UTC] PHP Notice:  Trying to get property 'tipo_gasto' of non-object in /home/tyjkeoif025c/public_html/proyectos/volarenglobo/dinamicos/inputs.php on line 60
+[10-Jul-2019 01:00:56 UTC] PHP Notice:  Uninitialized string offset: 0 in /home/tyjkeoif025c/public_html/proyectos/volarenglobo/dinamicos/inputs.php on line 60
+[10-Jul-2019 01:00:56 UTC] PHP Notice:  Trying to get property 'tipo_gasto' of non-object in /home/tyjkeoif025c/public_html/proyectos/volarenglobo/dinamicos/inputs.php on line 60
+[10-Jul-2019 01:00:56 UTC] PHP Notice:  Uninitialized string offset: 0 in /home/tyjkeoif025c/public_html/proyectos/volarenglobo/dinamicos/inputs.php on line 60
+[10-Jul-2019 01:00:56 UTC] PHP Notice:  Trying to get property 'tipo_gasto' of non-object in /home/tyjkeoif025c/public_html/proyectos/volarenglobo/dinamicos/inputs.php on line 60
+[10-Jul-2019 01:01:01 UTC] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; Conection has a deprecated constructor in /home/tyjkeoif025c/public_html/proyectos/volarenglobo/css/log/c/conexion.php on line 2
+[10-Jul-2019 01:01:03 UTC] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; Conection has a deprecated constructor in /home/tyjkeoif025c/public_html/proyectos/volarenglobo/css/log/c/conexion.php on line 2
+[10-Jul-2019 01:01:03 UTC] PHP Notice:  Undefined variable: idtemp in /home/tyjkeoif025c/public_html/proyectos/volarenglobo/paginas/sitio/form1.php on line 25
+[13-Jul-2019 23:46:56 UTC] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; Conection has a deprecated constructor in /home/tyjkeoif025c/public_html/proyectos/volarenglobo/css/log/c/conexion.php on line 2

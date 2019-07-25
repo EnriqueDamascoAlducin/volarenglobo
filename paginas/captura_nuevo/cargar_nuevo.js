@@ -121,3 +121,4 @@
 			 }
 		});
 	}
+      $("input[type='number']").prop({'min':0,'max':9999999});
